@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Export Default</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="export-default">Export Default</h1>
+        <hr>
+        <h2 id="export-default-1">Export Default</h2>
+        <ul>
+            <li>Sampai saat ini, kita selalu melakukan export dengan nama, baik itu nama variable, function dan yang
+                lainnya</li>
+            <li>Ada juga fitur yang bernama export default, ini adalah fitur yang digunakan untuk mempermudah untuk
+                membuat default data di module, dan membantu JavaScript agar kompatibel dengan CommonJS dan AMD module
+                system</li>
+        </ul>
+        <hr>
+        <h2 id="cara-export-default">Cara Export Default</h2>
+        <ul>
+            <li>export default namaFunction;</li>
+            <li>export default function(){ ... }</li>
+            <li>export default namaVariable;</li>
+            <li>export default namaVariable = value;</li>
+            <li>export default NamaClass;</li>
+            <li>export default class { ... }</li>
+        </ul>
+        <hr>
+        <h2 id="cara-import-default">Cara Import Default</h2>
+        <ul>
+            <li>import aliasFunction from “./module-default.js”</li>
+            <li>import {default as aliasVariable} from “./module-default.js”</li>
+            <li>import aliasVariable from “./module-default.js”</li>
+            <li>import {default as aliasVariable} from “./module-default.js”</li>
+            <li>import AliasClass from “./module-default.js”</li>
+            <li>import {default as AliasClass} from “./module-default.js”</li>
+        </ul>
+        <hr>
+        <h2 id="kode--export-default-function">Kode : Export Default Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, from default export`</span>);
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--import-default-function">Kode : Import Default Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> sayHelloDefault <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/default-functions.js&quot;</span>;
+
+<span class="hljs-title function_">sayHelloDefault</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <hr>
+        <h2 id="kode--export-default-variable">Kode : Export Default Variable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> name = <span class="hljs-string">&quot;Faizal&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="kode--import-default-variable">Kode : Import Default Variable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> aliasName <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/default-variable.js&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(aliasName);
+</code></pre>
+        <hr>
+        <h2 id="kode--export-default-class">Kode : Export Default Class</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name;
+    }
+
+    <span class="hljs-title function_">sayHi</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hi, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>);
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--import-default-class">Kode : Import Default Class</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Person</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/default-class.js&quot;</span>;
+
+<span class="hljs-keyword">const</span> person = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+person.<span class="hljs-title function_">sayHi</span>();
+</code></pre>
+        <hr>
+        <h2 id="default-dan-named-export">Default dan Named Export</h2>
+        <ul>
+            <li>Dalam satu module, kita bisa menggabungkan export default dan export named</li>
+            <li>Yang tidak boleh adalah, dalam satu module, membuat lebih dari satu default</li>
+            <li>Cara import default dan named secara bersamaan bisa menggunakan perintah :
+                <ul>
+                    <li>import defaultAlias, {named1, named2} from “./module.js”;</li>
+                    <li>import {default as defaultAlias, named1, named2} from “./module.js”;</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--export-default-dan-named">Kode : Export Default dan Named</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> title = <span class="hljs-string">&quot;Belajar JavaScript Module&quot;</span>;
+
+<span class="hljs-keyword">const</span> content = <span class="hljs-string">&quot;Content Belajar JavaScript Module&quot;</span>;
+
+<span class="hljs-keyword">const</span> author = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+
+<span class="hljs-keyword">export</span> {content};
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> author;
+</code></pre>
+        <hr>
+        <h2 id="kode--import-default-dan-named">Kode : Import Default dan Named</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> authorName, {title, content} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/default-and-named.js&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(title);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(authorName);
+</code></pre>
+        <hr>
+        <h2 id="rekomendasi">Rekomendasi</h2>
+        <ul>
+            <li>Bedakan antara default dan named, karena jika digabungkan kadang akan membingungkan ketika melakukan
+                import</li>
+            <li>Sebisa mungkin selalu gunakan export named dibandingkan export default</li>
+        </ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

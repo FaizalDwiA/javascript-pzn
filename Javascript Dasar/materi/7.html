@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Variable</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="variable">Variable</h1>
+        <h2 id="susahnya-tanpa-variable">Susahnya Tanpa Variable</h2>
+        <p>kita buat dulu script yang tanpa variable</p>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\1.PNG" alt="1">
+        </p>
+        <hr>
+        <ul>
+            <li>tiba2 kita pengen mengganti misal al farizi nya digabung, maka kita harus ubah semua.</li>
+            <li>kan pasti capek ya, apalagi jika 1000x</li>
+        </ul>
+        <hr>
+        <h2 id="variable-1">Variable</h2>
+        <ul>
+            <li><strong>Variable</strong> = tempat untuk menyimpan data</li>
+            <li>Dengan menyimpan data di variable, kita bisa <strong>menggunakan lagi</strong> dengan menyebutkan nama
+                variable nya</li>
+            <li>Untuk membuat variable di JavaScript, kita bisa menggunakan kata kunci <strong>var</strong> diikuti
+                dengan nama variablenya</li>
+            <li>JavaScript adalah <strong>dynamic language</strong>, artinya variable di JavaScript <strong>tidak
+                    terpaku</strong> harus menggunakan <strong>1 tipe data</strong>, kita bisa mengubah2 tipe data di
+                variable yang sama.</li>
+        </ul>
+        <h3 id="kode">kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">var</span> fullName;
+<span class="hljs-keyword">var</span> firstName;
+<span class="hljs-keyword">var</span> middleName;
+<span class="hljs-keyword">var</span> lastName;
+</code></pre>
+        <hr>
+        <h2 id="mengubah-value-di-variable">Mengubah Value di Variable</h2>
+        <ul>
+            <li>Setelah variable di deklarasikan, kita bisa <strong>mengubah value / nilai</strong> di dalam variable
+                tersebut</li>
+            <li>Untuk mengubahnya, kita bisa menggunakan perintah nama variable diikuti dengan tanda <strong>= (sama
+                    dengan)</strong> lalu diikuti dengan value / nilainya.</li>
+        </ul>
+        <h3 id="kode-1">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">var</span> fullName;
+<span class="hljs-keyword">var</span> firstName;
+<span class="hljs-keyword">var</span> middleName;
+<span class="hljs-keyword">var</span> lastName;
+
+fullName = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+firstName = <span class="hljs-string">&quot;Faizal&quot;</span>;
+middleName = <span class="hljs-string">&quot;Dwi&quot;</span>;
+lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="membuat-variable-langsung-dengan-value">Membuat Variable Langsung Dengan Value</h2>
+        <ul>
+            <li>di JavaScript juga kita bisa mendeklarasikan sebuah variable, <strong>langsung dengan isi value</strong>
+                nya</li>
+            <li>Caranya kita bisa menggunakan kata kunci <strong>var</strong>, diikuti <strong>nama variable</strong>,
+                lalu diikuti dengan tanda <strong>= (sama dengan)</strong>, dan di ikuti dengan value / nilainya</li>
+        </ul>
+        <h3 id="kode-2">Kode</h3>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">var</span> firstName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span>;
+<span class="hljs-keyword">var</span> lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+<span class="hljs-keyword">var</span> fullName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="mengakses-variable">Mengakses Variable</h2>
+        <ul>
+            <li>Salah 1 keuntungan menggunakan variable adalah variable bisa <strong>digunakan kembali</strong></li>
+            <li>Hal ini akan mempermudah ketika <strong>membutuhkan data yang sama berkali2</strong></li>
+            <li>Untuk mengakses variable, kita cukup <strong>menyebutkan</strong> nama variable nya</li>
+        </ul>
+        <h3 id="kode-3">kode</h3>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">var</span> firstName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span>;
+<span class="hljs-keyword">var</span> lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+<span class="hljs-keyword">var</span> fullName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\2.PNG" alt="2">
+        </p>
+        <hr>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">var</span> firstName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span>;
+<span class="hljs-keyword">var</span> lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+<span class="hljs-keyword">var</span> fullName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+
+fullName = <span class="hljs-string">&quot;Faizal Dwi A&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="kata-kunci-let-dan-const">Kata Kunci let dan const</h2>
+        <ul>
+            <li><strong>Sebelum tahun 2015</strong>, kata untuk membuat variable hanya bisa menggunakan kata kunci
+                <strong>var</strong></li>
+            <li>Namun <strong>tahun 2015</strong> sejak versi ECMAScript 2015, diperkenalkan kata kunci baru untuk
+                membuat variable, <strong>let dan const</strong></li>
+            <li>JavaScript sekarang tidak direkomendasikan lagi menggunakan kata kunci var untuk membuat variable, namun
+                diganti dengan let, hal ini dikarenakan <strong>ada masalah dari desain awal var</strong> (akan kita
+                bahas di chapter tersendiri)</li>
+        </ul>
+        <h3 id="kode-4">Kode</h3>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> firstName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span>;
+<span class="hljs-keyword">let</span> lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+<span class="hljs-keyword">let</span> fullName = <span class="hljs-string">&quot;Faizal Dwi&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+
+fullName = <span class="hljs-string">&quot;Faizal Dwi A&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(fullName);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+</code></pre>
+        <hr>
+        <h2 id="kata-kunci-const">Kata Kunci const</h2>
+        <ul>
+            <li>Kata kunci let itu seperti kata kunci var, dimana data di variable tersebut <strong>bisa
+                    diubah2</strong> sesuka kita.</li>
+            <li>Sedangakn kata kunci const berbeda, ketika sebuah variable sudah diisi di variable const, maka variable
+                tersebut <strong>tidak bisa diubah</strong> lagi valuenya</li>
+            <li>Variable sejenis ini kadang dibilang juga <strong>constant</strong></li>
+        </ul>
+        <h3 id="kode-5">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> application = <span class="hljs-string">&quot;Belajar JavaScript Dasar&quot;</span>;
+
+application = <span class="hljs-string">&quot;Gak Mau Belajar&quot;</span>
+</code></pre>
+        <blockquote>
+            <p>untuk melihat errornya :</p>
+        </blockquote>
+        <ol>
+            <li>buka Inspect dibrowser</li>
+            <li>bagian console<br>
+                <img src="..\assets\img\7\4.PNG"
+                    alt="4"><br>
+                <strong>artinya</strong> : mencoba merubah data variable yang tipe varible nya constant.</li>
+        </ol>
+
+
+
+    </body>
+
+</html>

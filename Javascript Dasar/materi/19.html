@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Null</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="null">Null</h1>
+        <hr>
+        <h2 id="null-1">Null</h2>
+        <ul>
+            <li>null merupakan representasi <strong>data kosong</strong></li>
+            <li>null berbeda dengan undefined, <strong>null</strong> berarti variable sudah ditambahkan value nya, hanya
+                saja <strong>value nya null</strong></li>
+            <li>Sedangkan <strong>undefined</strong> adalah variable <strong>belum ditambahkan</strong> value apapun
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--null-dan-undefined">Kode : Null dan Undefined</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> firstName = <span class="hljs-literal">null</span>;
+
+<span class="hljs-keyword">if</span> (firstName === <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello Undefined&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (firstName === <span class="hljs-literal">null</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello Null&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${firstName}</span>`</span>);
+}
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

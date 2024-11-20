@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Destructuring</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="destructuring">Destructuring</h1>
+        <hr>
+        <h2 id="destructuring-1">Destructuring</h2>
+        <ul>
+            <li><strong>Destructuring</strong> adalah fitur yang bisa digunakan untuk <strong>membongkar
+                    value-value</strong> di array atau object ke dalam variable-variable</li>
+            <li>Fitur ini sangat mempermudah kita ketika ingin mengambil data dari array atau object tanpa harus
+                melakukan pengambilan data satu persatu</li>
+        </ul>
+        <hr>
+        <h2 id="kode--mengambil-data-di-array">Kode : Mengambil Data di Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>];
+<span class="hljs-keyword">const</span> firstName = names[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">const</span> middleName = names[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">const</span> lastName = names[<span class="hljs-number">2</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--destructuring-array">Kode : Destructuring Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>, <span class="hljs-string">&quot;Black&quot;</span>];
+<span class="hljs-keyword">const</span> [firstName, middleName, lastName, ...others] = names;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(others);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="kode--mengambil-data-di-object">Kode : Mengambil Data di Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Alfarizi&quot;</span>,
+    <span class="hljs-attr">address</span>: {
+        <span class="hljs-attr">street</span>: <span class="hljs-string">&quot;Jalan Belum Ada&quot;</span>,
+        <span class="hljs-attr">city</span>: <span class="hljs-string">&quot;Sukoharjo&quot;</span>,
+        <span class="hljs-attr">country</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>
+    },
+    <span class="hljs-attr">hobby</span>: <span class="hljs-string">&quot;Baca Komik&quot;</span>,
+    <span class="hljs-attr">channel</span>: <span class="hljs-string">&quot;faizaldwia&quot;</span>
+};
+
+<span class="hljs-keyword">const</span> firstName = person.<span class="hljs-property">firstName</span>;
+<span class="hljs-keyword">const</span> lastName = person.<span class="hljs-property">lastName</span>;
+</code></pre>
+        <hr>
+        <h2 id="kode--destructuring-object">Kode : Destructuring Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Alfarizi&quot;</span>,
+    <span class="hljs-attr">address</span>: {
+        <span class="hljs-attr">street</span>: <span class="hljs-string">&quot;Jalan Belum Ada&quot;</span>,
+        <span class="hljs-attr">city</span>: <span class="hljs-string">&quot;Sukoharjo&quot;</span>,
+        <span class="hljs-attr">country</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>
+    },
+    <span class="hljs-attr">hobby</span>: <span class="hljs-string">&quot;Baca Komik&quot;</span>,
+    <span class="hljs-attr">channel</span>: <span class="hljs-string">&quot;faizaldwia&quot;</span>
+};
+
+<span class="hljs-keyword">let</span> {firstName, lastName, address, ...others} = person;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(address);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(others);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="kode--destructuring-nested-object">Kode : Destructuring Nested Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Alfarizi&quot;</span>,
+    <span class="hljs-attr">address</span>: {
+        <span class="hljs-attr">street</span>: <span class="hljs-string">&quot;Jalan Belum Ada&quot;</span>,
+        <span class="hljs-attr">city</span>: <span class="hljs-string">&quot;Sukoharjo&quot;</span>,
+        <span class="hljs-attr">country</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>
+    },
+    <span class="hljs-attr">hobby</span>: <span class="hljs-string">&quot;Baca Komik&quot;</span>,
+    <span class="hljs-attr">channel</span>: <span class="hljs-string">&quot;faizaldwia&quot;</span>
+};
+
+<span class="hljs-keyword">let</span> {firstName, lastName, <span class="hljs-attr">address</span>: {country, city, street}, ...others} = person;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(country);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(city);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(street);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(others);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\4.PNG" alt="4">
+        </p>
+        <hr>
+        <h2 id="destructuring-function-parameter">Destructuring Function Parameter</h2>
+        <ul>
+            <li>Destructuring <strong>tidak hanya</strong> bisa dilakukan di variable, tapi juga bisa dilakukan di
+                <strong>function parameter</strong></li>
+            <li>Hal ini membuat kita mudah ketika ingin <strong>mengambil nested data dalam array</strong> atau
+                <strong>object dalam function</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--destructuring-di-function-parameter-1">Kode : Destructuring di Function Parameter (1)</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">displayPerson</span>(<span class="hljs-params">{firstName, middleName, lastName}</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+}
+
+<span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+};
+
+<span class="hljs-title function_">displayPerson</span>(person);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\5.PNG" alt="5">
+        </p>
+        <hr>
+        <h2 id="kode--destructuring-di-function-parameter-2">Kode : Destructuring di Function Parameter (2)</h2>
+        <h3 id="tanpa-destructuring-">tanpa destructuring :</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">array</span>) {
+    <span class="hljs-keyword">return</span> array[<span class="hljs-number">0</span>] + array[<span class="hljs-number">1</span>];
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>([<span class="hljs-number">20</span>, <span class="hljs-number">10</span>]));
+</code></pre>
+        <hr>
+        <h3 id="dengan-destructuring-">dengan destructuring :</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">[first, second]</span>) {
+    <span class="hljs-keyword">return</span> first + second;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>([<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>([<span class="hljs-number">20</span>, <span class="hljs-number">10</span>]));
+</code></pre>
+        <p>dengan hasil yang sama</p>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\6.PNG" alt="6">
+        </p>
+        <hr>
+        <h2 id="default-value">Default Value</h2>
+        <ul>
+            <li>Yang paling menarik di destructuring adalah, kita bisa <strong>menambahkan default value</strong></li>
+            <li>Jadi misal kita kita melakukan <strong>destructuring terhadap array</strong>, ternyata <strong>tidak ada
+                    datanya</strong>, maka kita bisa <strong>menambahkan default value</strong></li>
+            <li>Begitu juga pada <strong>object</strong>, jika ternyata property nya tidak ada, maka kita bisa
+                menambahkan default value</li>
+        </ul>
+        <hr>
+        <h2 id="kode--default-value-destructuring-array">Kode : Default Value Destructuring Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>];
+<span class="hljs-keyword">const</span> [firstName, middleName = <span class="hljs-string">&quot;Dwi&quot;</span>, lastName = <span class="hljs-string">&quot;Al Farizi&quot;</span>] = names;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\7.PNG" alt="7">
+        </p>
+        <hr>
+        <h2 id="kode--default-value-destructuring-object">Kode : Default Value Destructuring Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Alfarizi&quot;</span>
+};
+
+<span class="hljs-keyword">const</span> {firstName, middleName = <span class="hljs-string">&quot;Dwi&quot;</span>, lastName} = person;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\8.PNG" alt="8">
+        </p>
+        <hr>
+        <h2 id="menggunakan-nama-variable-lain">Menggunakan Nama Variable Lain</h2>
+        <ul>
+            <li>Saat melakukan <strong>destructuring di Array</strong>, kita bisa dengan <strong>mudah membuat nama
+                    variable sesuka kita</strong></li>
+            <li>Namun pada saat melakukan destructuring object, kita harus membuat nama variable sama dengan nama
+                property</li>
+            <li>Kita juga bisa menggunakan <strong>nama variable lain</strong> saat melakukan destructuring object jika
+                kita mau</li>
+        </ul>
+        <hr>
+        <h2 id="kode--menggunakan-nama-variable-lain">Kode : Menggunakan Nama Variable Lain</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Black&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dragon&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Syiber&quot;</span>
+}
+
+<span class="hljs-keyword">const</span> {
+    <span class="hljs-attr">firstName</span>: namaDepan,
+    <span class="hljs-attr">middleName</span>: namaTengah = <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: namaBelakang
+} = person;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namaDepan);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namaTengah);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namaBelakang);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\55\9.PNG" alt="9">
+        </p>
+
+
+
+    </body>
+
+</html>

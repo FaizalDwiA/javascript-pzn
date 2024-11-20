@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Element</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="element">Element</h1>
+        <hr>
+        <h2 id="element-1">Element</h2>
+        <ul>
+            <li>Element merupakan Node yang berbentuk element, biasanya adalah element HTML, misal
+                <strong><code>&lt;html&gt;</code></strong>, <strong><code>&lt;head&gt;</code></strong>,
+                <strong><code>&lt;body&gt;</code></strong>, <strong><code>&lt;div&gt;</code></strong>,
+                <strong><code>&lt;table&gt;</code></strong>, dan lain-lain</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">https://developer.mozilla.org/en-US/docs/Web/API/Element</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--element">Kode : Element</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;description&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> title = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;title&quot;</span>);
+    title.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Belajar JavaScript DOM&quot;</span>;
+
+    <span class="hljs-keyword">const</span> description = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;description&quot;</span>);
+    description.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Selamat Belajar JavaScript DOM&quot;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="element-property">Element Property</h2>
+        <ul>
+            <li>Element memiliki banyak sekali property</li>
+            <li>Dan karena Element adalah turunan dari Node, semua property Node pun bisa digunakan di Element</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element#properties">https://developer.mozilla.org/en-US/docs/Web/API/Element#properties</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--element-property">Kode : Element Property</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>This is title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;description&quot;</span>&gt;</span>This is Description<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">id</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">className</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">tagName</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="element-method">Element Method</h2>
+        <ul>
+            <li>Element memiliki banyak sekali method</li>
+            <li>Dan karena Element adalah turunan dari Node, semua method Node pun bisa digunakan di Element</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element#methods">https://developer.mozilla.org/en-US/docs/Web/API/Element#methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--element-method">Kode : Element Method</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>This is title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;description&quot;</span>&gt;</span>This is Description<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> description = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;description&quot;</span>);
+    <span class="hljs-keyword">const</span> title = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;title&quot;</span>);
+
+    description.<span class="hljs-title function_">remove</span>();
+    title.<span class="hljs-title function_">remove</span>();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="membuat-element">Membuat Element</h2>
+        <ul>
+            <li>Sebelumnya kita hanya mengambil element menggunakan id, artinya kita perlu buat dulu element nya di HTML
+            </li>
+            <li>Kita juga bisa membuat object element baru, dan menambahkannya ke halaman web</li>
+            <li>Kita bisa menggunakan method createElement(tag) pada Document</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-element">Kode : Membuat Element</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+
+    <span class="hljs-keyword">const</span> title = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;h1&quot;</span>);
+    title.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Belajar JavaScript DOM&quot;</span>;
+    content.<span class="hljs-title function_">appendChild</span>(title);
+
+    <span class="hljs-keyword">const</span> description = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;p&quot;</span>);
+    description.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Selamat Belajar JavaScript DOM&quot;</span>;
+    content.<span class="hljs-title function_">appendChild</span>(description);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\4.PNG"
+                alt="4"></p>
+
+
+
+    </body>
+
+</html>

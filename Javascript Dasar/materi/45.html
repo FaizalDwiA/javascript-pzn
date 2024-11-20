@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Scope</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="scope">Scope</h1>
+        <hr>
+        <h2 id="scope-1">Scope</h2>
+        <ul>
+            <li><strong>Scope</strong> merupakan area akses sebuah data</li>
+            <li>Ada dua jenis scope, <strong>global scope</strong> dan <strong>local scope</strong>.</li>
+            <li>Setiap kita <strong>membuat function</strong>, maka kita akan <strong>membuat local scope</strong> untuk
+                function tersebut</li>
+            <li>Data di <strong>global scope bisa diakses dari local scope</strong>, namun data <strong>di local scope
+                    hanya bisa di akses di local scope</strong> tersebut atau di scope local dibawahnya (dalam kasus
+                function dalam function)</li>
+        </ul>
+        <hr>
+        <h2 id="kode--global-scope">Kode : Global Scope</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// global scope</span>
+<span class="hljs-keyword">let</span> counter = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// global scope</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">hitMe</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// local scope function hitMe</span>
+    counter++;
+}
+
+<span class="hljs-title function_">hitMe</span>();
+<span class="hljs-title function_">hitMe</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\45\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--local-scope">Kode : Local Scope</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">first</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> firstVariable = <span class="hljs-string">&quot;First&quot;</span>;
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">second</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> secondVariable = <span class="hljs-string">&quot;Second&quot;</span>;
+}
+
+<span class="hljs-title function_">first</span>();
+<span class="hljs-title function_">second</span>();
+
+<span class="hljs-comment">// global scope</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>((firstVariable));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>((secondVariable));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\45\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="kode--nested-function-scope">Kode : Nested Function Scope</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">first</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> firstVariable = <span class="hljs-string">&quot;First&quot;</span>;
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">second</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstVariable);
+    }
+
+    <span class="hljs-title function_">second</span>();
+}
+
+<span class="hljs-title function_">first</span>();
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\45\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Operator typeof</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="operator-typeof">Operator typeof</h1>
+        <hr>
+        <h2 id="operator-typeof-1">Operator typeof</h2>
+        <ul>
+            <li><strong>typeof</strong> merupakan operator yang bisa kita gunakan untuk melihat tipe data sebuah value
+                atau variable</li>
+            <li>Karena JavaScript merupakan <strong>dynamic langauge</strong>, jadi kadang kita perlu mengecek tipe data
+                sebuah value atau variable menggunakan operator typeof</li>
+            <li>Hasil dari operator typeof adalah <strong>string tipe datanya</strong></li>
+        </ul>
+        <table border="1" width="100%">
+            <tr>
+                <th>Type</th>
+                <th>Hasil Operator typeof</th>
+            </tr>
+            <tr>
+                <td>Undefined</td>
+                <td>“undefined”</td>
+            </tr>
+            <tr>
+                <td>Null</td>
+                <td>"object"</td>
+            </tr>
+            <tr>
+                <td>Boolean</td>
+                <td>"boolean"</td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td>"number"</td>
+            </tr>
+            <tr>
+                <td>BitInt</td>
+                <td>"bigint"</td>
+            </tr>
+            <tr>
+                <td>String</td>
+                <td>"string"</td>
+            </tr>
+            <tr>
+                <td>Symbol</td>
+                <td>"symbol"</td>
+            </tr>
+            <tr>
+                <td>Function</td>
+                <td>"function"</td>
+            </tr>
+            <tr>
+                <td>Lainnya</td>
+                <td>"object"</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--operator-typeof">Kode : Operator typeof</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> data;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;number&quot;</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Number&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;string&quot;</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;String&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;boolean&quot;</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Boolean&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;object&quot;</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Object&quot;</span>);
+}
+</code></pre>
+
+
+
+    </body>
+
+</html>

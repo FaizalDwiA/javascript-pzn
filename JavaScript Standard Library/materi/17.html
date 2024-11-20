@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Base64</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="base64">Base64</h1>
+        <hr>
+        <h2 id="base64-1">Base64</h2>
+        <ul>
+            <li>Base64 merupakan binary to text encoding, representasi binary data dalam format string</li>
+            <li>Base64 merupakan format text data yang aman untuk dikirimkan di web</li>
+            <li>Base64 merupakan encoding yang biasanya digunakan ketika perlu mengirim data dari client ke server</li>
+            <li>Karena encoding Base64 merupakan text, oleh karena itu sangat aman digunakan pada query param URL atau
+                text body dalam form</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/Base64">https://developer.mozilla.org/en-US/docs/Glossary/Base64</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="base64-function">Base64 Function</h2>
+        <p>JavaScript memiliki function bawaan untuk melakukan encode Base64 atau decode base64</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>btoa(value)</td>
+                <td>Encode ke base64 dari value</td>
+            </tr>
+            <tr>
+                <td>atob(encoded)</td>
+                <td>Decode dari base64 ke value</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--base64">Kode : Base64</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> original = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+
+<span class="hljs-keyword">const</span> encoded = <span class="hljs-title function_">btoa</span>(original);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(encoded);
+
+<span class="hljs-keyword">const</span> decoded = <span class="hljs-title function_">atob</span>(encoded);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(decoded);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

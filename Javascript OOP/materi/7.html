@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Prototype</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="prototype">Prototype</h1>
+        <hr>
+        <h2 id="prototype-1">Prototype</h2>
+        <ul>
+            <li>JavaScript sebelumnya dikenal dengan <strong>pemrograman berbasis prototype</strong></li>
+            <li>Memang agak sedikit <strong>membingungkan</strong>, dan tidak dipungkiri, <strong>banyak sekali yang
+                    bingung</strong> dengan konsep prototype di JavaScript</li>
+            <li>Pada chapter ini, kita akan bahas tentang konsep prototype</li>
+        </ul>
+        <hr>
+        <h2 id="prototype-inheritance">Prototype Inheritance</h2>
+        <ul>
+            <li>Saat kita membuat object dari constructor function, object tersebut disebut <strong>instance</strong>,
+                semua property (baik itu value atau method), akan berada <strong>di dalam</strong> instance object nya
+            </li>
+            <li>Setiap kita membuat sebuah constructor function, maka secara otomatis akan dibuatkan prototype nya,
+                misal ketika kita membuat <strong>constructor function Person</strong>, maka akan ada
+                <strong>Person.prototype</strong></li>
+            <li>Saat kita membuat sebuah object instance, secara otomatis object tersebut adalah turunan dari
+                Constructor.prototype nya</li>
+            <li>Untuk mengakses prototype milih sebuah instance, kita bisa menggunakan
+                <strong><strong>proto</strong></strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--object-instance">Kode : Object Instance</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">firstname, lastName</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstname</span> = firstname;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = lastName;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\1.PNG" alt="1"></p>
+        <hr>
+        <h2 id="console--object-instance">Console : Object Instance</h2>
+        <p><img src="..\assets\img\7\1.PNG" alt="1"></p>
+        <hr>
+        <h2 id="diagramprototype">DiagramPrototype</h2>
+        <p><img src="..\assets\img\7\2.PNG" alt="2"></p>
+        <hr>
+        <h2 id="console--object-instance-inheritance">Console : Object Instance Inheritance</h2>
+        <p><img src="..\assets\img\7\3.PNG" alt="3"></p>
+        <hr>
+        <h2 id="menambah-property-ke-prototype">Menambah Property ke Prototype</h2>
+        <ul>
+            <li>Property mirip object, dimana kita bisa menambah property baik itu value ataupun method</li>
+            <li>Saat kita menambah sebuah property ke Prototype, secara otomatis, semua object instance yang turunan
+                dari prototype tersebut akan memiliki property tersebut</li>
+        </ul>
+        <hr>
+        <h2 id="kode--menambah-property-ke-instance-object">Kode : Menambah Property ke Instance Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">firstname, lastName</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstname</span> = firstname;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = lastName;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+faizal.<span class="hljs-property">sayBye</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Good Bye&quot;</span>);
+}
+
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\4.PNG" alt="4"></p>
+        <hr>
+        <h2 id="kode--menambahkan-property-ke-prototype">Kode : Menambahkan Property ke Prototype</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">firstname, lastName</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstname</span> = firstname;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = lastName;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span>`</span>);
+    }
+}
+
+<span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">sayBye</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Good Bye&quot;</span>);
+}
+
+<span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">run</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span> is running`</span>);
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\5.PNG" alt="5"></p>
+        <hr>
+        <h2 id="cara-kerja-prototype-inheritance">Cara Kerja Prototype Inheritance</h2>
+        <ul>
+            <li>Bagaimana bisa property di prototype diakses dari object instance?</li>
+            <li>Ketika kita mengakses property di object instance, pertama akan di cek apakah di object tersebut
+                terdapat property tersebut atau tidak, jika tidak, maka akan di cek di <strong>proto</strong>
+                (prototype) nya, jika masih tidak ada, akan di cek lagi di <strong>proto</strong> (prototype) yang lebih
+                tinggi, begitu seterusnya, sampai berakhir di Object Prototype</li>
+        </ul>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">firstname, lastName</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstname</span> = firstname;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = lastName;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span>`</span>);
+    }
+}
+
+<span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">sayBye</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">// ini tidak ditampilkan karena kalah sama dengan yang diinisialisasi faizal.sayBye</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Good Bye&quot;</span>);
+}
+
+<span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">run</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstname}</span> is running`</span>);
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+faizal.<span class="hljs-property">sayBye</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) { <span class="hljs-comment">// ini yang akan ditampilkan</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Sampai Jumpa&quot;</span>);
+}
+
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+
+faizal.<span class="hljs-title function_">sayBye</span>();
+faizal.<span class="hljs-title function_">run</span>();
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\6.PNG" alt="6"></p>
+        <hr>
+        <h2 id="console--prototype-inheritance">Console : Prototype Inheritance</h2>
+        <p><img src="..\assets\img\7\7.PNG" alt="7"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

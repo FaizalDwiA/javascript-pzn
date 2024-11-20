@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="json">JSON</h1>
+        <hr>
+        <h2 id="pengenalan-json">Pengenalan JSON</h2>
+        <ul>
+            <li>JSON singkatan dari JavaScript Object Notation</li>
+            <li>JSON merupakan data String yang bentuknya mirip dengan JavaScript Object</li>
+            <li>Saat ini JSON banyak sekali digunakan untuk komunikasi antara Server dan Client</li>
+            <li><a href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a></li>
+        </ul>
+        <hr>
+        <h2 id="json-1">JSON</h2>
+        <ul>
+            <li>JavaScript mendukung konversi data dari String json ke Object ataupun sebaliknya</li>
+            <li>JSON.stringify() digunakan untuk melakukan konversi dari Object ke String</li>
+            <li>JSON.parse() digunakan untuk melakukan konversi dari String ke Object</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--json">Kode : JSON</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>,
+    <span class="hljs-attr">address</span>: {
+        <span class="hljs-attr">country</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>,
+        <span class="hljs-attr">city</span>: <span class="hljs-string">&quot;Sukoharjo&quot;</span>
+    },
+    <span class="hljs-attr">hobbies</span>: [
+        <span class="hljs-string">&quot;Coding&quot;</span>, <span class="hljs-string">&quot;Reading&quot;</span>, <span class="hljs-string">&quot;sporting&quot;</span>
+    ]
+}
+
+<span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(person);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(json);
+
+<span class="hljs-keyword">const</span> jsonObject = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(json);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(jsonObject);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

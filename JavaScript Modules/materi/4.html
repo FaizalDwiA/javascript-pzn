@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Tanpa Module</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="tanpa-module">Tanpa Module</h1>
+        <hr>
+        <h2 id="tanpa-module-1">Tanpa Module</h2>
+        <ul>
+            <li>Sebelum kita membahas JavaScript Module, sekarang kita akan coba dulu tanpa menggunakan module</li>
+            <li>Saat kita membuat file JavaScript, lalu kita load file JavaScript tersebut di web, secara default semua
+                kode JavaScript di file tersebut bisa diakses, baik itu variable, function atau class<br>
+                <img src="..\assets\img\4\1.PNG"
+                    alt="1"></li>
+        </ul>
+        <hr>
+        <h2 id="kode--javascript-library">Kode : JavaScript Library</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Good Bye <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Faizal&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="kode--menggunakan-library">Kode : Menggunakan Library</h2>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Without Module<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/library.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+        <span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <h2 id=""><img src="..\assets\img\4\2.PNG"
+                alt="2"></h2>
+        <h2 id="dengan-module">Dengan Module</h2>
+        <ul>
+            <li>Namun jika kita menggunakan module, kita bisa secara selektif memilih bagian kode mana yang ingin kita
+                ekspos keluar</li>
+            <li>Secara default kode yang kita buat menggunakan JavaScript Module tidak bisa digunakan dari luar file,
+                kecuali kita memintanya untuk mengekspos keluar</li>
+        </ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

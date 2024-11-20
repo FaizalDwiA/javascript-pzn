@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Event</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="event">Event</h1>
+        <hr>
+        <h2 id="jenis-event">Jenis Event</h2>
+        <ul>
+            <li>DOM sendiri memiliki banyak sekali jenis event, tidak hanya click</li>
+            <li>Jenis event yang bisa kita gunakan biasanya disesuaikan dengan target event nya, misal pada element
+                video, ada event play, pause, sedangkan pada element button, tidak ada event play atau pause</li>
+            <li>Untuk lebih detailnya, ada apa saja jenis event nya, kita bisa lihat pada halaman berikut :</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="event-1">Event</h2>
+        <ul>
+            <li>Saat kita membuat callback function untuk Event Handler, kita juga bisa menerima data event yang memicu
+                event itu terjadi</li>
+            <li>Data Event tersebut bisa berbeda-beda, tergantung jenis Event nya, contohnya untuk Click, data event nya
+                berupa Mouse Event (yang berisi lokasi mouse dan lain-lain)</li>
+            <li>Kita bisa lihat detail dari data tiap event di halaman documentation nya :</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Event">https://developer.mozilla.org/en-US/docs/Web/API/Event</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--event">Kode : Event</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>Click Yellow Box<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;canvas&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 500px; height: 500px; background-color: yellow;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas&quot;</span>);
+    <span class="hljs-keyword">const</span> text = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;text&quot;</span>);
+    canvas.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+        text.<span class="hljs-property">textContent</span> = <span class="hljs-string">`You Click At <span class="hljs-subst">${event.x}</span>, <span class="hljs-subst">${event.y}</span>`</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\12\1.PNG"
+                alt="1"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

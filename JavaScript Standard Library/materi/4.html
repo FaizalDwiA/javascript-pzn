@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Object</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="object">Object</h1>
+        <hr>
+        <h2 id="object-1">Object</h2>
+        <ul>
+            <li>Tipe data object sudah sering sekali kita bahas di JavaScript Dasar dan JavaScript OOP</li>
+            <li>Pada materi ini, kita akan bahas banyak static method yang terdapat pada Object</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="object-freeze--seal">Object Freeze &amp; Seal</h2>
+        <ul>
+            <li>Secara default, object bisa diubah atau dihapus properties nya</li>
+            <li>Jika kita ingin mengubah sebuah object menjadi object yang tidak bisa diubah atau dihapus, kita bisa
+                menggunakan beberapa static method</li>
+            <li>Object.freeze() digunakan untuk mengubah object menjadi object yang tidak bisa diubah atau dihapus
+                attribute nya</li>
+            <li>Object.seal() digunakan untuk mengubah object menjadi object yang tidak bisa dihapus attribute nya</li>
+        </ul>
+        <hr>
+        <h2 id="kode--object-freeze">Kode : Object Freeze</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>
+}
+
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">freeze</span>(person);
+
+person.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Diubah&quot;</span>; <span class="hljs-comment">// tidak berubah</span>
+<span class="hljs-keyword">delete</span> person.<span class="hljs-property">lastName</span>; <span class="hljs-comment">// tidak berubah</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="kode--object-seal">Kode : Object Seal</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">seal</span>(person); <span class="hljs-comment">// hanya bisa mengubah</span>
+
+person.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Diubah&quot;</span>; <span class="hljs-comment">// berubah</span>
+person.<span class="hljs-property">middleName</span> = <span class="hljs-string">&quot;Dwi&quot;</span>; <span class="hljs-comment">// tidak ditambah</span>
+<span class="hljs-keyword">delete</span> person.<span class="hljs-property">lastName</span>; <span class="hljs-comment">// tidak terhapus</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="object-assign">Object Assign</h2>
+        <ul>
+            <li>Kadang kita ada kasus menggabungkan semua attribute dari sebuah object ke object lain</li>
+            <li>Hal ini bisa kita lakukan dengan menggunakan Object.assign(target, source)</li>
+        </ul>
+        <hr>
+        <h2 id="kode--object-assign">Kode : Object Assign</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> target = {<span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>};
+<span class="hljs-keyword">const</span> source = {<span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>};
+
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(target, source);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(target);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="object-property-name--value">Object Property Name &amp; Value</h2>
+        <ul>
+            <li>Object juga memiliki static method untuk digunakan mengambil semua properties names dan values</li>
+            <li>Object.values() digunakan untuk mengambil semua property value</li>
+            <li>Object.getPropertyNames() digunakan untuk mengambil semua properti name</li>
+        </ul>
+        <hr>
+        <h2 id="kode--object-property-name--value">Kode : Object Property Name &amp; Value</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">values</span>(person));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getOwnPropertyNames</span>(person));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\4.PNG"
+                alt="4"></p>
+        <hr>
+        <h2 id="dan-function-lain-lain">Dan Function Lain-Lain</h2>
+        <ul>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</a>
+            </li>
+        </ul>
+
+
+
+    </body>
+
+</html>

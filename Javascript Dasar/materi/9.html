@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Operasi Perbandingan</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="operasi-perbandingan">Operasi Perbandingan</h1>
+        <ul>
+            <li>Operasi perbandingan = operasi untuk membandingkan 2 buah data</li>
+            <li>Operasi perbandingan = operasi yang menghasilkan nilai boolean (benar / salah)</li>
+            <li>Jika hasil operasinya adalah benar, maka nilainya adalah true</li>
+            <li>Jika hasil operasinya adalah salah, maka nilainya adalah false</li>
+        </ul>
+        <hr>
+        <h2 id="tabel">Tabel</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Operator</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Lebih Dari</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Kurang Dari</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Lebih Dari Sama Dengan</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Kurang Dari Sama Dengan</td>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Sama Dengan</td>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Sama Dengan Dan Sama Tipe</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Tidak Sama Dengan</td>
+            </tr>
+            <tr>
+                <td>!==</td>
+                <td>Tidak Sama Dengan / Tidak Sama Tipe</td>
+            </tr>
+        </table>
+        <h3 id="kode">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> result = <span class="hljs-number">5</span> == <span class="hljs-string">&quot;5&quot;</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result = <span class="hljs-number">5</span> === <span class="hljs-string">&quot;5&quot;</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result = <span class="hljs-number">5</span> &gt; <span class="hljs-number">10</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result = <span class="hljs-number">5</span> &lt; <span class="hljs-number">10</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\9\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

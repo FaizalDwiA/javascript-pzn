@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Async Await</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="async-await">Async Await</h1>
+        <hr>
+        <h2 id="async-await-1">Async Await</h2>
+        <p>● Async Await adalah fitur di JavaScript yang digunakan untuk mempermudah proses pembuatan kode Promise.<br>
+            ● Dengan menggunakan Async Await, kita bisa membuat kode Asynchronous dengan gaya Synchronous</p>
+        <hr>
+        <h2 id="async">Async</h2>
+        <ul>
+            <li>Async digunakan untuk menandakan bahwa Function tersebut adalah Async, dan mengembalikan Promise</li>
+            <li>Dengan menggunakan Async, kita tidak perlu membuat Promise secara manual lagi</li>
+        </ul>
+        <hr>
+        <h2 id="kode--async">Kode : Async</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// return Promise&lt;String&gt;</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getnamePromise</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) {
+        <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+    });
+}
+
+<span class="hljs-comment">// return Promise&lt;String&gt;</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getNameAsync</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Faizal&quot;</span>;
+}
+</code></pre>
+        <hr>
+        <h2 id="await">Await</h2>
+        <ul>
+            <li>Await digunakan untuk mendapatkan value hasil dari Promise</li>
+            <li>Await hanya bisa digunakan dalam Async Function</li>
+        </ul>
+        <hr>
+        <h2 id="kode--await">Kode : Await</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getProduct</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;api/product.json&quot;</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;GET&quot;</span>
+    }).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> response.<span class="hljs-title function_">json</span>());
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getProductName</span>(<span class="hljs-params"></span>) {
+    response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getProduct</span>();
+    <span class="hljs-keyword">return</span> response.<span class="hljs-property">name</span>;
+}
+</code></pre>
+        <hr>
+        <h2 id="error-handler-di-async-await">Error Handler di Async Await</h2>
+        <ul>
+            <li>Saat kita menggunakan Promise, kita bisa menggunakan catch() ketika terjadi error</li>
+            <li>Bagaimana pada kasus Async Await?</li>
+            <li>Pada Async Await, kita bisa menggunakan try catch untuk melakukan penanganan error</li>
+        </ul>
+        <hr>
+        <h2 id="kode--try-catch">Kode : Try Catch</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getProduct</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;api/product.json&quot;</span>, {
+        <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;GET&quot;</span>
+    }).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> response.<span class="hljs-title function_">json</span>());
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getProductName</span>(<span class="hljs-params"></span>) {
+    response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getProduct</span>();
+    <span class="hljs-keyword">return</span> response.<span class="hljs-property">name</span>;
+}
+
+(<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> productName = <span class="hljs-keyword">await</span> <span class="hljs-title function_">getProductName</span>();
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(productName);
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">`something wrong <span class="hljs-subst">${e}</span>`</span>);
+    }
+})();
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

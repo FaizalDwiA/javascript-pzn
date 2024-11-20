@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Array</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="array">Array</h1>
+        <ul>
+            <li>Tipe data Array sudah kita bahas di materi JavaScript Dasar</li>
+            <li>Namun kita hanya membahas beberapa instance method yang ada di Array</li>
+            <li>Sebenarnya, terdapat banyak sekali Instance Method yang ada di Array, dan kita akan coba bahas beberapa
+                di sini</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="array-loop">Array Loop</h2>
+        <ul>
+            <li>Sebelumnya kita biasa menggunakan for in dan for of untuk melakukan iterasi Array, namun Array juga
+                memiliki method yang bernama forEach()</li>
+            <li>Method forEach bisa digunakan juga untuk melakukan iterasi data array</li>
+        </ul>
+        <hr>
+        <h2 id="kode--array-loop">Kode : Array Loop</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> array = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al&quot;</span>, <span class="hljs-string">&quot;Farizi&quot;</span>];
+
+array.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">value, index</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${index}</span> : <span class="hljs-subst">${value}</span>`</span>);
+});
+
+array.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">value, index</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${index}</span> : <span class="hljs-subst">${value}</span>`</span>));
+
+array.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="array-queue">Array Queue</h2>
+        <ul>
+            <li>Dalam struktur data, terdapat tipe struktur data bernama Queue (Antrian)</li>
+            <li>Dimana data masuk akan diposisikan di urutan paling belakang</li>
+            <li>Sedangkan data keluar akan diposisikan dari urutan paling depan</li>
+            <li>Mirip sekali dengan antrian, atau istilahnya FIFO (first in first out)</li>
+            <li>Kita bisa menggunakan Array dengan bantuan function push() untuk menambah data di belakang, dan shift()
+                untuk mengambil dan menghapus data paling depan</li>
+        </ul>
+        <hr>
+        <h2 id="kode--array-queue">Kode : Array Queue</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> queue = [];
+
+queue.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+queue.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>);
+queue.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Al&quot;</span>);
+queue.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(queue.<span class="hljs-title function_">shift</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(queue.<span class="hljs-title function_">shift</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(queue.<span class="hljs-title function_">shift</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(queue.<span class="hljs-title function_">shift</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="array-stack">Array Stack</h2>
+        <ul>
+            <li>Struktur data Stack (Tumpukan) kebalikan dari Queue, dimana aturannya mirip dengan tumpukan kartu</li>
+            <li>Saat kita memasukkan data, kita akan memasukkan di urutan paling belakang (atau atas)</li>
+            <li>Sedangkan saat kita mengambil data, kita akan mengambil data dari paling belakang (atau atas) terlebih
+                dahulu</li>
+            <li>Stack ini sifatnya LIFO (last in first out)</li>
+            <li>Untuk menambah diurutan belakang, kita bisa menggunakan function push()</li>
+            <li>Dan untuk mengambil dan menghapus paling belakang, kita bisa menggunakan function pop()</li>
+        </ul>
+        <hr>
+        <h2 id="kode--array-stack">Kode : Array Stack</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> stack = [];
+
+stack.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+stack.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>);
+stack.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Al&quot;</span>);
+stack.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stack.<span class="hljs-title function_">pop</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stack.<span class="hljs-title function_">pop</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stack.<span class="hljs-title function_">pop</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stack.<span class="hljs-title function_">pop</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stack.<span class="hljs-title function_">pop</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="array-search">Array Search</h2>
+        <p>Array memiliki banyak function untuk melakukan pencarian :</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>find(value => boolean) : value </td>
+                <td>Mencari data sesuai dengan kondisi</td>
+            </tr>
+            <tr>
+                <td>findIndex(value => boolean) : number</td>
+                <td>Mencari data index sesuai dengan kondisi</td>
+            </tr>
+            <tr>
+                <td>includes(value) : boolean</td>
+                <td>Mengecek apakah terdapat data</td>
+            </tr>
+            <tr>
+                <td>indexOf(value) : number</td>
+                <td>Mengecek posisi index data</td>
+            </tr>
+            <tr>
+                <td>lastIndexOf(value) : number </td>
+                <td>Mengecek posisi index data terakhir</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--array-search">Kode : Array Search</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> source = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source.<span class="hljs-title function_">find</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt; <span class="hljs-number">3</span>)); <span class="hljs-comment">// 4</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source.<span class="hljs-title function_">findIndex</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt; <span class="hljs-number">3</span>)); <span class="hljs-comment">// 3</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source.<span class="hljs-title function_">includes</span>(<span class="hljs-number">7</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source.<span class="hljs-title function_">indexOf</span>(<span class="hljs-number">5</span>)); <span class="hljs-comment">// 4</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(source.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-number">5</span>)); <span class="hljs-comment">// 9</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\4.PNG"
+                alt="4"></p>
+        <hr>
+        <h2 id="array-filter">Array Filter</h2>
+        <p>Array memiliki function untuk melakukan filter data :</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>filter(value => boolean) : Array </td>
+                <td>Melakukan filter data yang kondisinya bernilai true</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--array-filter">Kode : Array Filter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+
+<span class="hljs-keyword">const</span> ganjil = numbers.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>);
+<span class="hljs-keyword">const</span> genap = numbers.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ganjil);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(genap);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\5.PNG"
+                alt="5"></p>
+        <hr>
+        <h2 id="array-transform">Array Transform</h2>
+        <p>Array juga memiliki function yang digunakan untuk melakukan transformasi :</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>map(value => result) : Array<result>
+                </td>
+                <td>Melakukan transform tiap value dan menghasilkan array result</td>
+            </tr>
+            <tr>
+                <td>reduce(resultBefore, value => result) : result</td>
+                <td>Melakukan transform dengan menggunakan value array dan value selanjutnya, lalu hasilnya dilanjutkan
+                    ke iterasi selanjutnya
+                </td>
+            </tr>
+            <tr>
+                <td>reduceRight(resultBefore, value => result)</td>
+                <td>Sama seperti reduce(), namun dilakukan dari belakang</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--array-transform">Kode : Array Transform</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+<span class="hljs-keyword">const</span> namesUpper = names.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value.<span class="hljs-title function_">toUpperCase</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namesUpper);
+
+<span class="hljs-keyword">const</span> namesReduce = names.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">before, value</span>) =&gt;</span> before + <span class="hljs-string">&quot; &quot;</span> + value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namesReduce);
+
+<span class="hljs-keyword">const</span> namesRight = names.<span class="hljs-title function_">reduceRight</span>(<span class="hljs-function">(<span class="hljs-params">before, value</span>) =&gt;</span> before + <span class="hljs-string">&quot; &quot;</span> + value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(namesRight);
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+<span class="hljs-keyword">const</span> total = numbers.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">result, value</span>) =&gt;</span> result + value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(total);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <h2 id=""><img
+                src="..\assets\img\3\6.PNG"
+                alt="6"></h2>
+        <h2 id="dan-function-lain-lain">Dan Function lain-lain</h2>
+        <ul>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods</a>
+            </li>
+        </ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

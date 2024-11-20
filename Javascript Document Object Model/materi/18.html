@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Element</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="html-element">HTML Element</h1>
+        <hr>
+        <h2 id="html-element-1">HTML Element</h2>
+        <ul>
+            <li>Element merupakan representasi dalam DOM</li>
+            <li>Namun, saat menggunakan HTML, implementasi detail nya sebenarnya adalah HTML Element, yaitu turunan dari
+                Element</li>
+            <li>HTML Element memiliki banyak sekali property dan method tambahan selain dari Element DOM</li>
+            <li>Kebanyakan HTML Element memiliki property yang sesuai dengan attribute yang ada pada tag html tersebut,
+                oleh karena itu, kadang kita tidak butuh lagi menggunakan method setAttribute dan getAttribute</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--html-element">Kode : HTML Element</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;link&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> link = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;link&quot;</span>);
+    link.<span class="hljs-property">href</span> = <span class="hljs-string">&quot;https://faizaldwalfarizi.com&quot;</span>;
+    link.<span class="hljs-property">target</span> = <span class="hljs-string">&quot;_blank&quot;</span>;
+    link.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\18\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Operator Matematika</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="operator-matematika">Operator Matematika</h1>
+        <p>Javascript mendukung <strong>banyak sekali</strong> operator Matematika untuk tipe data Number, seperti:</p>
+        <ul>
+            <li>Operator Aritmatika</li>
+            <li>Operator Augmented Assignments</li>
+            <li>Operator Unary</li>
+            <li>Dll</li>
+        </ul>
+        <hr>
+        <h2 id="operator-aritmatika">Operator Aritmatika</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Operator</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Pertambahan</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Pengurangan</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Perkalian</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>Exponensial / Pangkat</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Pembagian</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Sisa Bagi</td>
+            </tr>
+        </table>
+        <h3 id="kode">Kode</h3>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>; <span class="hljs-comment">// 3</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;1 + 2 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+<span class="hljs-keyword">let</span> originalResult = result; <span class="hljs-comment">//3</span>
+
+result = result - <span class="hljs-number">1</span>; <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + originalResult + <span class="hljs-string">&quot; - 1 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+originalResult = result;
+
+result = result * <span class="hljs-number">1</span>; <span class="hljs-comment">// 4</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + originalResult + <span class="hljs-string">&quot; * 1 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+originalResult = result;
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\8\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="operator-augmented-assignments">Operator Augmented Assignments</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Operator Matematika</th>
+                <th>Operator Augmented Assignments</th>
+            </tr>
+            <tr>
+                <td>result = result + 10</td>
+                <td>resut += 10</td>
+            </tr>
+            <tr>
+                <td>result = result - 10</td>
+                <td>resut -= 10</td>
+            </tr>
+            <tr>
+                <td>result = result * 10</td>
+                <td>resut *= 10</td>
+            </tr>
+            <tr>
+                <td>result = result ** 10</td>
+                <td>resut **= 10</td>
+            </tr>
+            <tr>
+                <td>result = result / 10</td>
+                <td>resut /= 10</td>
+            </tr>
+            <tr>
+                <td>result = result % 10</td>
+                <td>resut %= 10</td>
+            </tr>
+        </table>
+        <h3 id="kode-1">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>; <span class="hljs-comment">// 3</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;1 + 2 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+<span class="hljs-keyword">let</span> originalResult = result; <span class="hljs-comment">//3</span>
+
+result -= <span class="hljs-number">1</span>; <span class="hljs-comment">// 2</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + originalResult + <span class="hljs-string">&quot; - 1 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+originalResult = result;
+
+result *= <span class="hljs-number">1</span>; <span class="hljs-comment">// 4</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + originalResult + <span class="hljs-string">&quot; * 1 = &quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+originalResult = result;
+</code></pre>
+        <hr>
+        <h2 id="operator-unary">Operator Unary</h2>
+        <p>Operator yang cukup membutuhkan 1 data</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Operator</th>
+                <th>keterangan</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Menandakan nilai positif</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Menandakan nilai negatif</td>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>Increment, menaikan 1 angka</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>Decrement, menurunkan 1 angka</td>
+            </tr>
+        </table>
+        <h3 id="kode-2">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> result = +<span class="hljs-number">1</span>;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result--;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result++;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+
+result = -result;
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;&quot;</span> + result + <span class="hljs-string">&quot;&lt;/p&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\8\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

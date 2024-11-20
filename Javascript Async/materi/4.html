@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Menerima Data di AJAX</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="menerima-data-di-ajax">Menerima Data di AJAX</h1>
+        <hr>
+        <h2 id="menerima-data-di-ajax-1">Menerima Data di AJAX</h2>
+        <ul>
+            <li>AJAX biasanya digunakan untuk mengirim data ke Server atau menerima data dari Server</li>
+            <li>Tiap request AJAX yang dilakukan, biasanya kita ingin mendapat informasi response yang diberikan oleh
+                Server</li>
+            <li>Kita tidak bisa langsung mengambil response AJAX, karena proses AJAX adalah Async, sehingga kita perlu
+                menunggu sampai proses Async nya selesai.</li>
+            <li>Untuk mendapatkan informasi AJAX, kita bisa menggunakan AJAX Callback, yang akan dieksekusi setelah
+                proses AJAX selesai</li>
+            <li>Untuk menambahkan AJAX Callback, kita bisa tambahkan pada event load</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event</a>
+            </li>
+            <li>Dan untuk mengambil datanya dari server, kita bisa menggunakan property responseText</li>
+        </ul>
+        <hr>
+        <h2 id="kode--menerima-data-di-ajax">Kode : Menerima Data di AJAX</h2>
+        <p><em>index.html</em></p>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;response&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/hello.json&quot;</span>);
+
+<span class="hljs-comment">//ajax.onload = callback; // menggunakan onload</span>
+ajax.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;load&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(ajax.<span class="hljs-property">responseText</span>);
+    <span class="hljs-keyword">const</span> response = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;response&quot;</span>);
+    response.<span class="hljs-property">textContent</span> = json.<span class="hljs-property">response</span>;
+    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(response);
+});
+
+ajax.<span class="hljs-title function_">send</span>(); <span class="hljs-comment">// mengirim request</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

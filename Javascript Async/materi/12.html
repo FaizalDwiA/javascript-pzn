@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Promise</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="promise">Promise</h1>
+        <hr>
+        <h2 id="apa-itu-promise">Apa itu Promise?</h2>
+        <ul>
+            <li>Promise merupakan proxy untuk sebuah nilai di masa depan (Future) yang belum diketahui saat pembuatan
+                Promise tersebut.</li>
+            <li>Biasa Promise digunakan sebagai proxy untuk proses Async.</li>
+            <li>Penggunaan Promise sangat mudah, dan lebih mirip dengan kode Synchronous.</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="masalah-dengan-callback">Masalah dengan Callback</h2>
+        <pre><code class="language-js"><span class="hljs-title function_">doFirst</span>(data, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-title function_">doSecond</span>(data, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-title function_">doThird</span>(data, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-comment">// Callback Hell</span>
+        });
+    });
+});
+</code></pre>
+        <hr>
+        <h2 id="promise-state">Promise State</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>state</th>
+                <td>pending</td>
+                <td>fulfilled</td>
+                <td>rejected</td>
+            </tr>
+            <tr>
+                <th>result</th>
+                <td>undefined</td>
+                <td>value</td>
+                <td>error</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--membuat-promise">Kode : Membuat Promise</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) {
+    <span class="hljs-keyword">if</span>(success) {
+        <span class="hljs-title function_">resolve</span>(value)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-title function_">reject</span>(error)
+    }
+});
+</code></pre>
+        <hr>
+        <h2 id="kode--ajax-dengan-promise">Kode : AJAX dengan Promise</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getProduct</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) {
+        <span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+        ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/product.json&quot;</span>);
+        ajax.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-keyword">if</span>(ajax.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) {
+                <span class="hljs-title function_">resolve</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(ajax.<span class="hljs-property">responseText</span>));
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-title function_">reject</span>(ajax.<span class="hljs-property">responseText</span>);
+            }
+        }
+        ajax.<span class="hljs-title function_">send</span>();
+    });
+}
+</code></pre>
+
+
+
+    </body>
+
+</html>

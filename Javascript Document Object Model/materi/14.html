@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>InnerText dan InnerHTML</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="innertext-dan-innerhtml">InnerText dan InnerHTML</h1>
+        <hr>
+        <h2 id="text-content-dan-inner-text">Text Content dan Inner Text</h2>
+        <ul>
+            <li>Selain textContent, terdapat property lain bernama innerText untuk mendapatkan isi text sebuah element
+            </li>
+            <li>Tujuan nya sama, untuk mengambil atau mengubah isi text konten sebuah element, namun ada perbedaannya
+            </li>
+            <li>textContent akan mengembalikan semua isi dari konten text sebuah element</li>
+            <li>innerText bisa tahu, bagian text mana yang ditampilkan, dan dia hanya akan mengambil text yang
+                ditampilkan saja</li>
+        </ul>
+        <hr>
+        <h2 id="kode--text-content-dan-inner-text">Kode : Text Content dan Inner Text</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Faizal<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> Dwi <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Al Farizi<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">textContent</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">innerHTML</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\14\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="inner-html">Inner HTML</h2>
+        <ul>
+            <li>Jika Text Content dan Inner Text hanya mengambil text saja, Inner HTML akan mengambil seluruh element
+                HTML nya sebagai text</li>
+            <li>Ini juga cocok jika kita ingin mengubah isi dari element menggunakan text yang berisi tag HTML</li>
+        </ul>
+        <hr>
+        <h2 id="kode--inner-html">Kode : Inner HTML</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Faizal<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> Dwi <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Al Farizi<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(content.<span class="hljs-property">innerHTML</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\14\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="mengubah-element-dengan-inner-html">Mengubah Element dengan Inner HTML</h2>
+        <ul>
+            <li>Salah satu kemampuan dari innerHTML adalah, kita bisa mengubah isi dari children sebuah element hanya
+                dengan string</li>
+            <li>Tag yang terdapat di dalam String secara otomatis akan menjadi child element</li>
+        </ul>
+        <hr>
+        <h2 id="kode--mengubah-element-dengan-inner-html">Kode : Mengubah Element dengan Inner HTML</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Faizal<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span> Dwi <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Al Farizi<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+    content.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;&lt;h1&gt;This is Title&lt;/h1&gt;&lt;p&gt;This is Description&lt;/p&gt;&quot;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3.PNG"
+                alt="3"></p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Number</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="number">Number</h1>
+        <ul>
+            <li>Number merupakan function yang digunakan untuk melakukan konversi ke tipe data number</li>
+            <li>Jika data tidak bisa dikonversi ke number, secara otomatis hasilnya adalah NaN</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--number">Kode : Number</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> input = <span class="hljs-string">&quot;12345&quot;</span>;
+<span class="hljs-keyword">const</span> number = <span class="hljs-title class_">Number</span>(input);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> input);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> number);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(number);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;salah&quot;</span>));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\1\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="number-static-properties">Number Static Properties</h2>
+        <ul>
+            <li>Number memiliki banyak static properties, seperti :</li>
+            <li>Number.MIN_VALUE untuk mendapat number minimal</li>
+            <li>Number.MAX_VALUE untuk mendapat number maksimal</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_properties">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_properties</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--number-static-properties">Kode : Number Static Properties</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MIN_VALUE</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_VALUE</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MIN_SAFE_INTEGER</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_SAFE_INTEGER</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">NaN</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\1\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="number-static-method">Number Static Method</h2>
+        <ul>
+            <li>Number memiliki banyak static method, seperti :</li>
+            <li>Number.isNaN(value) untuk mengecek apakah value NaN atau bukan</li>
+            <li>Number.isInteger(value) untuk mengecek apakah value berupa integer atau bukan</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#static_methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--number-static-method">Kode : Number Static Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> data = <span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;12345&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-title function_">isInteger</span>(data));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-built_in">isNaN</span>(data));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\1\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="number-instance-method">Number Instance Method</h2>
+        <ul>
+            <li>Number memiliki banyak instance method, seperti :</li>
+            <li>Number.toLocalString(locale) untuk mengubah number menjadi string sesuai locale : <a
+                    href="https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/">https://www.lansweeper.com/knowledgebase/list-of-currency-culture-codes/</a>
+            </li>
+            <li>Number.toString(radix) untuk mengubah number menjadi string sesuai radix</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#instance_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#instance_methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--number-instance-method">Kode : Number Instance Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;12345&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value.<span class="hljs-title function_">toString</span>(<span class="hljs-number">2</span>)); <span class="hljs-comment">// binnary</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value.<span class="hljs-title function_">toLocaleString</span>(<span class="hljs-string">&quot;id-ID&quot;</span>)); <span class="hljs-comment">// format indonesia</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value.<span class="hljs-title function_">toLocaleString</span>(<span class="hljs-string">&quot;en-US&quot;</span>)); <span class="hljs-comment">// format US</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\1\4.PNG"
+                alt="4"></p>
+
+
+
+    </body>
+
+</html>

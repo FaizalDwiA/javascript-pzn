@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Tipe Data Array</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="tipe-data-array">Tipe Data Array</h1>
+        <ul>
+            <li><strong>Array</strong> = tipe data yang berisikan kumpulan data</li>
+            <li>Array di javascript memiliki sifat <strong>dinamis</strong>, artinya datanya bisa
+                <strong>bertambah</strong> dengan sendirinya saat kita memasukkan data ke dalam array</li>
+        </ul>
+        <hr>
+        <h2 id="kode-membuat-array">Kode Membuat Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> arrayKosong = [];
+
+<span class="hljs-keyword">let</span> arrayNama = [<span class="hljs-string">&quot;faizal&quot;</span>, <span class="hljs-string">&quot;dwi&quot;</span>, <span class="hljs-string">&quot;alfarizi&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-literal">true</span>];
+</code></pre>
+        <hr>
+        <h2 id="cara-kerja-array">Cara Kerja Array</h2>
+        <ul>
+            <li>Setiap data di array akan disimpan dalam posisi berurutan, dimana urutan pertama dimulai dari
+                <strong>nomor 0</strong></li>
+            <li>Setiap kita menambahkan data ke array, otomatis data akan disimpan diurutan <strong>terakhir</strong>
+            </li>
+            <li>Urutan di array, kita sebut dengan <strong>index</strong></li>
+        </ul>
+        <p><img src="..\assets\img\14\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="menambahkan-array">Menambahkan Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [];
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al&quot;</span>, <span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\14\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="operasi-di-array">Operasi di Array</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Operasi</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>array.push(value)</td>
+                <td>Menambahkan data ke array</td>
+            </tr>
+            <tr>
+                <td>array.length</td>
+                <td>Untuk mendapatkan panjang Array</td>
+            </tr>
+            <tr>
+                <td>array[index]</td>
+                <td>Mendapatkan data di posisi index</td>
+            </tr>
+            <tr>
+                <td>array[index] = value</td>
+                <td>Mengubah data di posisi index</td>
+            </tr>
+            <tr>
+                <td>delete array[index]</td>
+                <td>Menghapus data di posisi index, namum index tidak bergeser</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode-operasi-di-array">Kode Operasi di Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [];
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al&quot;</span>, <span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+
+names[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(names.<span class="hljs-property">length</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+</code></pre>
+        <p><img src="..\assets\img\14\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="mengahapus-array">Mengahapus Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [];
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al&quot;</span>, <span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+
+names[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(names.<span class="hljs-property">length</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+
+<span class="hljs-keyword">delete</span> names[<span class="hljs-number">3</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+</code></pre>
+        <p><img src="..\assets\img\14\4.PNG" alt="4">
+        </p>
+        <hr>
+        <h2 id="perlu-diingat">Perlu Diingat</h2>
+        <ul>
+            <li>Data di dalam Array <strong>tidak ada batasannya</strong> harus data apa</li>
+            <li>Jadi kita <strong>bisa</strong> memasukkan data <strong>apapun</strong> ke dalam Array</li>
+            <li>Bahkan kita juga bisa memasukkan <strong>Array ke dalam Array</strong> jika kita mau</li>
+        </ul>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [];
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+names.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al&quot;</span>, <span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+
+names.<span class="hljs-title function_">push</span>([<span class="hljs-string">&quot;Syiber&quot;</span>, <span class="hljs-string">&quot;black&quot;</span>, <span class="hljs-string">&quot;coba&quot;</span>]);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(names);
+</code></pre>
+        <p><img src="..\assets\img\14\5.PNG" alt="5">
+        </p>
+
+
+
+    </body>
+
+</html>

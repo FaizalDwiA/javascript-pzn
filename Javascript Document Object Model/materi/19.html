@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Form Element</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="html-form-element">HTML Form Element</h1>
+        <hr>
+        <h2 id="html-form-element-1">HTML Form Element</h2>
+        <ul>
+            <li>Form adalah salah satu element yang memiliki banyak sekali fitur diluar dari Element DOM</li>
+            <li>Hal ini karena penggunaan Form memang lebih kompleks dibandingkan element HTML lainnya</li>
+            <li>Ada banyak sekali property, method dan juga event yang terdapat pada HTML form element atau input
+                element</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement</a>
+            </li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--html-form-element">Kode : HTML Form Element</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;commentForm&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;comment&quot;</span>&gt;</span>
+        Comment : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;comment&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comment&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;from&quot;</span>&gt;</span>
+        From : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;from&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;from&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;commentList&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;form[name=commentForm]&quot;</span>).<span class="hljs-property">onsubmit</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+        <span class="hljs-keyword">const</span> commentList = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;commentList&quot;</span>);
+        <span class="hljs-keyword">const</span> comment = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;comment&quot;</span>).<span class="hljs-property">value</span>;
+        <span class="hljs-keyword">const</span> <span class="hljs-keyword">from</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;from&quot;</span>).<span class="hljs-property">value</span>;
+
+        <span class="hljs-keyword">const</span> commentItem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;p&quot;</span>);
+        commentItem.<span class="hljs-property">textContent</span> = <span class="hljs-string">`<span class="hljs-subst">${comment}</span> - <span class="hljs-subst">${<span class="hljs-keyword">from</span>}</span>`</span>;
+        commentList.<span class="hljs-title function_">appendChild</span>(commentItem);
+
+        <span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-string">&#x27;commentForm&#x27;</span>].<span class="hljs-title function_">reset</span>();
+
+        event.<span class="hljs-title function_">preventDefault</span>();
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\19\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="akses-form-via-name">Akses Form Via Name</h2>
+        <ul>
+            <li>Salah satu kelebihan Form adalah, kita bisa mengakses form hanya dengan menggunakan form name</li>
+            <li>Kita bisa gunakan <strong><code>document.forms[name]</code></strong></li>
+            <li>Atau jika kita ingin mengakses input nya, kita juga bisa menggunakan name nya
+                <strong><code>document.forms[name][inputName]</code></strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--html-form-element-javascript">Kode : HTML Form Element JavaScript</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;commentForm&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;comment&quot;</span>&gt;</span>
+        Comment : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;comment&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comment&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;from&quot;</span>&gt;</span>
+        From : <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;from&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;from&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;commentList&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;form[name=commentForm]&quot;</span>).<span class="hljs-property">onsubmit</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+        <span class="hljs-keyword">const</span> commentList = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;commentList&quot;</span>);
+        <span class="hljs-keyword">const</span> comment = <span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-string">&#x27;commentForm&#x27;</span>][<span class="hljs-string">&#x27;comment&#x27;</span>].<span class="hljs-property">value</span>;
+        <span class="hljs-keyword">const</span> <span class="hljs-keyword">from</span> = <span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-string">&#x27;commentForm&#x27;</span>][<span class="hljs-string">&#x27;from&#x27;</span>].<span class="hljs-property">value</span>;
+
+        <span class="hljs-keyword">const</span> commentItem = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;p&quot;</span>);
+        commentItem.<span class="hljs-property">textContent</span> = <span class="hljs-string">`<span class="hljs-subst">${comment}</span> - <span class="hljs-subst">${<span class="hljs-keyword">from</span>}</span>`</span>;
+        commentList.<span class="hljs-title function_">appendChild</span>(commentItem);
+
+        <span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-string">&#x27;commentForm&#x27;</span>].<span class="hljs-title function_">reset</span>();
+
+        event.<span class="hljs-title function_">preventDefault</span>();
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

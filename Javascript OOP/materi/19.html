@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Private Method</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="private-method">Private Method</h1>
+        <hr>
+        <h2 id="private-method-1">Private Method</h2>
+        <ul>
+            <li>Sama seperti field, terdapat proposal juga untuk menambah fitur private method di EcmaScript</li>
+            <li>Dengan demikian, access modifier private juga bisa digunakan di method</li>
+            <li>Caranya sama, dengan menambahkan tanda # diawal method, maka secara otomatis method tersebut adalah
+                private</li>
+            <li>Ingat fitur ini masih dalam tahapan, belum benar-benar menjadi standard EcmaScript, jadi mungkin tidak
+                semua browser mendukung fitur ini</li>
+            <li><a
+                    href="https://github.com/tc39/proposal-private-methods">https://github.com/tc39/proposal-private-methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--private-method">Kode : Private Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+    <span class="hljs-title function_">say</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-keyword">if</span>(name) {
+            <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">sayWithName</span>(name);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">sayWithoutName</span>();
+        }
+    }
+
+    #<span class="hljs-title function_">sayWithoutName</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello&quot;</span>);
+    }
+
+    #<span class="hljs-title function_">sayWithName</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+faizal.<span class="hljs-title function_">say</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+faizal.<span class="hljs-title function_">say</span>();
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\19\1.PNG" alt="1">
+        </p>
+        <hr>
+        <blockquote>
+            <p>jika kita memaksa mengakses methodnya, maka akan error</p>
+        </blockquote>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+    <span class="hljs-title function_">say</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-keyword">if</span>(name) {
+            <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">sayWithName</span>(name);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-variable language_">this</span>.#<span class="hljs-title function_">sayWithoutName</span>();
+        }
+    }
+
+    #<span class="hljs-title function_">sayWithoutName</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello&quot;</span>);
+    }
+
+    #<span class="hljs-title function_">sayWithName</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+faizal.<span class="hljs-title function_">say</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+faizal.<span class="hljs-title function_">say</span>();
+faizal.#<span class="hljs-title function_">sayWithoutName</span>();
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\19\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

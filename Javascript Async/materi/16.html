@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Web Worker</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="web-worker">Web Worker</h1>
+        <hr>
+        <h2 id="thread-di-javascript">Thread di JavaScript</h2>
+        <ul>
+            <li>JavaScript adalah Single Thread (Single Proses), artinya walaupun proses yang kita buat adalah Async,
+                tapi tetap akan dijalankan dalam Thread (Proses) yang sama.</li>
+            <li>Kemampuan satu Thread dalam mengelola beberapa pekerjaan, dinamakan Concurrent.</li>
+            <li>Kemampuan menjalankan beberapa Thread untuk mengelola satu atau lebih pekerjaan, dinamakan Paralel.</li>
+            <li>Dan untuk membuat proses secara Paralel, kita bisa menggunakan Web Worker</li>
+        </ul>
+        <hr>
+        <h2 id="kode--proses-lambat">Kode : Proses Lambat</h2>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonTask&quot;</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">function</span> <span class="hljs-title function_">showLog</span>(<span class="hljs-params">total</span>) {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; total; i++) {
+                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+            }
+        }
+
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;buttonTask&quot;</span>).<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Start Log:&quot;</span>);
+            <span class="hljs-title function_">showLog</span>(<span class="hljs-number">20</span>);
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;End Log&quot;</span>);
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="web-worker-1">Web Worker</h2>
+        <ul>
+            <li>Web Worker adalah kemampuan yang untuk menjalankan proses di Thread yang berbeda dibanding Main Thread.
+            </li>
+            <li>Keuntungan menggunakan Web Worker adalah, jika terdapat proses yang membutuhkan waktu lama, Web kita
+                tidak akan Freeze, karena proses tersebut bisa kita jalankan di Thread yang berbeda dari Main Thread
+                (yang biasa digunakan oleh UI)</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="diagram-web-worker">Diagram Web Worker</h2>
+        <p><img src="..\assets\img\16\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="worker">Worker</h2>
+        <ul>
+            <li>Untuk menggunakan Web Worker API, kita bisa membuat object Worker</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Worker">https://developer.mozilla.org/en-US/docs/Web/API/Worker</a>
+            </li>
+            <li>Saat kita membuat object Worker, Worker tidak akan secara otomatis berjalan, melainkan kita perlu
+                memberi perintah dengan cara mengirim pesan</li>
+            <li>Untuk mengirim pesan, kita bisa gunakan method postMessage()</li>
+            <li>Sedangkan untuk menerima balasan dari worker, kita bisa menggunakan event listener onmessage</li>
+            <li>Data yang diterima adalah object MessageEvent</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent">https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-worker">Kode : Membuat Worker</h2>
+        <p><em>index.html</em></p>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;buttonTask&quot;</span>&gt;</span>Click Me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">const</span> worker = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Worker</span>(<span class="hljs-string">&quot;scripts/worker.js&quot;</span>);
+        <span class="hljs-comment">// worker.onmessage = callback</span>
+        worker.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">message</span>) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(message.<span class="hljs-property">data</span>);
+        });
+
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;buttonTask&quot;</span>).<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            worker.<span class="hljs-title function_">postMessage</span>(<span class="hljs-number">20000</span>);
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="kode--file-worker">Kode : File Worker</h2>
+        <p><em>worker.js</em></p>
+        <pre><code class="language-js"><span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;message&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+    <span class="hljs-keyword">const</span> total = event.<span class="hljs-property">data</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; total; i++) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">postMessage</span>(i);
+    }
+});
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

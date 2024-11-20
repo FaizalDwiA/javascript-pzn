@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Date</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="date">Date</h1>
+        <hr>
+        <h2 id="date-1">Date</h2>
+        <ul>
+            <li>JavaScript memiliki tipe data untuk representasi waktu dan tanggal, yaitu Date</li>
+            <li>Date merupakan representasi milisecond sejak tanggal 1 Januari 1970, atau dikenal dengan Epoch &amp;
+                Unix Timestamp</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/WebJavaScript/Reference/Global_Objects/Date">https://developer.mozilla.org/en-US/docs/WebJavaScript/Reference/Global_Objects/Date</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="membuat-object-date">Membuat Object Date</h2>
+        <p>Untuk membuat object Date, kita bisa menggunakan new Date(), dimana terdapat constructor parameter :</p>
+        <table border="1" width="100%">
+            <tr>
+                <td>new Date()</td>
+                <td>Membuat date saat ini</td>
+            </tr>
+            <tr>
+                <td>new Date(year, month, date</td>
+                <td>Membuat date dengan tanggal</td>
+            </tr>
+            <tr>
+                <td>new Date(year, month, date?, hour?, minute?, second?, milis?)</td>
+                <td>Membuat date dengan parameter sampai milis</td>
+            </tr>
+            <tr>
+                <td>new Date(timestamp)</td>
+                <td>Membuat date dari epoch atau unix timestamp</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--membuat-object-date">Kode : Membuat Object Date</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> date1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date1);
+
+<span class="hljs-keyword">const</span> date2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-number">2023</span>, <span class="hljs-number">07</span>, <span class="hljs-number">30</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date2);
+
+<span class="hljs-keyword">const</span> date3 = <span class="hljs-title class_">Date</span>(<span class="hljs-number">2023</span>, <span class="hljs-number">07</span>, <span class="hljs-number">30</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date3);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="epoch--unix-timestamp">Epoch &amp; Unix Timestamp</h2>
+        <ul>
+            <li>Dalam menggunakan tipe data waktu, biasanya disemua bahasa pemrograman akan mendukung yang namanya epoch
+                &amp; unix timestamp</li>
+            <li>Epoch &amp; Unix timestamp merupakan hitungan miliseconds setelah tanggal 1 Januari 1970</li>
+            <li>JavaScript pun mendukung pembuatan waktu dalam bentuk epoch dan unix timestamp</li>
+            <li>Untuk mendapatkan waktu saat ini dalam epoch &amp; unix timestamp, kita bisa menggunakan Date.now()</li>
+            <li>Untuk mengubah dari object date ke epoch &amp; unix timestamp, kita bisa menggunakan function getTime()
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--unix-timestamp">Kode : Unix Timestamp</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> timestamp = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(timestamp);
+
+<span class="hljs-keyword">const</span> dateUnix = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(timestamp);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(dateUnix);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(dateUnix.<span class="hljs-title function_">getTime</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="parsing-date">Parsing Date</h2>
+        <ul>
+            <li>Kita juga bisa melakukan parsing membuat date dari string menggunakan method Date.parse(value)</li>
+            <li>Format string harus YYYY-MM-DDTHH:mm:ss.sssZ</li>
+            <li>Dimana jika kita hanya membuat date berisi tanggal saya, kita cukup gunakan YYYY-MM-DD</li>
+            <li>Jika date dengan tanggal dan waktu, gunakan YYYY-MM-DDTHH:mm:ss.sss</li>
+            <li>Jika date dengan tanggal, waktu dan timezone, gunakan YYYY-MM-DDTHH:mm:ss.sssZ</li>
+            <li>Hasil parsing adalah unix timestamp, bukan object date</li>
+        </ul>
+        <hr>
+        <h2 id="format-date">Format Date</h2>
+        <table border="1" width="100%">
+            <tr>
+                <td>YYYY</td>
+                <td>Tahun</td>
+            </tr>
+            <tr>
+                <td>MM</td>
+                <td>Bulan</td>
+            </tr>
+            <tr>
+                <td>DD</td>
+                <td>Tangal</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>Pemisah tanggal dan waktu</td>
+            </tr>
+            <tr>
+                <td>HH</td>
+                <td>Jam</td>
+            </tr>
+            <tr>
+                <td>mm</td>
+                <td>Menit</td>
+            </tr>
+            <tr>
+                <td>ss</td>
+                <td>Detik</td>
+            </tr>
+            <tr>
+                <td>sss</td>
+                <td>Milidetik</td>
+            </tr>
+            <tr>
+                <td>Z</td>
+                <td>Timezone</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--parsing-date">Kode : Parsing Date</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> parseTimestamp = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&quot;2023-07-29T10:10:10.123+07:00&quot;</span>)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(parseTimestamp);
+
+<span class="hljs-keyword">const</span> parseDate = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(parseTimestamp);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(parseDate);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="date-getter-dan-setter">Date Getter dan Setter</h2>
+        <ul>
+            <li>Date juga memiliki banyak sekali method untuk mendapatkan informasi date dan juga mengubah informasi
+                date, atau istilahnya adalah getter dan setter</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--date-getter-dan-setter">Kode : Date Getter dan Setter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();
+date.<span class="hljs-title function_">setFullYear</span>(<span class="hljs-number">2023</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getFullYear</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getMonth</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getDate</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getHours</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getMinutes</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getSeconds</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getMilliseconds</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(date.<span class="hljs-title function_">getTimezoneOffset</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\4.PNG"
+                alt="4"></p>
+
+
+
+    </body>
+
+</html>

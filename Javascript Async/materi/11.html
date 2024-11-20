@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload File dengan AJAX</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="upload-file-dengan-ajax">Upload File dengan AJAX</h1>
+        <hr>
+        <h2 id="upload-file-dengan-ajax-1">Upload File dengan AJAX</h2>
+        <ul>
+            <li>Selain menggunakan JSON, Query Param, Form, kadang kita butuh mengirim file ke Server</li>
+            <li>Untuk mengirim file ke Server, kita perlu menggunakan object Form Data, lalu kita perlu menambahkan
+                object File ke dalam FormData tersebut
+                <ul>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">https://developer.mozilla.org/en-US/docs/Web/API/FormData</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/File">https://developer.mozilla.org/en-US/docs/Web/API/File</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/FileList">https://developer.mozilla.org/en-US/docs/Web/API/FileList</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--upload-file-dengan-ajax">Kode : Upload File dengan AJAX</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doLogin</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+    ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">`https://hookbi.in/sjhbgskfb`</span>);
+    ajax.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ajax.<span class="hljs-property">responseText</span>);
+    }
+
+    ajax.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&quot;Content=Type&quot;</span>, <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);
+
+    <span class="hljs-keyword">const</span> form = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>();
+    form.<span class="hljs-title function_">append</span>(<span class="hljs-string">&quot;username&quot;</span>, <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;username&quot;</span>). value);
+    form.<span class="hljs-title function_">append</span>(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;name&quot;</span>). value);
+    form.<span class="hljs-title function_">append</span>(<span class="hljs-string">&quot;profile&quot;</span>, <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;profile&quot;</span>).<span class="hljs-property">files</span>.<span class="hljs-title function_">item</span>(<span class="hljs-number">0</span>));
+
+    ajax.<span class="hljs-title function_">send</span>(form);
+}
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;login&quot;</span>).<span class="hljs-property">onclick</span> = doLogin;
+</code></pre>
+
+
+
+    </body>
+
+</html>

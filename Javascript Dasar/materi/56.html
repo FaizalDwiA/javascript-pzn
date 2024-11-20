@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Strict Mode</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="strict-mode">Strict Mode</h1>
+        <hr>
+        <h2 id="strict-mode-1">Strict Mode</h2>
+        <ul>
+            <li>Saat kita <strong>menjalankan</strong> kode program JavaScript, secara <strong>default</strong> kode
+                program kita berjalan dalam mode <strong>tidak strict</strong>, atau istilahnya <strong>sloppy
+                    mode</strong></li>
+            <li>Pada <strong>ECMAScript 5</strong>, diperkenalkan <strong>mode strict</strong>, dimana ketika strict
+                mode dijalankan, maka akan merubah beberapa cara kerja di JavaScript, seperti :
+                <ul>
+                    <li>Merubah beberapa JavaScript error dari yang tadinya <strong>silent error</strong>, menjadi
+                        <strong>throw error</strong> (terlihat)</li>
+                    <li>Memperbaiki beberapa kesalahan engine JavaScript untuk optimisasi</li>
+                    <li>Menolak beberapa kode perintah yang kedepannya akan digunakan di ECMAScript</li>
+                </ul>
+            </li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="cara-menyalakan-strict-mode">Cara Menyalakan Strict Mode</h2>
+        <ul>
+            <li>Untuk menyalakan strict mode, kita bisa menambahkan <code>use strict</code> pada baris awal file
+                javascript kita</li>
+            <li>Atau bisa juga ditambahkan di awal function kita</li>
+        </ul>
+        <hr>
+        <h2 id="kode--strict-mode">Kode : Strict Mode</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">useStrictMode</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-string">&#x27;use strict&#x27;</span>;
+    <span class="hljs-keyword">const</span> person = {
+        <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>
+    }
+
+    <span class="hljs-comment">// error</span>
+    <span class="hljs-title function_">with</span>(<span class="hljs-params">person</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+    }
+}
+
+<span class="hljs-title function_">useStrictMode</span>();
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\56\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

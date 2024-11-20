@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Rest Parameter</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="rest-parameter">Rest Parameter</h1>
+        <hr>
+        <h2 id="rest-parameter-1">Rest Parameter</h2>
+        <ul>
+            <li><strong>Rest Parameter</strong> adalah fitur dimana kita bisa mengirim data sebanyak-banyak nya pada
+                satu parameter, dan secara otomatis akan di konversi menjadi Array</li>
+            <li>Untuk membuat rest parameter, ada ketentuannya</li>
+            <li>Rest parameter <strong>hanya boleh ada satu di function</strong>, tidak boleh lebih dari satu</li>
+            <li>Rest parameter hanya boleh berada di posisi <strong>paling akhir</strong>, tidak boleh di depan atau di
+                tengah, kecuali memang cuma ada 1 parameter</li>
+            <li>Di bahasa pemrograman lain, ada juga yang bilang ini adalah <strong>variable argument</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--rest-parameter">Kode : Rest Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">name, ...data</span>) {
+    <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> data) {
+        total += item;
+    }
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Total <span class="hljs-subst">${name}</span> is <span class="hljs-subst">${total}</span>`</span>);
+}
+
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>);
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">56</span>, <span class="hljs-number">2</span>);
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\41\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="spread-syntax">Spread Syntax</h2>
+        <ul>
+            <li>Kadang kita terlanjur memiliki <strong>data berupa Array</strong></li>
+            <li>Tapi untungnya kita juga bisa <strong>mengirim Array ke Rest Parameter</strong></li>
+            <li>Kita bisa gunakan <strong>… (titik tiga kali)</strong> diikuti dengan array nya ketika memanggil
+                function</li>
+            <li>Fitur ini dinamakan <strong>Spread Syntax</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--spread-syntax-di-rest-parameter">Kode : Spread Syntax di Rest Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">name, ...data</span>) {
+    <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> data) {
+        total += item;
+    }
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Total <span class="hljs-subst">${name}</span> is <span class="hljs-subst">${total}</span>`</span>);
+}
+
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Orange&quot;</span>, ...[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]);
+<span class="hljs-keyword">const</span> value = [<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">56</span>, <span class="hljs-number">2</span>]
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Apple&quot;</span>, ...value);
+<span class="hljs-title function_">sum</span>(<span class="hljs-string">&quot;Banana&quot;</span>, ...[<span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>]);
+</code></pre>
+        <p><img src="..\assets\img\41\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="arguments-object">Arguments Object</h2>
+        <ul>
+            <li><strong>Sebelum ada</strong> fitur rest parameter, di JavaScript sudah ada fitur yang bernama
+                <strong>arguments object</strong></li>
+            <li>Ini adalah fitur dimana kita bisa <strong>mengambil semua parameter</strong> dalam bentuk array dengan
+                menggunakan object bernama <strong>arguments</strong></li>
+            <li>arguments secara otomatis bisa digunakan di function</li>
+            <li>Namun <strong>perlu diingat</strong>, bahwa untuk JavaScript saat ini, lebih baik
+                <strong>disarankan</strong> menggunakan <strong>rest parameter</strong> dibanding <strong>arguments
+                    object</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--arguments-object">Kode : Arguments Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">oldSum</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> <span class="hljs-variable language_">arguments</span>) {
+        total += item;
+    }
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Total is <span class="hljs-subst">${total}</span>`</span>);
+}
+
+<span class="hljs-title function_">oldSum</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\41\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

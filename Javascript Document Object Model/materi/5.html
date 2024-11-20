@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Node</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="node">Node</h1>
+        <hr>
+        <h2 id="node-1">Node</h2>
+        <ul>
+            <li>Node adalah base class dari Document, Element dan Attr</li>
+            <li>Artinya semua fitur yang dimiliki di Node dimiliki diturunannya</li>
+            <li>Node dalam DOM itu bentuknya adalah Tree (pohon), artinya dengan Node, kita bisa melihat Parent (node
+                diatas nya), Children (node dibawahnya), Sibling (node disebelahnya)</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Node">https://developer.mozilla.org/en-US/docs/Web/API/Node</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--node">Kode : Node</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> menu = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(menu);
+
+    <span class="hljs-keyword">const</span> second = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;second&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="node-property">Node Property</h2>
+        <ul>
+            <li>Node memiliki banyak sekali property</li>
+            <li>Property di Node banyak berisi informasi reference ke Node lain nya, seperti ke node parent nya, node
+                children nya atau node sebelahnya</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Node#properties">https://developer.mozilla.org/en-US/docs/Web/API/Node#properties</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--node-1">Kode : Node</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> menu = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(menu);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(menu.<span class="hljs-property">children</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(menu.<span class="hljs-property">childNodes</span>);
+
+    <span class="hljs-keyword">const</span> second = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;second&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second.<span class="hljs-property">previousSibling</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second.<span class="hljs-property">nextSibling</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(second.<span class="hljs-property">textContent</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\2.PNG"
+                alt="2"></p>
+        <blockquote>
+            <p>untuk nextSibling &amp; previousSibling enter dan spasi dihitung</p>
+        </blockquote>
+        <hr>
+        <h2 id="node-method">Node Method</h2>
+        <ul>
+            <li>Node memiliki banyak sekali method</li>
+            <li>Method di Node bisa digunakan untuk memanipulasi data Node di dalam Node tersebut, misal
+                menambah/menghapus Node children</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Node#properties">https://developer.mozilla.org/en-US/docs/Web/API/Node#properties</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--node-method">Kode : Node Method</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> menu = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu&quot;</span>);
+    menu.<span class="hljs-title function_">removeChild</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;first&quot;</span>))
+    menu.<span class="hljs-title function_">removeChild</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;second&quot;</span>))
+    menu.<span class="hljs-title function_">removeChild</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;third&quot;</span>))
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\3.PNG"
+                alt="3"></p>
+
+
+
+    </body>
+
+</html>

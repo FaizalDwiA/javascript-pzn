@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Function Generator</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="function-generator">Function Generator</h1>
+        <hr>
+        <h2 id="function-generator-1">Function Generator</h2>
+        <ul>
+            <li><strong>Function generator</strong> adalah function yang digunakan untuk <strong>membuat data
+                    generator</strong></li>
+            <li><strong>Generator</strong> adalah data yang bisa di interasi seperti Array</li>
+            <li>Untuk membuat function generator, kita perlu menggunakan <strong>tanda * (bintang)</strong> setelah kata
+                function</li>
+            <li>Dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci <strong>yield diikuti
+                    datanya</strong></li>
+            <li>generator itu hanya bisa iterabel saja tapi tidak bisa diakses dengan index</li>
+        </ul>
+        <hr>
+        <h2 id="kode--function-generator-sederhana">Kode : Function Generator Sederhana</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">createNames</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&quot;Faizal&quot;</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&quot;Dwi&quot;</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">createNames</span>());
+<span class="hljs-keyword">const</span> names = <span class="hljs-title function_">createNames</span>();
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> name <span class="hljs-keyword">of</span> names) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\47\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--function-generator-kompleks">Kode : Function Generator Kompleks</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= value; i++) {
+        <span class="hljs-keyword">if</span>(i % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">yield</span> i;
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> numbers = <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-number">100</span>);
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> number <span class="hljs-keyword">of</span> numbers) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(number);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\47\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="lazy-evaluation">Lazy Evaluation</h2>
+        <ul>
+            <li>Generator itu sifatnya <strong>lazy</strong></li>
+            <li>Jadi artinya jika <strong>datanya belum kita ambil</strong> dari generator, maka <strong>yield
+                    selanjutnya tidak akan di eksekusi</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--lazy-generator">Kode : Lazy Generator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= value; i++) {
+        <span class="hljs-keyword">if</span>(i % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Perulangan ke <span class="hljs-subst">${i}</span>`</span>);
+            <span class="hljs-keyword">yield</span> i;
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> numbers = <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-number">100</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\47\3.PNG" alt="3">
+        </p>
+        <hr>
+        <p>ketika kita mengakses functionnya tidak akan dieksekusi karena kita tidak membutuhkan function tersebut itu
+            function generator dengan sifat lazy.</p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= value; i++) {
+        <span class="hljs-keyword">if</span>(i % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Perulangan ke <span class="hljs-subst">${i}</span>`</span>);
+            <span class="hljs-keyword">yield</span> i;
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> numbers = <span class="hljs-title function_">buatGanjil</span>(<span class="hljs-number">100</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\47\4.PNG" alt="4">
+        </p>
+        <hr>
+        <p>sedangkan function biasa itu eager artinya jika kita akses walaupun tidak kita gunakan maka functio tersebut
+            akan tetap dieksekusi.</p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">buatGanjilArray</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">const</span> result = [];
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= value; i++) {
+        <span class="hljs-keyword">if</span>(i % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Perulangan ke <span class="hljs-subst">${i}</span>`</span>);
+            result.<span class="hljs-title function_">push</span>(i);
+        }
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-keyword">const</span> numbers = <span class="hljs-title function_">buatGanjilArray</span>(<span class="hljs-number">100</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\47\5.PNG" alt="5">
+        </p>
+        <hr>
+        <blockquote>
+            <p>jadi function generator bersifat lazy artinya jika dibutuhkan baru dieksekusi<br>
+                jadi menghemat proses dan hemat data karena baru dibutuhkan baru diambil ketika tidak dibutuhkan maka
+                tidak akan dieksekusi.</p>
+        </blockquote>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

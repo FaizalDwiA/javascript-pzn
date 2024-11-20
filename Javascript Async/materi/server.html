@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Kode server</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="kode-server">Kode server</h1>
+        <p>pastikan aktifkan xampp</p>
+        <pre><code class="language-php"><span class="hljs-meta">&lt;?php</span> 
+
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&quot;REQUEST_METHOD&quot;</span>] === <span class="hljs-string">&quot;POST&quot;</span>) {
+    <span class="hljs-variable">$data</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&quot;data&quot;</span>];
+    <span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$POST</span>);
+    <span class="hljs-comment">// lakukan apa pun yang ingin anda lakukan dengan data, seperti menyimpan ke database / melakukan tindakan lain di server</span>
+
+    <span class="hljs-comment">// contoh kirim balik ke client (opsional)</span>
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Data yang dikirimkan: &quot;</span> . <span class="hljs-variable">$data</span>;
+}
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

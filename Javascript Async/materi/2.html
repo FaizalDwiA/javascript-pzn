@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Callback</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+<link rel="stylesheet" href="../../assets/css/highlight.min.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="callback">Callback</h1>
+<hr>
+<h2 id="apa-itu-callback">Apa itu Callback?</h2>
+<ul>
+<li>Callback, merupakan mekanisme untuk memanggil kembali kode yang ada di program dari proses Async</li>
+<li>Callback biasanya dibuat dalam bentuk function as parameter, dan parameter function tersebut akan dieksekusi saat proses Async selesai</li>
+<li>Dengan menggunakan Callback, program bisa menerima informasi yang dibutuhkan dari proses yang berjalan secara Async</li>
+</ul>
+<hr>
+<h2 id="async-method">Async Method</h2>
+<p>ada banyak method Async yang terdapat di JavaScript, yang akan kita bahas kali ini adalah :</p>
+<ul>
+<li>setTimeout(callback, timeInMilis), digunakan untuk menjalankan proses Async sekali dalam waktu tertentu.</li>
+<li>setInterval(callback, timeInMilis), digunakan untuk menjalankan proses Async secara periodik dalam waktu tertentu.</li>
+</ul>
+<hr>
+<h2 id="kode--settimeout">Kode : setTimeout</h2>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">addElement</span> = (<span class="hljs-params"></span>) =&gt; {
+    <span class="hljs-keyword">const</span> header = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;h1&quot;</span>);
+    header.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Program Faizal&quot;</span>;
+
+    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(header);
+}
+
+<span class="hljs-built_in">setTimeout</span>(addElement, <span class="hljs-number">5000</span>);
+</code></pre>
+<p><strong>Hasil :</strong></p>
+<p><img src="..\assets\img\2\1.PNG" alt="1"></p>
+<hr>
+<h2 id="kode--setinterval">Kode : setInterval</h2>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> <span class="hljs-title function_">setTime</span> = (<span class="hljs-params"></span>) =&gt; {
+        <span class="hljs-keyword">const</span> header = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;header&quot;</span>);
+        header.<span class="hljs-property">textContent</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>().<span class="hljs-title function_">toString</span>();
+
+        <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(header);
+    }
+
+    <span class="hljs-built_in">setInterval</span>(setTime, <span class="hljs-number">1000</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><strong>Hasil :</strong></p>
+<p><img src="..\assets\img\2\2.PNG" alt="2"></p>
+
+        
+        
+    </body>
+    </html>

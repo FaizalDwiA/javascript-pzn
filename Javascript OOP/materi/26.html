@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Iterable dan Iterator</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="iterable-dan-iterator">Iterable dan Iterator</h1>
+        <hr>
+        <h2 id="iterable-dan-iterator-1">Iterable dan Iterator</h2>
+        <ul>
+            <li>Salah satu fitur terbaru di ES6 adalah iterable</li>
+            <li>Iterable adalah spesial object yang memiliki standarisasi</li>
+            <li>Dengan mengikuti standarisasi Iterable, secara otomatis kita bisa melakukan iterasi terdapat data
+                tersebut dengan menggunakan perulangan for...of</li>
+            <li>Contoh yang sudah mengikuti standarisasi Iterable adalah string, Array, Object, dan lain-lain</li>
+        </ul>
+        <hr>
+        <h2 id="kode--kontrak-iterable-dalam-typescript">Kode : Kontrak Iterable (dalam TypeScript)</h2>
+        <pre><code class="language-js">interface <span class="hljs-title class_">Iterable</span>&lt;T&gt; {
+    [<span class="hljs-title class_">Symbol</span>.<span class="hljs-property">iterator</span>](): <span class="hljs-title class_">Iterator</span>&lt;T&gt;;
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--kontrak-iterator-dalam-typescript">Kode : Kontrak Iterator (dalam TypeScript)</h2>
+        <pre><code class="language-js">interface <span class="hljs-title class_">Iterator</span>&lt;T, <span class="hljs-title class_">TReturn</span> = any, <span class="hljs-title class_">TNext</span> = <span class="hljs-literal">undefined</span>&gt; {
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> &#x27;next&#x27; is defined using a tuple to ensure we report the correct</span>
+    <span class="hljs-title function_">next</span>(...<span class="hljs-attr">args</span>: [] | [<span class="hljs-title class_">TNext</span>]): <span class="hljs-title class_">IteratorResult</span>&lt;T, <span class="hljs-title class_">TReturn</span>&gt;;
+    <span class="hljs-keyword">return</span>?(value?: <span class="hljs-title class_">TReturn</span>): <span class="hljs-title class_">IteratorResult</span>&lt;T, <span class="hljs-title class_">TReturn</span>&gt;;
+    <span class="hljs-keyword">throw</span>?(e?: any): <span class="hljs-title class_">IteratorResult</span>&lt;T, <span class="hljs-title class_">TReturn</span>&gt;;
+}
+</code></pre>
+        <hr>
+        <h2 id="kontrak--iteratorresult-dalam-typescript">Kontrak : IteratorResult (dalam TypeScript)</h2>
+        <pre><code class="language-js">interface <span class="hljs-title class_">IteratorYieldResult</span>&lt;<span class="hljs-title class_">TYield</span>&gt; {
+    done?: <span class="hljs-literal">false</span>;
+    <span class="hljs-attr">value</span>: <span class="hljs-title class_">TYield</span>;
+}
+
+interface <span class="hljs-title class_">IteratorReturnResult</span>&lt;<span class="hljs-title class_">TReturn</span>&gt; {
+    <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span>;
+    <span class="hljs-attr">value</span>: <span class="hljs-title class_">TReturn</span>;
+}
+
+type <span class="hljs-title class_">IteratorResult</span>&lt;T, <span class="hljs-title class_">TReturn</span> = any&gt; = <span class="hljs-title class_">IteratorYieldResult</span>&lt;T&gt; | <span class="hljs-title class_">IteratorReturnResult</span>&lt;<span class="hljs-title class_">TReturn</span>&gt;;
+</code></pre>
+        <hr>
+        <h2 id="cara-kerja-iterable-dan-iterator">Cara Kerja Iterable dan Iterator</h2>
+        <ul>
+            <li>Jika kita mengikuti kontrak Iterable, maka object yang kita buat akan bisa dilakukan iterasi menggunakan
+                for...of</li>
+            <li>Setiap kita melakukan perulangan, object Iterator akan dibuat</li>
+            <li>Hal ini menjadi aman jika kita melakukan iterasi berulang-ulang, karena Iterator baru akan dibuat terus
+                menerus</li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-counter-iterator-result">Kode : Membuat Counter Iterator Result</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CounterIteratorResult</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, done</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = done;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--membuat-counter-iterator">Kode : Membuat Counter Iterator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CounterIterator</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, max</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span> = max;
+    }
+
+    <span class="hljs-title function_">next</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> &gt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIteratorResult</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-literal">true</span>);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIteratorResult</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-literal">false</span>);
+            }
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>++;
+        }
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--membuat-counter-iterable">Kode : Membuat Counter Iterable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, max</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span> = max;
+    }
+
+    [<span class="hljs-title class_">Symbol</span>.<span class="hljs-property">iterator</span>]() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIterator</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span>);
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--menggunakan-counter-iterable">Kode : Menggunakan Counter Iterable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CounterIteratorResult</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, done</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">done</span> = done;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CounterIterator</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, max</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span> = max;
+    }
+
+    <span class="hljs-title function_">next</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> &gt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIteratorResult</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-literal">true</span>);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIteratorResult</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-literal">false</span>);
+            }
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>++;
+        }
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">value, max</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = value;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span> = max;
+    }
+
+    [<span class="hljs-title class_">Symbol</span>.<span class="hljs-property">iterator</span>]() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CounterIterator</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">max</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> counter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Counter</span>(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> element <span class="hljs-keyword">of</span> counter) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(element);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\26\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

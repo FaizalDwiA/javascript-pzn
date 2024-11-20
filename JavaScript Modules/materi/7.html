@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Import</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="import">Import</h1>
+        <hr>
+        <h2 id="import-1">Import</h2>
+        <ul>
+            <li>Export digunakan untuk mengekspos kode di module, jika kita ingin menggunakan kode yang sudah di ekspos
+                di module, kita bisa menggunakan kata kunci import</li>
+            <li>Cara menggunakan kata kunci import adalah sebagai berikut : import {namaFunction, namaVariable,
+                NamaClass} from “lokasi-module.js”</li>
+            <li>Module hanya bisa digunakan di module lain, jadi pastikan ketika membuat script, kita harus menggunakan
+                type module</li>
+            <li>Saat menggunakan import, kita tidak perlu lagi menambahkan script module src satu per satu, karena sudah
+                di handle oleh Browser secara otomatis ketika menggunakan module</li>
+        </ul>
+        <hr>
+        <h2 id="kode--import-module">Kode : Import Module</h2>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>With Module<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/say.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">import</span>{sayHello, sayGoodBye, name} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/say.js&quot;</span>;
+
+        <span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+        <span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

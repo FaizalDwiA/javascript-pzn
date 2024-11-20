@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>If Expression</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="if-expression">If Expression</h1>
+        <hr>
+        <h2 id="if-expression-1">If Expression</h2>
+        <ul>
+            <li>Dalam JavaScript, <strong>if</strong> adalah salah satu kata kunci yang digunakan untuk
+                <strong>percabangan</strong></li>
+            <li><strong>Percabangan</strong> artinya kita bisa mengeksekusi kode program tertentu ketika <strong>suatu
+                    kondisi terpenuhi</strong></li>
+            <li>Hampir di semua bahasa pemrograman mendukung <strong>if expression</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode-if-expression">Kode If Expression</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> examValue = <span class="hljs-number">90</span>;
+
+<span class="hljs-keyword">if</span> (examValue &gt; <span class="hljs-number">80</span>) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Good Jobs&lt;/p&gt;&quot;</span>);
+}
+</code></pre>
+        <p><img src="..\assets\img\16\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="else-expression">Else Expression</h2>
+        <ul>
+            <li>Blok if akan dieksekusi ketika kondisi if bernilai <strong>true</strong></li>
+            <li>Kadang kita ingin melakukan <strong>eksekusi program</strong> tertentu jika kondisi if bernilai
+                <strong>false</strong></li>
+            <li>Hal ini bisa dilakukan menggunakan <strong>else expression</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode-else-expression">Kode Else Expression</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> examValue = <span class="hljs-number">70</span>;
+
+<span class="hljs-keyword">if</span> (examValue &gt; <span class="hljs-number">80</span>) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Good Jobs&lt;/p&gt;&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Try Again Next Year&lt;/p&gt;&quot;</span>);
+}
+</code></pre>
+        <p><img src="..\assets\img\16\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="else-if-expression">Else If Expression</h2>
+        <ul>
+            <li>Kadang dalam If, kita butuh membuat <strong>beberapa kondisi</strong></li>
+            <li>Kasus seperti ini, di JavaScript kita bisa menggunakan <strong>Else If expression</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode-else-if-expression">Kode Else If Expression</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> examValue = <span class="hljs-number">70</span>;
+
+<span class="hljs-keyword">if</span> (examValue &gt; <span class="hljs-number">80</span>) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Good Jobs&lt;/p&gt;&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (examValue &gt; <span class="hljs-number">60</span>) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Not Bad&lt;/p&gt;&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;p&gt;Try Again Next Year&lt;/p&gt;&quot;</span>);
+}
+</code></pre>
+        <p><img src="..\assets\img\16\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

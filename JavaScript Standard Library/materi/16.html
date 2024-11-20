@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Encode</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="encode">Encode</h1>
+        <hr>
+        <h2 id="encode-1">Encode</h2>
+        <ul>
+            <li>Saat kita menulis URL, kadang kita ingin menambahkan informasi tambahan seperti query parameter misalnya
+            </li>
+            <li>URL sendiri sudah memiliki standard encoding penulisan URL</li>
+            <li>Standard encoding ini dilakukan agar penulisan URL aman ketika diterima oleh server</li>
+            <li>Aman disini dalam artian informasi URL tidak berubah</li>
+            <li>Contoh paling sederhana, misal, walaupun kita bisa mengirim spasi dalam url, tapi disarankan untuk di
+                encode agar nilai spasi tidak benar-benar terlihat seperti spasi pada URL nya</li>
+        </ul>
+        <hr>
+        <h2 id="contoh-masalah-jika-tidak-menggunakan-encode">Contoh Masalah Jika Tidak Menggunakan Encode</h2>
+        <ul>
+            <li>Misal ada query parameter dengan nama data, lalu kita ingin mengirimkan nilai kesana</li>
+            <li>Misal nilainya adalah &amp;eko=eko&amp;, alhasil URL nya akan seperti berikut</li>
+            <li><a href="http://contoh.com?data=&amp;eko=eko&amp;">http://contoh.com?data=&amp;eko=eko&amp;</a></li>
+            <li>URL diatas terlihat tidak ada masalah, tapi sebenarnya ketika diterima oleh server, parameter data
+                bernilai kosong, kenapa? karena &amp; dianggap sebagai pemisah antar parameter</li>
+            <li>Artinya tanda seperti &amp; dan lain-lain perlu di encode, agar tidak terjadi kesalahan data yang kita
+                kirim</li>
+        </ul>
+        <hr>
+        <h2 id="encode-function">Encode Function</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>encodeURI(value)</td>
+                <td>Melakukan encode value, namun karakter yang dipesan di URI tidak akan diubah ;,/?:@&=+$#</td>
+            </tr>
+            <tr>
+                <td>encodeURIComponent(value)</td>
+                <td>Melakukan encode value semua karakter</td>
+            </tr>
+            <tr>
+                <td>decodeURI(encoded) </td>
+                <td>Melakukan decode value hasil encodeURI()</td>
+            </tr>
+            <tr>
+                <td>decodeURIComponent(encoded) </td>
+                <td>Melakukan decode value hasil encodeURIComponent()</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--encodeuri-dan-decodeuri">Kode : encodeURI dan decodeURI</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> url = <span class="hljs-string">&#x27;https://github.com/fdasib?name= faizal dwi al farizi&#x27;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(url);
+
+<span class="hljs-keyword">const</span> encoded = <span class="hljs-built_in">encodeURI</span>(url);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(encoded);
+
+<span class="hljs-keyword">const</span> decoded = <span class="hljs-built_in">decodeURI</span>(encoded);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(decoded);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="kode--encodeuricomponent-dan-decodeuricompoentn">Kode : encodeURIComponent dan decodeURICompoentn</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-string">&quot;Faizal&amp;Dwi=AlFarizi;&quot;</span>;
+<span class="hljs-keyword">const</span> url = <span class="hljs-string">&#x27;https://github.com/fdasib?name=&#x27;</span>;
+
+<span class="hljs-keyword">const</span> encoded = <span class="hljs-built_in">encodeURIComponent</span>(value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(url + encoded);
+
+<span class="hljs-keyword">const</span> decoded = <span class="hljs-built_in">decodeURIComponent</span>(encoded);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(url + decoded);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\2.PNG"
+                alt="2"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

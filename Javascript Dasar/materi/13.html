@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Konversi String Dan Number</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="konversi-string-dan-number">Konversi String Dan Number</h1>
+        <ul>
+            <li>Saat kita membuat apk, kadang kita <strong>input</strong> dari pengguna selalu dalam bentuk
+                <strong>string</strong></li>
+            <li>Sedangkan kita ingin mengelola datanya dalam bentuk <strong>Number</strong></li>
+            <li>Maka sangat disarankan untuk melakukan <strong>konversi tipe data</strong></li>
+        </ul>
+        <h3 id="kode">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value1 = <span class="hljs-string">&quot;1&quot;</span>;
+<span class="hljs-keyword">const</span> value2 = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> sum = value1 + value2;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${sum}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\1.PNG" alt="1">
+        </p>
+        <p>Inginnya : 1<br>
+            hasilnya 11<br>
+            karena : string + string : 11</p>
+        <hr>
+        <h2 id="melakukan-konversi-string-dan-number">Melakukan Konversi String Dan Number</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>parseInt(string)</td>
+                <td>Mengkonversi dari string ke number (bilangan bulat)</td>
+            </tr>
+            <tr>
+                <td>parseFloat(string)</td>
+                <td>Mengkonversi dari string ke number (bilangan pecahan)</td>
+            </tr>
+            <tr>
+                <td>Number(string)</td>
+                <td>Mengkonversi dari string ke number (bilangan bulat / pecahan)</td>
+            </tr>
+            <tr>
+                <td>number.toString()</td>
+                <td>Mengkonversi dari number ke string</td>
+            </tr>
+        </table>
+        <h3 id="kode-1">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value1 = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;1&quot;</span>);
+<span class="hljs-keyword">const</span> value2 = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> sum = value1 + value2;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${sum}</span>&lt;/p&gt;`</span>);
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;1.1&quot;</span>)}</span>&lt;/p&gt;`</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">&quot;1.1&quot;</span>)}</span>&lt;/p&gt;`</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;1.1&quot;</span>)}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\2.PNG" alt="2">
+        </p>
+        <hr>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> total = a.<span class="hljs-title function_">toString</span>() + b.<span class="hljs-title function_">toString</span>();
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${total}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="nan">NaN</h2>
+        <ul>
+            <li>Bagaimana jika terjadi data string yang kita coba konversi ke number <strong>bukanlah</strong> data yang
+                valid?</li>
+            <li>Jika data string yang kita coba lakukan konversi bukanlah data valid, maka hasil dari koversi tersebut
+                adalah <strong>NaN(Not a Number)</strong></li>
+            <li>Nan adalah number spesial yang menyebutkan bahwa ini <strong>bukanlah number</strong></li>
+            <li>Jika NaN dioperasikan dengan data number lainnya, maka hasilnya akan menjadi <strong>NaN lagi</strong>
+            </li>
+        </ul>
+        <h3 id="kode-2">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;salah&quot;</span>)}</span>&lt;/p&gt;`</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;1.1text&quot;</span>)}</span>&lt;/p&gt;`</span>); <span class="hljs-comment">// 1.1</span>
+
+<span class="hljs-comment">// Number() tidak akan mentoleriri kesalahan pada data</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;1.1ups&quot;</span>)}</span>&lt;/p&gt;`</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;1.1x&quot;</span>)}</span>&lt;/p&gt;`</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;bukan number&quot;</span>)}</span>&lt;/p&gt;`</span>); <span class="hljs-comment">// NaN</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\4.PNG" alt="4">
+        </p>
+        <hr>
+        <h2 id="operasi-pada-nan">Operasi pada NaN</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value1 = <span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;salah&quot;</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-keyword">const</span> value2 = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">const</span> sum = value1 + value2; <span class="hljs-comment">//NaN</span>
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${sum}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\5.PNG" alt="5">
+        </p>
+        <hr>
+        <h2 id="isnan-function">isNaN() Function</h2>
+        <ul>
+            <li>Kadang kita ingin <strong>mengecek</strong> apakah sebuah number itu NaN / bukan</li>
+            <li>Untuk melakukan pengecekan tersebut, kita bisa menggunakan function <strong>isNaN(number)</strong></li>
+            <li>Hasil nya adalah berupa data boolean, <strong>true</strong> jika NaN, <strong>false</strong> jika bukan
+            </li>
+        </ul>
+        <h3 id="kode-3">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> value1 = <span class="hljs-title class_">Number</span>(<span class="hljs-string">&quot;salah&quot;</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-keyword">const</span> value2 = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">const</span> sum = value1 + value2; <span class="hljs-comment">//NaN</span>
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">isNaN</span>(sum)}</span>&lt;/p&gt;`</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${<span class="hljs-built_in">isNaN</span>(<span class="hljs-number">100</span>)}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\6.PNG" alt="6">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

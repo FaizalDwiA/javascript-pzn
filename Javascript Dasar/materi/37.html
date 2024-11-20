@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Function Parameter</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="function-parameter">Function Parameter</h1>
+        <hr>
+        <h2 id="function-parameter-1">Function Parameter</h2>
+        <ul>
+            <li>Kita bisa <strong>mengirim informasi</strong> ke function yang ingin kita panggil</li>
+            <li>Untuk melakukan hal tersebut, kita perlu menambahkan <strong>parameter atau argument</strong> di
+                function yang sudah kita buat</li>
+            <li>Parameter ditempatkan <strong>di dalam kurung ()</strong> di deklarasi method</li>
+            <li>Parameter bisa lebih dari satu, jika lebih dari satu, harus dipisah menggunakan <strong>tanda
+                    koma</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--function-parameter">Kode : Function Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// Membuat function</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHelloWorld</span>(<span class="hljs-params">firstName, lastName</span>) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Hello <span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>&lt;/p&gt;`</span>);
+}
+
+<span class="hljs-comment">// Memanggil function</span>
+<span class="hljs-title function_">sayHelloWorld</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+<span class="hljs-title function_">sayHelloWorld</span>(<span class="hljs-string">&quot;Black&quot;</span>, <span class="hljs-string">&quot;Syiber&quot;</span>); <span class="hljs-comment">// boleh berkali-kali</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\37\1.PNG" alt="1">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

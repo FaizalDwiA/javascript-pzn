@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Tipe Data String</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="tipe-data-string">Tipe Data String</h1>
+        <ul>
+            <li><strong>Tipe data string / text</strong> = tipe data yang berisikan kumpulan kosong / lebih karakter
+            </li>
+            <li>Sebelumnya kita sudah pernah menggunakan string ketika membuat <strong>program hello world</strong></li>
+            <li>di JavaScript untuk membuat data dengan tipe string, kita perlu menggunakan <strong>&quot;</strong>
+                (petik 2) / <strong>'</strong> (petik 1) sebelum dan setelah isi text nya</li>
+        </ul>
+        <h3 id="kode">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&#x27;Black Syiber&#x27;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="menambah-string">Menambah String</h2>
+        <ul>
+            <li>Data string bisa digabungkan menggunakan operator <strong>+</strong> (plus)</li>
+        </ul>
+        <h3 id="kode-1">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Nama : &quot;</span> + <span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/br&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Teman : &quot;</span> + <span class="hljs-string">&quot;Black&quot;</span> + <span class="hljs-string">&quot; dan &quot;</span> + <span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="escape-sequence">Escape Sequence</h2>
+        <ul>
+            <li>JavaScript mendukung escape sequence di string.</li>
+            <li>Escape sequence = karakter khusus, seperti ENTER, TAB, &quot; (kutip 2), dll.</li>
+            <li>Berikut contoh escape sequence yang didukung oeh JavaScript di data string.</li>
+        </ul>
+        <table border="1" width="100%">
+            <tr>
+                <td>\n</td>
+                <td>ENTER</td>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>TAB</td>
+            </tr>
+            <tr>
+                <td>\'</td>
+                <td>'</td>
+            </tr>
+            <tr>
+                <td>\"</td>
+                <td>"</td>
+            </tr>
+            <tr>
+                <td>\\</td>
+                <td>\</td>
+            </tr>
+        </table>
+        <h3 id="kode-2">Kode</h3>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;textarea cols=&#x27;100&#x27; rows=&#x27;10&#x27;&gt;&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;Faizal \nDwi \nAlfarizi\n&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;\\Home\\Faizal\n&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;\&quot;Faizal Dwi Alfarizi\&quot;\n&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;\&#x27;Black Syiber\&#x27;\n&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;&lt;/textarea&gt;&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

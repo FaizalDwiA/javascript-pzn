@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Window</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="window">Window</h1>
+        <hr>
+        <h2 id="window-1">Window</h2>
+        <ul>
+            <li>Window merupakan representasi window yang berisikan DOM Document</li>
+            <li>Beberapa JavaScript function sebenarnya berasal dari object Window, seperti alert(), confirm() dan
+                prompt()</li>
+            <li>Ada banyak sekali property, method dan event yang bisa kita gunakan pada window</li>
+            <li>Untuk menggunakan Window, kita tidak perlu membuat objectnya, cukup gunakan kata kunci window</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window">https://developer.mozilla.org/en-US/docs/Web/API/Window</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode-window">Kode: Window</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> content = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;content&quot;</span>);
+    <span class="hljs-keyword">const</span> height = <span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">height</span>;
+    <span class="hljs-keyword">const</span> width = <span class="hljs-variable language_">window</span>.<span class="hljs-property">screen</span>.<span class="hljs-property">width</span>;
+
+    content.<span class="hljs-property">textContent</span> = <span class="hljs-string">`Window width (<span class="hljs-subst">${width}</span>) x height (<span class="hljs-subst">${height}</span>)`</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\15\1.PNG"
+                alt="1"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

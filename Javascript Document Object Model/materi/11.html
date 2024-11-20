@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Handler</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="event-handler">Event Handler</h1>
+        <hr>
+        <h2 id="event-handler-1">Event Handler</h2>
+        <ul>
+            <li>Node memiliki kemampuan bereaksi terhadap suatu kejadian, misal kejadian di klik, mouse di atas node
+                tersebut, dan lain-lain</li>
+            <li>Ada banyak sekali jenis kejadian yang bisa kita buatkan aksinya ketika kejadian tersebut terjadi, atau
+                dikenal dengan nama Event Handler</li>
+            <li>Ada dua cara kita menambahkan Event Handler ke Node, menggunakan Event Target atau Global</li>
+        </ul>
+        <hr>
+        <h2 id="event-handler-2">Event Handler</h2>
+        <ul>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget</a>
+            </li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="event-target">Event Target</h2>
+        <ul>
+            <li>Event Target merupakan parent class dari Node, artinya semua Node memiliki kemampuan dari Event Target
+            </li>
+            <li>Pada Event Target, kita bisa menggunakan method addEventListener(type, callback) untuk menambahkan Event
+                Handler</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--event-listener">Kode : Event Listener</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clickMe&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Click Me&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> clickMe = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;clickMe&quot;</span>);
+    clickMe.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        clickMe.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;value&quot;</span>, <span class="hljs-string">&quot;You Already Click Me!&quot;</span>);
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\11\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="global-event-handler">Global Event Handler</h2>
+        <ul>
+            <li>Selain menggunakan Event Target, untuk menambahkan Event Handler, kita juga bisa menggunakan Global
+                Event Handler</li>
+            <li>Global Event Handler bukanlah sebuah super class, hanya kontrak yang bisa kita gunakan untuk menambah
+                event handler sesuai dengan type event nya</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--global-event-handler">Kode : Global Event Handler</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clickMe&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Click Me&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> clickMe = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;clickMe&quot;</span>);
+    clickMe.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        clickMe.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;value&quot;</span>, <span class="hljs-string">&quot;You Already Click Me!&quot;</span>);
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\11\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

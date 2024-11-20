@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Node Type</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="node-type">Node Type</h1>
+        <hr>
+        <h2 id="node-type-1">Node Type</h2>
+        <ul>
+            <li>Saat kita menyeleksi Node menjadi NodeList, kadang kita ingin tahu tipe Node tersebut</li>
+            <li>Apakah Element, TextElement atau yang lainnya</li>
+            <li>Node sendiri memiliki property bernama nodeType, dimana kita bisa melihat tipe dari node tersebut</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType">https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType</a>
+            </li>
+        </ul>
+        <hr>
+        <table border="1" width="100%">
+            <tr>
+                <th>Constant</th>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Node.ELEMENT_NODE</td>
+                <td>1</td>
+                <td>An Element node like &lt;p&gt; or &lt;div&gt;</td>
+            </tr>
+            <tr>
+                <td>Node.ATTRIBUTE_NODE</td>
+                <td>2</td>
+                <td>An Attribute of an Element</td>
+            </tr>
+            <tr>
+                <td>Node.TEXT_NODE</td>
+                <td>3</td>
+                <td>The actual Text inside an Element or Attr</td>
+            </tr>
+            <tr>
+                <td>Node.CDATA_SECTION_NODE</td>
+                <td>4</td>
+                <td>A CDATASection, such as &lt;!CDATA[[...]&gt;.</td>
+            </tr>
+            <tr>
+                <td>Node.PROCESSING_INSTRUCTION_NODE</td>
+                <td>7</td>
+                <td>A ProcessingInstuction o an XML document, such as &lt;?xml-stylesheet...?&gt;</td>
+            </tr>
+            <tr>
+                <td>Node.COMMENT_NODE</td>
+                <td>8</td>
+                <td>A Comment node, such as &lt;!-- ... --&gt;.</td>
+            </tr>
+            <tr>
+                <td>Node.DOCUMENT_NODE</td>
+                <td>9</td>
+                <td>A Document node.</td>
+            </tr>
+            <tr>
+                <td>Node.DOCUMENT_TYPE_NODE</td>
+                <td>10</td>
+                <td>A DocumentType node, such as &lt;!DOCTYPE html&gt;.</td>
+            </tr>
+            <tr>
+                <td>Node.DOCUMENT_FRAGMENT_NODE</td>
+                <td>11</td>
+                <td>A DocumentFragment node.</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--node-type">Kode : Node Type</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+Faizal Dwi Al Farizi
+<span class="hljs-comment">&lt;!-- Hello World --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> nodes = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">childNodes</span>;
+    nodes.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">node</span> =&gt;</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${node}</span> : <span class="hljs-subst">${node.nodeType}</span>`</span>);
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\1.PNG"
+                alt="1"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

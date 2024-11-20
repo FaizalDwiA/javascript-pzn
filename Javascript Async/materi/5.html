@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Response Status di AJAX</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="response-status-di-ajax">Response Status di AJAX</h1>
+        <hr>
+        <h2 id="response-status">Response Status</h2>
+        <ul>
+            <li>AJAX adalah proses komunikasi Client dan Server</li>
+            <li>Dalam komunikasi Client dan Server, kita tidak bisa selalu menganggap proses tersebut akan berjalan
+                lancar.</li>
+            <li>Akan ada banyak hal-hal yang bisa mengganggu proses AJAX yang bisa menyebabkan error, seperti; koneksi
+                internet bermasalah, error dari server, data dari client tidak valid, dan lain-lain.</li>
+            <li>Server biasanya akan mengirimkan HTTP Status Code yang sesuai dengan jenis response nya, seperti yang
+                sudah dibahas di materi HTTP</li>
+            <li>Untuk mengetahui status response dari Server, kita bisa menggunakan property status</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/status</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="response-status-di-ajax-1">Response Status di AJAX</h2>
+        <p><em>index.html</em></p>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;response&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/script.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><strong>jika berhasil :</strong></p>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">displayResponse</span>(<span class="hljs-params">json</span>) {
+    <span class="hljs-keyword">const</span> header = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;response&quot;</span>);
+    header.<span class="hljs-property">textContent</span> = json.<span class="hljs-property">response</span>;
+}
+
+<span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/hello.json&quot;</span>);
+ajax.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;load&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span>(ajax.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) {
+        <span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(ajax.<span class="hljs-property">responseText</span>);
+        <span class="hljs-title function_">displayResponse</span>(json)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-title function_">displayResponse</span>({
+            <span class="hljs-attr">response</span>: <span class="hljs-string">`Terjadi Kesalahan dengan status <span class="hljs-subst">${ajax.status}</span>`</span>
+        });
+    }
+});
+
+ajax.<span class="hljs-title function_">send</span>(); <span class="hljs-comment">// mengirim request</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\1.PNG" alt="1">
+        </p>
+        <p><strong>Jika gagal :</strong></p>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">displayResponse</span>(<span class="hljs-params">json</span>) {
+    <span class="hljs-keyword">const</span> header = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;response&quot;</span>);
+    header.<span class="hljs-property">textContent</span> = json.<span class="hljs-property">response</span>;
+}
+
+<span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/faizal.json&quot;</span>);
+ajax.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;load&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span>(ajax.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) {
+        <span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(ajax.<span class="hljs-property">responseText</span>);
+        <span class="hljs-title function_">displayResponse</span>(json)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-title function_">displayResponse</span>({
+            <span class="hljs-attr">response</span>: <span class="hljs-string">`Terjadi Kesalahan dengan status <span class="hljs-subst">${ajax.status}</span>`</span>
+        });
+    }
+});
+
+ajax.<span class="hljs-title function_">send</span>(); <span class="hljs-comment">// mengirim request</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\5\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

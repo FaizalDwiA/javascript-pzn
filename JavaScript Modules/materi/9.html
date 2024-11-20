@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Class di Module</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="class-di-module">Class di Module</h1>
+        <hr>
+        <h2 id="class-di-module-1">Class di Module</h2>
+        <ul>
+            <li>Selain function dan juga variable, di module juga kita bisa menambahkan class</li>
+            <li>Secara default, class tersebut hanya bisa diakses dari dalam module nya saja, tidak bisa diluar module
+            </li>
+            <li>Jika kita ingin mengekspos class yang kita buat, kita juga bisa menggunakan kata kunci export di awal
+                deklarasi class nya</li>
+        </ul>
+        <hr>
+        <h2 id="kode--export-class-di-module">Kode : Export Class di Module</h2>
+        <p><em>class.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name;
+    }
+
+    <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>);
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--menggunakan-class-di-module">Kode : Menggunakan Class di Module</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">Person</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/class.js&quot;</span>;
+
+<span class="hljs-keyword">const</span> person = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\9\1.PNG" alt="1">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

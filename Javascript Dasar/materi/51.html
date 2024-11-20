@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Kata Kunci this</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="kata-kunci-this">Kata Kunci this</h1>
+        <hr>
+        <h2 id="kata-kunci-this-1">Kata Kunci this</h2>
+        <ul>
+            <li><strong>Kata kunci this</strong> adalah referensi ke object milik siapa</li>
+            <li><strong>Tiap lokasi</strong> kata kunci this, bisa berbeda-beda referensi pemilik nya</li>
+            <li>Dalam <strong>Object Method</strong>, this merupakan referensi ke object pemilik function nya</li>
+            <li>Di <strong>global scope</strong>, this merupakan referensi ke global object (di browser biasanya Window)
+            </li>
+            <li><strong>Dalam function</strong>, this merupakan referensi ke global object (di browser biasanya Window)
+            </li>
+            <li><strong>Di function dengan strict mode</strong> (akan dibahas nanti), this adalah undefined</li>
+            <li><strong>Dalam event</strong>, this merupakan referensi ke element yang menerima event (dibahas di materi
+                Document Object Model)</li>
+        </ul>
+        <hr>
+        <h2 id="kode--this-di-global-scope">Kode : this di Global Scope</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>); <span class="hljs-comment">// Window</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\51\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--this-di-function">Kode : this di Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sample</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>);
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">inner</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>);
+    }
+
+    <span class="hljs-title function_">inner</span>(); <span class="hljs-comment">// Window</span>
+}
+
+<span class="hljs-title function_">sample</span>(); <span class="hljs-comment">// Window</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\51\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="kode--this-di-object-method">Kode : this di Object Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">sayHello</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-comment">// this = person</span>
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hi <span class="hljs-subst">${name}</span>, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>);
+    }
+}
+
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\51\3.PNG" alt="3">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

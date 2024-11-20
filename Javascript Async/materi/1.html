@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pengenalan Asynchronous</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="pengenalan-asynchronous">Pengenalan Asynchronous</h1>
+        <hr>
+        <h2 id="apa-itu-synchronous">Apa itu Synchronous?</h2>
+        <ul>
+            <li>Program dalam JavaScript secara default akan dieksekusi baris per baris</li>
+            <li>Secara default, proses di JavaScript akan dieksekusi secara Synchronous, artinya baris selanjutnya akan
+                dieksekusi setelah baris sebelumnya selesai dikerjakan</li>
+            <li>Proses Synchronous juga biasa disebut Blocking, karena harus menunggu tiap proses selesai, baru proses
+                selanjutnya bisa dilakukan</li>
+        </ul>
+        <hr>
+        <h2 id="contoh-synchronous">Contoh Synchronous</h2>
+        <p><img src="..\assets\img\1\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="apa-itu-asynchronous">Apa itu Asynchronous?</h2>
+        <ul>
+            <li>Walaupun secara default proses di JavaScript dieksekusi secara Synchronous, namun kita bisa membuatnya
+                menjadi Asynchronous.</li>
+            <li>Berbeda dengan proses Synchronous, pada proses Asynchronous, JavaScript tidak akan menunggu proses
+                tersebut selesai, melainkan JavaScript akan melanjutkan baris selanjutnya, tanpa harus menunggu proses
+                Asynchronous selesai.</li>
+            <li>Proses Asynchronous juga biasa disebut Non-Blocking.</li>
+        </ul>
+        <hr>
+        <h2 id="contoh-asynchronous">Contoh Asynchronous</h2>
+        <p><img src="..\assets\img\1\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

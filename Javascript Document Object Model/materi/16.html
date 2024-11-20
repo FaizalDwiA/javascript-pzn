@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Query Selector</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="query-selector">Query Selector</h1>
+        <hr>
+        <h2 id="query-selector-1">Query Selector</h2>
+        <ul>
+            <li>Sebelumnya kita sudah menggunakan method querySelectorAll() pada Document, sekarang kita akan bahas
+                lebih lengkap tentang Query Selector</li>
+            <li>Query Selector merupakan method untuk menseleksi node sesuai dengan pola yang kita ingin cari</li>
+            <li>Terdapat dua method untuk Query Selector :
+                <ul>
+                    <li>Document.querySelector(pola) digunakan menyeleksi node pertama yang sesuai dengan pola</li>
+                    <li>Document.querySelectorAll(pola) digunakan untuk menyeleksi semua node yang sesuai dengan pola
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="pola-query-selector">Pola Query Selector</h2>
+        <ul>
+            <li>Pola untuk Query Selector adalah menggunakan CSS Selector</li>
+            <li>Penggunakan Pola nya mirip ketika kita membuat Selector di CSS</li>
+            <li>Jika belum tahu tentang CSS Selector, disarankan untuk dipelajari ulang tentang materi CSS</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="universal-selector">Universal Selector</h2>
+        <ul>
+            <li>Universal Selector merupakan selector untuk menyeleksi semua element</li>
+            <li>Kita bisa menggunakan karakter *</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--universal-selector">Kode : Universal Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;*&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="type-selector">Type Selector</h2>
+        <ul>
+            <li>Type Selector adalah selector yang digunakan untuk menyeleksi tag type HTML yang kita pilih</li>
+            <li>Untuk menggunakannya, kita bisa langsung sebutkan nama tag nya</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--type-selector">Kode : Type Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;li&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="class-selector">Class Selector</h2>
+        <ul>
+            <li>Class Selector merupakan selector untuk menyeleksi semua element yang memiliki class yang sesuai
+                selector</li>
+            <li>Untuk menggunakannya, kita bisa sebutkan nama class nya diawali dengan titik</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--class-selector">Kode : Class Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menuItem&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menuItem&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;.menuItem&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="id-selector">ID Selector</h2>
+        <ul>
+            <li>ID Selector merupakan selector yang digunakan untuk menyeleksi id yang sesuai selector</li>
+            <li>Untuk menggunakannya, kita bisa gunakan nama id diawali dengan karakter #</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--id-selector">Kode : ID Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menuItem&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menuItem&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;#menu2&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\4.PNG"
+                alt="4"></p>
+        <hr>
+        <h2 id="attribute-selector">Attribute Selector</h2>
+        <ul>
+            <li>Attribute Selector merupakan selector yang bisa digunakan untuk menyeleksi element berdasarkan attribute
+                nya</li>
+            <li>Kita bisa menggunakan selector <strong><code>[attribute]</code></strong></li>
+            <li>Atau bisa juga untuk tag tertentu, misal menggunakan selector
+                <strong><code>div[attribute]</code></strong></li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode-attribute-selector">Kode: Attribute Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;faizal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dwi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;alfarizi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;[class]&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\5.PNG"
+                alt="5"></p>
+        <hr>
+        <h2 id="operator-di-attribute-selector">Operator di Attribute Selector</h2>
+        <ul>
+            <li>Kita juga bisa menggunakan operator pada attribut selector</li>
+            <li>Misal <strong><code>[attribute=value]</code></strong>, <strong><code>[attribute^=value]</code></strong>
+                dan lain-lain</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax">https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--operator-attribute-selector">Kode : Operator Attribute Selector</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;faizal&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;faizaldwi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;faizalalfarizi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;div[class^=&#x27;faizal&#x27;&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(elements);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\16\6.PNG"
+                alt="6"></p>
+        <hr>
+        <h2 id="dan-selector-lainnya">Dan Selector Lainnya</h2>
+        <ul>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
+            </li>
+        </ul>
+
+
+
+    </body>
+
+</html>

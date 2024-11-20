@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Public Class Field</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="public-class-field">Public Class Field</h1>
+        <hr>
+        <h2 id="class-field">Class Field</h2>
+        <ul>
+            <li>Biasanya, saat kita ingin menambahkan field (property yang berisi value), kita biasanya tambahkan di
+                constructor</li>
+            <li>Namun, ada proposal di EcmaScript yang mengajukan pembuatan public class field ditempatkan diluar
+                constructor, selevel dengan penempatan method</li>
+            <li>Proposal ini masih belum final, namun beberapa browser sudah mendukung nya</li>
+            <li><a
+                    href="https://github.com/tc39/proposal-class-fields">https://github.com/tc39/proposal-class-fields</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="public-class-field-1">Public Class Field</h2>
+        <ul>
+            <li>Dalam proposal tersebut juga disebutkan bahwa EcmaScript akan mendukung access modifier public dan
+                private</li>
+            <li>Public artinya bisa diakses dari luar class, dan private hanya bisa diakses dari dalam class saja</li>
+            <li>Private class field akan kita bahas di chapter selanjutnya</li>
+            <li>Untuk membuat public class field, kita bisa langsung buat nama field dengan value nya selevel dengan
+                method</li>
+            <li>Jika kita tidak memasukkan value ke dalam field tersebut, artinya field tersebut memiliki value
+                undefined</li>
+        </ul>
+        <hr>
+        <h2 id="kode--public-class-field">Kode : Public Class Field</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Customer</span> {
+    firstName;
+    lastName;
+    balance = <span class="hljs-number">0</span>;
+
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+
+    }
+
+    <span class="hljs-title function_">sayHello</span>(<span class="hljs-params"></span>) {
+
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Customer</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--public-class-field-dan-constructor">Kode : Public Class Field dan Constructor</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Customer</span> {
+    firstName;
+    lastName;
+    balance = <span class="hljs-number">0</span>;
+
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">firstName, lastName</span>) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> = firstName;
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = lastName;
+    }
+
+    <span class="hljs-title function_">sayHello</span>(<span class="hljs-params"></span>) {
+
+    }
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Customer</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

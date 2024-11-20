@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Membuat Module</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="membuat-module">Membuat Module</h1>
+        <hr>
+        <h2 id="membuat-module-1">Membuat Module</h2>
+        <ul>
+            <li>Membuat module sangat sederhana, kita cukup membuat file JavaScript saja</li>
+            <li>Yang membedakan adalah, saat kita akan meload file JavaScript dari HTML, kita tidak menggunakan type
+                javascript lagi, melainkan menggunakan type module File .js dan .mjs</li>
+            <li>Karena File JavaScript Module sebenarnya sama dengan JavaScript, kadang developer membedakan nama file
+                untuk JavaScript Module menggunakan .mjs</li>
+            <li>Hal ini sebenarnya tidak ada kewajiban, hanya saja agar mempermudah ketika tahapan development, kita
+                bisa dengan mudah membedakan mana file JavaScript biasa, mana file JavaScript module hanya dengan
+                extension file nya saja</li>
+            <li>Pada kelas ini, kita akan tetap menggunakan file .js ketika membuat module, agar tidak membingungkan
+                untuk pemula</li>
+        </ul>
+        <hr>
+        <h2 id="kode--javascript-module">Kode : JavaScript Module</h2>
+        <p><em>say.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Good Bye <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Faizal&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="kode--load-javascript-module">Kode : Load JavaScript Module</h2>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>With Module<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/library.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+        <span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="hasil-javascript-module">Hasil JavaScript Module</h2>
+        <p><img src="..\assets\img\5\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kenapa-error">Kenapa Error?</h2>
+        <ul>
+            <li>Secara default, saat kita menggunakan fitur JavaScript Module, semua kode (function, variable, class dan
+                lain-lain) tidak akan di ekspos keluar module tersebut</li>
+            <li>Jika kita ingin mengekspos kode tersebut, kita harus memberitahunya secara eksplisit</li>
+        </ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

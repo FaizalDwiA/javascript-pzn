@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Style</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="style">Style</h1>
+        <hr>
+        <h2 id="style-1">Style</h2>
+        <ul>
+            <li>DOM juga bisa digunakan untuk memanipulasi attribute style pada element dengan lebih mudah</li>
+            <li>Kita tidak perlu menggunakan setAttribute(“style”, “value”) setiap ingin mengubah style sebuah element
+            </li>
+            <li>Kita bisa langsung gunakan <a href="http://element.style.name">element.style.name</a> = value</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="nama-style">Nama Style</h2>
+        <ul>
+            <li>Saat kita mengubah sebuah style, penamaan style menjadi berubah</li>
+            <li>Pada style css, rata-rata menggunakan format lowercase dan -, misal background-color</li>
+            <li>Sedangkan pada DOM Style, menggunakan format pascalCase, misal backgroundColor</li>
+        </ul>
+        <hr>
+        <h2 id="kode--style">Kode : Style</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;red&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;yellow&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;canvas&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 500px; height: 500px; background-color: black;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;canvas&quot;</span>);
+    <span class="hljs-keyword">const</span> buttons = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;input&quot;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> button <span class="hljs-keyword">of</span> buttons) {
+        button.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+            canvas.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = button.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;value&quot;</span>);
+        }
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>BigInt</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="bigint">BigInt</h1>
+        <hr>
+        <h2 id="bigint-1">BigInt</h2>
+        <ul>
+            <li>BigInt merupakan tipe data Number yang bisa mencakup data angka lebih besar dari Number.MAX_SAFE_INTEGER
+                dan lebih kecil dari Nmber.MIN_SAFE_INTEGER</li>
+            <li>Untuk kasus number yang lebih dari itu, sangat disarankan menggunakan tipe data BigInt</li>
+            <li>Cara penggunaan BigInt sama saja dengan penggunaan Number dan juga operator nya</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt%5C">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt\</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--bigint">Kode : BigInt</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> a = <span class="hljs-title class_">BigInt</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_SAFE_INTEGER</span>);
+<span class="hljs-keyword">const</span> b = <span class="hljs-title class_">BigInt</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">MAX_SAFE_INTEGER</span>);
+
+<span class="hljs-keyword">const</span> c = a + b;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(c);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> c);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

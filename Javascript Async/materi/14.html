@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Fetch API</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="fetch-api">Fetch API</h1>
+        <hr>
+        <h2 id="fetch-api-1">Fetch API</h2>
+        <ul>
+            <li>Fetch API merupakan fitur baru sebagai alternatif AJAX</li>
+            <li>Saat menggunakan AJAX, kita perlu menggunakan Callback untuk menerima response atau data dari Server,
+                sedangkan Fetch API sudah menggunakan Promise, sehingga penggunaan Fetch API lebih mudah dibandingkan
+                AJAX</li>
+            <li>Hampir semua browser modern sekarang sudah mendukung menggunakan Fetch API</li>
+            <li>Apa yang bisa kita lakukan di AJAX, bisa juga kita lakukan di Fetch API</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="request">Request</h2>
+        <ul>
+            <li>Saat kita akan mengirim request menggunakan Fetch API, kita perlu membuat object Request</li>
+            <li>Hal ini menjadi lebih rapi dibandingkan menggunakan AJAX</li>
+            <li>Kita bisa membuat object Request, lalu dikirim menggunakan Fetch API</li>
+            <li>Dan saat membuat Request, kita bisa menentukan data yang ingin kita kirim</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request">https://developer.mozilla.org/en-US/docs/Web/API/Request/Request</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-request">Kode : Membuat Request</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Request</span>(<span class="hljs-string">&quot;server.php&quot;</span>, {
+    <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
+        <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>
+    },
+    <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({
+        <span class="hljs-attr">username</span>: <span class="hljs-string">&quot;faizal&quot;</span>,
+        <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;rahasia&quot;</span>
+    })
+});
+</code></pre>
+        <hr>
+        <h2 id="kode--menggunakan-fetch-api">Kode : Menggunakan Fetch API</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// Promise&lt;Response&gt;</span>
+<span class="hljs-keyword">const</span> response = <span class="hljs-title function_">fetch</span>(request);
+</code></pre>
+        <hr>
+        <h2 id="kode--fetch-api-tanpa-object-request">Kode : Fetch API Tanpa Object Request</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> request = <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;server.php&quot;</span>, {
+    <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
+        <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>
+    },
+    <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({
+        <span class="hljs-attr">username</span>: <span class="hljs-string">&quot;faizal&quot;</span>,
+        <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;rahasia&quot;</span>
+    })
+});
+</code></pre>
+        <hr>
+        <h2 id="response">Response</h2>
+        <ul>
+            <li>Hasil dari Fetch API adalah sebuah Promise</li>
+            <li>Promise tersebut berisikan object Response</li>
+            <li>Ada banyak property dan method pada object Response, kita bisa menggunakannya sesuai dengan yang kita
+                butuhkan</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Response">https://developer.mozilla.org/en-US/docs/Web/API/Response</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--menggunakan-response">Kode : Menggunakan Response</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Request</span>(<span class="hljs-string">&quot;server.php&quot;</span>, {
+    <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
+        <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>
+    },
+    <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>({
+        <span class="hljs-attr">username</span>: <span class="hljs-string">&quot;faizal&quot;</span>,
+        <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;rahasia&quot;</span>
+    })
+});
+
+<span class="hljs-keyword">const</span> response = <span class="hljs-title function_">fetch</span>(request);
+
+response
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value.<span class="hljs-title function_">json</span>())
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">json</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(json));
+</code></pre>
+
+
+
+    </body>
+
+</html>

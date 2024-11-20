@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Private Class Field</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="private-class-field">Private Class Field</h1>
+        <hr>
+        <h2 id="private-class-field-1">Private Class Field</h2>
+        <ul>
+            <li>Secara default, saat kita menambahkan field, maka field tersebut bisa diakses dari manapun</li>
+            <li>Jika kita ingin membuat field yang bersifat private (hanya bisa diakses di dalam class), kita bisa
+                menggunakan tanda # sebelum nama field nya</li>
+            <li>Ini dinamakan private class field, dan hanya bisa diakses dari dalam class saja</li>
+        </ul>
+        <hr>
+        <h2 id="kode--private-class-field">Kode : Private Class Field</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    #counter = <span class="hljs-number">0</span>;
+
+    <span class="hljs-title function_">increment</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.#counter++;
+    }
+
+    <span class="hljs-title function_">decrement</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.#counter--;
+    }
+
+    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.#counter;
+    }
+}
+
+<span class="hljs-keyword">const</span> counter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Counter</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">get</span>());
+
+counter.<span class="hljs-property">counter</span> = <span class="hljs-number">100</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\18\1.PNG" alt="1">
+        </p>
+        <p>jika kita merubah paksa, maka akan error</p>
+        <pre><code class="language-js">counter.#counter = <span class="hljs-number">100</span>
+</code></pre>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    #counter = <span class="hljs-number">0</span>;
+
+    <span class="hljs-title function_">increment</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.#counter++;
+    }
+
+    <span class="hljs-title function_">decrement</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">this</span>.#counter--;
+    }
+
+    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.#counter;
+    }
+}
+
+<span class="hljs-keyword">const</span> counter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Counter</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+counter.<span class="hljs-title function_">increment</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">get</span>());
+
+counter.<span class="hljs-property">counter</span> = <span class="hljs-number">100</span>;
+counter.#counter = <span class="hljs-number">100</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\18\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

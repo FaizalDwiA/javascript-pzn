@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>In Operator</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="in-operator">In Operator</h1>
+        <hr>
+        <h2 id="in-operator-1">In Operator</h2>
+        <ul>
+            <li><strong>In operator</strong> adalah operator yang bisa dilakukan untuk mengecek apakah sebuah property
+                ada di dalam object atau tidak</li>
+            <li>Jika property tersebut <strong>ada</strong> di object, maka hasilnya true, sedangkan jika tidak, maka
+                hasilnya false</li>
+            <li>Tidak hanya di <strong>object</strong>, In juga bisa digunakan untuk mengecek index di
+                <strong>Array</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--in-operator">Kode : In Operator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>,
+};
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-string">&quot;firstName&quot;</span> <span class="hljs-keyword">in</span> person; <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${result}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <hr>
+        <h2 id="peringatan">Peringatan</h2>
+        <ul>
+            <li>In operator hanya akan <strong>mengecek</strong> apakah sebuah property atau index ada atau tidak</li>
+            <li>Jadi walaupun nilai property atau index nya <strong>undefined atau null</strong>, maka tetap akan
+                dianggap <strong>ada</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--in-operator-undefinednull-property">Kode : In Operator Undefined/Null Property</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">lastName</span>: <span class="hljs-literal">undefined</span>,
+};
+
+<span class="hljs-keyword">const</span> result = <span class="hljs-string">&quot;lastName&quot;</span> <span class="hljs-keyword">in</span> person; <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${result}</span>&lt;/p&gt;`</span>);
+
+<span class="hljs-keyword">const</span> names = [<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-literal">null</span>];
+<span class="hljs-keyword">const</span> nameResult = <span class="hljs-number">0</span> <span class="hljs-keyword">in</span> names; <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${nameResult}</span>&lt;/p&gt;`</span>);
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

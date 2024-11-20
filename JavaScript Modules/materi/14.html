@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Aggregating Modules</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="aggregating-modules">Aggregating Modules</h1>
+        <hr>
+        <h2 id="aggregating-modules-1">Aggregating Modules</h2>
+        <ul>
+            <li>Ada waktunya kadang kita ingin meng agregate beberapa module menjadi satu agar penggunaannya lebih
+                sederhana</li>
+            <li>Jika module sudah banyak, maka ketika butuh banyak kode dari banyak module, kita harus sebutkan nama
+                module tersebut tiap kalo import</li>
+            <li>Dengan melakukan aggregate, kita bisa membuat module aggregate, yang isinya menggabungkan export dari
+                module lain</li>
+            <li>Caranya sangat mudah, cukup gunakan perintah :
+                <ul>
+                    <li>export {a, b, c} from “./module.js”</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--aggregate-module">Kode : Aggregate Module</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">export</span> {<span class="hljs-title class_">Person</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./class.js&quot;</span>;
+<span class="hljs-keyword">export</span> {sayHello, sayGoodBye} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./say.js&quot;</span>;
+<span class="hljs-keyword">export</span> {sum} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./multiple.js&quot;</span>;
+</code></pre>
+        <hr>
+        <h2 id="kode--import-aggregate-module">Kode : Import Aggregate Module</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Person</span>, sayHello, sayGoodBye, sum } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./script/aggregate.js&quot;</span>;
+
+<span class="hljs-keyword">const</span> person = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-title function_">sayGoodBye</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>));
+</code></pre>
+
+
+
+    </body>
+
+</html>

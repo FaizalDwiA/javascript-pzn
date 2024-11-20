@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Optional Chaining</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="optional-chaining">Optional Chaining</h1>
+        <hr>
+        <h2 id="optional-chaining-1">Optional Chaining</h2>
+        <ul>
+            <li><strong>Optional chaining operator (?)</strong> merupakan operator yang digunakan untuk
+                <strong>mengamankan</strong> ketika kita ingin mengakses property sebuah object <strong>dari data
+                    nullish</strong></li>
+            <li>Jika kita mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan optional
+                chaining operator, maka akan terjadi error</li>
+        </ul>
+        <hr>
+        <h2 id="kode--error-mengakses-property-nullish">Kode : Error Mengakses Property Nullish</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> person = {}
+
+<span class="hljs-title function_">alert</span>(person.<span class="hljs-property">address</span>.<span class="hljs-property">country</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\25\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--pengecekan-menggunakan-if">Kode : Pengecekan Menggunakan If</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> person = {}
+
+<span class="hljs-keyword">let</span> say;
+<span class="hljs-keyword">if</span>(person.<span class="hljs-property">address</span> !== <span class="hljs-literal">undefined</span> &amp;&amp; person.<span class="hljs-property">address</span> !== <span class="hljs-literal">null</span>) {
+    say = person.<span class="hljs-property">address</span>.<span class="hljs-property">country</span>
+}
+
+<span class="hljs-title function_">alert</span>(say);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\25\2.PNG" alt="2">
+        </p>
+        <blockquote>
+            <p>jadi tidak akan error karena kodenya dicek terlebih dahulu</p>
+        </blockquote>
+        <hr>
+        <h2 id="kode--menggunakan-optional-chaining">Kode : Menggunakan Optional Chaining</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> person = {}
+
+<span class="hljs-title function_">alert</span>(person?.<span class="hljs-property">address</span>?.<span class="hljs-property">country</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\25\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>String</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="string">String</h1>
+        <hr>
+        <h2 id="string-1">String</h2>
+        <ul>
+            <li>Tipe data String sudah kita bahas pada materi JavaScript Dasar</li>
+            <li>Namun kita belum membahas instance method atau juga instance properties yang terdapat di String</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="string-instance-method-dan-properties">String Instance Method dan Properties</h2>
+        <ul>
+            <li>String sendiri memiliki banyak sekali instance method dan properties</li>
+            <li>Hal ini menjadikan untuk memanipulasi data String sangat mudah di JavaScript, seperti mengubah menjadi
+                lowercase, UPPERCASE, memotong string menjadi array dan lain-lain</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--string-instance-method-dan-properties">Kode : String Instance Method dan Properties</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name.<span class="hljs-property">length</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name.<span class="hljs-title function_">toLowerCase</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name.<span class="hljs-title function_">toUpperCase</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>));
+
+<span class="hljs-keyword">const</span> input = <span class="hljs-string">&quot;     input data      &quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(input.<span class="hljs-title function_">trim</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\2\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

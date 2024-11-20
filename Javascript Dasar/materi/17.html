@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Popup</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="popup">Popup</h1>
+        <hr>
+        <h2 id="alert-prompt-dan-confirm">Alert, Prompt dan Confirm</h2>
+        <ul>
+            <li>JavaScript memiliki fitur yang bernama <strong>alert, prompt dan confirm</strong></li>
+            <li><strong>Alert</strong> digunakan untuk memberi peringatan berupa popup text di browser</li>
+            <li><strong>Prompt</strong> digunakan untuk meminta input string dari pengguna browser dalam bentuk popup
+                input text</li>
+            <li>Sedangkan <strong>confirm</strong> digunakan untuk meminta input boolean dari pengguna browser dalam
+                bentuk popup input pilihan</li>
+        </ul>
+        <hr>
+        <h2 id="kode--alert">Kode : Alert</h2>
+        <pre><code class="language-js"><span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--prompt">Kode : Prompt</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&quot;Siapa Nama Anda?&quot;</span>);
+
+<span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\17\2.PNG" alt="2">
+        </p>
+        <p><img src="..\assets\img\17\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="kode--confirm">Kode : Confirm</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> masuk = <span class="hljs-title function_">confirm</span>(<span class="hljs-string">&quot;Anda yakin mau masuk?&quot;</span>);
+
+<span class="hljs-keyword">if</span> (masuk) {
+    <span class="hljs-keyword">const</span> name = <span class="hljs-title function_">prompt</span>(<span class="hljs-string">&quot;Siapa Nama Anda?&quot;</span>);
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Bye bye&quot;</span>);
+}
+</code></pre>
+        <p><img src="..\assets\img\17\4.PNG" alt="4">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

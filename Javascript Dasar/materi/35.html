@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>With Statement</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="with-statement">With Statement</h1>
+        <hr>
+        <h2 id="with-statement-1">With Statement</h2>
+        <ul>
+            <li><strong>With statement</strong> merupakan fitur yang digunakan untuk menurunkan sebuah <strong>scope
+                    data</strong></li>
+            <li>Dengan menggunakan with statement, kita bisa mengakses property dalam sebuah data <strong>tanpa harus
+                    menyebut datanya</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--tanpa-with-statement">Kode : Tanpa With Statement</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">firstName</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">middleName</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">lastName</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\35\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--dengan-with-statement">Kode : Dengan With Statement</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-keyword">with</span> (person) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\35\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="with-statement-tidak-direkomendasikan">With Statement Tidak Direkomendasikan</h2>
+        <ul>
+            <li><strong>Walaupun</strong> fitur with statement ini sangat menarik</li>
+            <li>Namun kebanyakan orang <strong>tidak merekomendasikan</strong> penggunaan with statement</li>
+            <li>Hal ini dikarenakan with statement kadang membuat sebuah kode menjadi <strong>ambigu</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--ambigu-di-with-statement">Kode : Ambigu di With Statement</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-keyword">const</span> firstName = <span class="hljs-string">&quot;Black&quot;</span>;
+<span class="hljs-keyword">const</span> lastName = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-keyword">with</span> (person) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(firstName); <span class="hljs-comment">// Niatnya ingin Black</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(middleName);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(lastName); <span class="hljs-comment">// Niatnya ingin Syiber</span>
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\35\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>

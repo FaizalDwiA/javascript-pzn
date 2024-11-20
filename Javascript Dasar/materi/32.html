@@ -1,0 +1,84 @@
+                              <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Label</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+<link rel="stylesheet" href="../../assets/css/highlight.min.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="label">Label</h1>
+<hr>
+<h2 id="label-1">Label</h2>
+<ul>
+<li><strong>Label</strong> merupakan penanda yang bisa digunakan dengan kata kunci break dan continue</li>
+<li>Secara default saat kita melakukan <strong>break atau continue</strong>, dia akan melakukan terhadap perulangan dimana kode break dan continue itu digunakan</li>
+<li>Dengan menggunakan label, kita bisa melakukan break dan continue terhadap perulangan yang kita inginkan, asalkan pada perulangannya kita gunakan label</li>
+<li>Untuk membuat label, kita bisa gunakan nama label lalu diikuti dengan : (titik dua)</li>
+</ul>
+<hr>
+<h2 id="kode--label">Kode : Label</h2>
+<pre><code class="language-js">loopi :
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+    <span class="hljs-attr">loopj</span>:
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10</span>; j++) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - <span class="hljs-subst">${j}</span>`</span>);
+    }
+}
+</code></pre>
+<p><strong>Hasil :</strong></p>
+<p><img src="..\assets\img\32\1.PNG" alt="1"></p>
+<hr>
+<h2 id="kode--continue-atau-break-di-label">Kode : Continue atau Break di Label</h2>
+<pre><code class="language-js">loopi :
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+    <span class="hljs-attr">loopj</span>:
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10</span>; j++) {
+        <span class="hljs-keyword">if</span>(j &gt; <span class="hljs-number">10</span>) {
+            <span class="hljs-keyword">continue</span> loopi;
+        }
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`<span class="hljs-subst">${i}</span> - <span class="hljs-subst">${j}</span>`</span>);
+    }
+}
+</code></pre>
+<p><strong>Hasil :</strong></p>
+<p><img src="..\assets\img\32\2.PNG" alt="2"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

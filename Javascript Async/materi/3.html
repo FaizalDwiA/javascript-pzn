@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>AJAX</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="ajax">AJAX</h1>
+        <hr>
+        <h2 id="apa-itu-ajax">Apa itu AJAX?</h2>
+        <ul>
+            <li>AJAX singkatan dari Asynchronous JavaScript and XML</li>
+            <li>AJAX biasanya digunakan untuk mengambil atau mengirim data ke URL lain</li>
+            <li>Untuk membuat AJAX, kita bisa menggunakan class XMLHttpRequest</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="cara-kerja-ajax">Cara Kerja AJAX</h2>
+        <p><img src="..\assets\img\3\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--membuat-ajax">Kode : Membuat AJAX</h2>
+        <p>Membuat folder <em>api</em> dan file <em>hello.json</em></p>
+        <p><img src="..\assets\img\3\2.PNG" alt="2">
+        </p>
+        <p>isi script <em>hello.json</em> :</p>
+        <pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;response&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Helo Faizal&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+        <p>isi file <em>script.js</em> :</p>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/hello.json&quot;</span>);
+<span class="hljs-comment">// ajax.open(&quot;GET&quot;, &quot;http://localhost:8080/api/hello.json&quot;);</span>
+
+ajax.<span class="hljs-title function_">send</span>(); <span class="hljs-comment">// mengirim request</span>
+</code></pre>
+        <h2 id="melihat-komunikasi-ajaxnya">Melihat Komunikasi ajaxnya</h2>
+        <ol>
+            <li>Buka inspect</li>
+            <li>Network</li>
+            <li>Fetch/XHR</li>
+            <li>tekan ctrl + R terlebih dahulu agar muncul</li>
+        </ol>
+        <p><img src="..\assets\img\3\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

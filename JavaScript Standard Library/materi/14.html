@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Proxy</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="proxy">Proxy</h1>
+        <hr>
+        <h2 id="proxy-1">Proxy</h2>
+        <ul>
+            <li>Proxy merupakan fitur yang bisa digunakan sebagai wakil sebuah data</li>
+            <li>Dengan menggunakan proxy, semua interaksi ke data akan selalu melalui Proxy terlebih dahulu</li>
+            <li>Dengan ini, kita bisa melakukan apapun sebelum interaksi dilakukan ke data yang dituju</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="proxy-handler">Proxy Handler</h2>
+        <ul>
+            <li>Pembuatan Proxy perlu menggunakan handler, dimana dalam handler, kita bisa membuat function yang
+                dinamakan interceptor yang digunakan ketika mengambil data atau mengubah data ke target</li>
+            <li>Untuk membuat Proxy, kita bisa menggunakan new Proxy(target, handler)</li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-handler">Kode : Membuat Handler</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> target = {}
+
+<span class="hljs-keyword">const</span> handler = {
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property</span>) {
+        <span class="hljs-keyword">return</span> target[property];
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property, value</span>) {
+        target[property] = value;
+    }
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--membuat-proxy">Kode : Membuat Proxy</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, handler);
+proxy.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+proxy.<span class="hljs-property">lastName</span> = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">firstName</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">lastName</span>);
+</code></pre>
+        <hr>
+        <h2 id="digabung">Digabung</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> target = {}
+
+<span class="hljs-keyword">const</span> handler = {
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property</span>) {
+        <span class="hljs-keyword">return</span> target[property];
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property, value</span>) {
+        target[property] = value;
+    }
+}
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, handler);
+proxy.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+proxy.<span class="hljs-property">lastName</span> = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">firstName</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">lastName</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\14\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="proxy-dan-handler">Proxy dan Handler</h2>
+        <ul>
+            <li>Saat kita mengubah data proxy, secara otomatis data akan dikirim ke target melalui handler dengan
+                memanggil function set(target, property, value)</li>
+            <li>Saat kita mengambil data proxy, secara otomatis data akan diambil dari target melalui handler dengan
+                memanggil function get(target, property)</li>
+            <li>Artinya, jika kita ingin melakukan sesuatu sebelum dan setelah nya, bisa kita lakukan di handler</li>
+        </ul>
+        <hr>
+        <h2 id="kode--log-handler">Kode : Log Handler</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> target = {}
+
+<span class="hljs-keyword">const</span> handler = {
+    <span class="hljs-attr">get</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Access property <span class="hljs-subst">${property}</span>`</span>);
+        <span class="hljs-keyword">return</span> target[property];
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">target, property, value</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Change property <span class="hljs-subst">${property}</span> : <span class="hljs-subst">${value}</span>`</span>);
+        target[property] = value;
+    }
+}
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, handler);
+proxy.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+proxy.<span class="hljs-property">lastName</span> = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">firstName</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">lastName</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\14\2.PNG"
+                alt="2"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

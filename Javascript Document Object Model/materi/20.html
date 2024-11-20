@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Table Element</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="html-table-element">HTML Table Element</h1>
+        <hr>
+        <h2 id="html-table-element-1">HTML Table Element</h2>
+        <ul>
+            <li>Salah satu HTML Element yang kompleks selain Form adalah Table</li>
+            <li>HTML Table Element juga memiliki banyak sekali property, method dan event yang khusus</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--html-table-element">Kode : HTML Table Element</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;orderRevenue&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>Order Revenue<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Month<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Income<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>January<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>100000000<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>February<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>200000000<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Total<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>300000000<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;commentList&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> orderRevenue = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;orderRevenue&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(orderRevenue.<span class="hljs-property">caption</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(orderRevenue.<span class="hljs-property">tHead</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(orderRevenue.<span class="hljs-property">tBodies</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(orderRevenue.<span class="hljs-property">tFoot</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\20\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

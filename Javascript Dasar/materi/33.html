@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>For In</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="for-in">For In</h1>
+        <hr>
+        <h2 id="for-in-1">For In</h2>
+        <ul>
+            <li><strong>For In</strong> merupakan perulangan for yang digunakan untuk mengiterasi seluruh data property
+                di <strong>object</strong> atau <strong>index di array</strong></li>
+            <li><strong>Walaupun</strong> for in bisa digunakan untuk <strong>Array</strong>, namun <strong>tidak
+                    direkomendasikan</strong> untuk Array, karena biasanya kita jarang sekali butuh data index untuk
+                Array, kita bisa menggunakan <strong>For Of</strong> (yang dibahas setelah ini)</li>
+        </ul>
+        <hr>
+        <h2 id="kode--for-in-di-object">Kode : For In di Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">middleName</span>: <span class="hljs-string">&quot;Dwi&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> property <span class="hljs-keyword">in</span> person) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Property <span class="hljs-subst">${property}</span> : <span class="hljs-subst">${person[property]}</span>&lt;/p&gt;`</span>)
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\33\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--for-in-di-array">Kode : For In di Array</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Dwi&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> index <span class="hljs-keyword">in</span> names) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Index <span class="hljs-subst">${index}</span> : <span class="hljs-subst">${names[index]}</span>&lt;/p&gt;`</span>)
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\33\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

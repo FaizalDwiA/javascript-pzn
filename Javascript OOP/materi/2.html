@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Membuat Constructor Function</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="membuat-constructor-function">Membuat Constructor Function</h1>
+        <hr>
+        <h2 id="membuat-object">Membuat Object</h2>
+        <ul>
+            <li>Sebenarnya kita <strong>sudah</strong> belajar tipe data object, dengan cara <strong>membuat variable
+                    dengan tipe data object</strong></li>
+            <li>Namun pembuatan object menggunakan tipe data object, <strong>akan membuat object yang selalu
+                    unik</strong>, sedangkan dalam OOP, biasanya kita akan membuat class sebagai cetakan, sehingga bisa
+                membuat object dengan <strong>karakteristik yang sama berkali</strong>, kali, tanpa harus
+                <strong>mendeklarasikan object berkali-kali</strong> seperti menggunakan tipe data object</li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-object-dengan-object">Kode : Membuat Object dengan Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> faizal = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-keyword">const</span> syiber = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Black&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Syiber&quot;</span>
+}
+</code></pre>
+        <hr>
+        <h2 id="membuat-constructor-function-1">Membuat Constructor Function</h2>
+        <ul>
+            <li>Sebelum <strong>EcmaScript versi 6</strong>, pembuatan class, biasanya <strong>menggunakan
+                    function</strong>. Hal ini dikarenakan sebenarnya JavaScript <strong>bukanlah bahasa pemrograman
+                    yang fokus ke OOP</strong></li>
+            <li>Untuk membuat class di JavaScript lama, kita bisa membuat function</li>
+            <li>Function ini kita sebut dengan <strong>Constructor Function</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--constructor-function">Kode : Constructor Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params"></span>) {
+    
+}
+</code></pre>
+        <hr>
+        <h2 id="membuat-object-dari-constructor-function">Membuat Object dari Constructor Function</h2>
+        <ul>
+            <li><strong>Setelah</strong> kita membuat class, jika kita ingin membuat object dari class tersebut, kita
+                bisa menggunakan <strong>kata kunci new</strong>, lalu diikuti dengan nama constructor function nya.
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-object">Kode : Membuat Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params"></span>) {
+
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+</code></pre>
+
+
+
+    </body>
+
+</html>

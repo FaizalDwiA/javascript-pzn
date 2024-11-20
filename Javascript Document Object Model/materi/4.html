@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="document">Document</h1>
+        <hr>
+        <h2 id="document-1">Document</h2>
+        <ul>
+            <li>Document merupakan representasi object dari halaman web</li>
+            <li>Dalam satu halaman web, terdapat satu document, dan kita tidak perlu membuatnya secara manual, karena
+                otomatis akan ada di browser</li>
+            <li>Untuk mengakses Document, kita bisa gunakan object document</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Document">https://developer.mozilla.org/en-US/docs/Web/API/Document</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="document-object">document Object</h2>
+        <ul>
+            <li>Document secara otomatis dibuat dalam browser ketika membuka halaman web, sehingga kita tidak perlu
+                membuat objek Document secara manual</li>
+            <li>Kita bisa langsung menggunakan kata kunci document</li>
+        </ul>
+        <hr>
+        <h2 id="kode--document">Kode : Document</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="document-property">Document Property</h2>
+        <ul>
+            <li>Document memiliki banyak sekali property</li>
+            <li>Property dalam Document bisa kita gunakan untuk melihat semua data yang terdapat dalam document halaman
+                web</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Document#properties">https://developer.mozilla.org/en-US/docs/Web/API/Document#properties</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--document-property">Kode : Document Property</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">head</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">images</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">contentType</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="document-method">Document Method</h2>
+        <ul>
+            <li>Document memiliki banyak sekali method</li>
+            <li>Banyak method yang terdapat di document digunakan untuk memanipulasi data DOM, misal membuat Node,
+                Element, Attribute atau mengambil dan menyeleksi Node di dalam document</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Document#methods">https://developer.mozilla.org/en-US/docs/Web/API/Document#methods</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--document-method">Kode : Document Method</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tulisan&quot;</span>&gt;</span>Ini Adalah Tulisan<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> tulisan = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;tulisan&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(tulisan);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\4\3.PNG"
+                alt="3"></p>
+
+
+
+    </body>
+
+</html>

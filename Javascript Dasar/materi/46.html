@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Recursive Function</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="recursive-function">Recursive Function</h1>
+        <ul>
+            <li><strong>Recursive function</strong> adalah kemampuan function memanggil function dirinya sendiri</li>
+            <li>Kadang memang ada banyak problem, yang lebih mudah diselesaikan menggunakan recursive function, seperti
+                contohnya kasus factorial</li>
+        </ul>
+        <hr>
+        <h2 id="kode--factorial-loop">Kode : Factorial Loop</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">let</span> result = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= value; i++) {
+        result *= i;
+
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">factorial</span>(<span class="hljs-number">5</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span> * <span class="hljs-number">2</span> * <span class="hljs-number">3</span> * <span class="hljs-number">4</span> * <span class="hljs-number">5</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\46\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--factorial-recursive">Kode : Factorial Recursive</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">factorialRecursive</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">if</span>(value === <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> value * <span class="hljs-title function_">factorialRecursive</span>(value - <span class="hljs-number">1</span>);
+    }
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">factorialRecursive</span>(<span class="hljs-number">10</span>));
+<span class="hljs-comment">// 5 * factorialRecursive(4)</span>
+<span class="hljs-comment">// 5 * 4 * factorialRecursive(4)</span>
+<span class="hljs-comment">// 5 * 4 * factorialRecursive(4)</span>
+<span class="hljs-comment">// 5 * 4 * 3 * factorialRecursive(4)</span>
+<span class="hljs-comment">// 5 * 4 * 3 * 2 * factorialRecursive(4)</span>
+<span class="hljs-comment">// 5 * 4 * 3 * 2 * 1</span>
+</code></pre>
+        <p><img src="..\assets\img\46\2.PNG" alt="2">
+        </p>
+
+
+
+    </body>
+
+</html>

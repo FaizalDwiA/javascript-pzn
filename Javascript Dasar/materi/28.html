@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>For Loop</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="for-loop">For Loop</h1>
+        <hr>
+        <h2 id="for-loop-1">For Loop</h2>
+        <ul>
+            <li><strong>For</strong> adalah salah satu kata kunci yang bisa digunakan untuk melakukan
+                <strong>perulangan</strong></li>
+            <li>Blok kode yang terdapat di <strong>dalam</strong> for akan selalu diulangi selama kondisi for
+                <strong>terpenuhi</strong></li>
+        </ul>
+        <hr>
+        <h2 id="sintak-perulangan-for">Sintak Perulangan For</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">for</span>(init statement; kondisi; post statement){
+ <span class="hljs-comment">// block perulangan</span>
+}
+</code></pre>
+        <ul>
+            <li><strong>Init statement</strong> akan dieksekusi hanya sekali di awal sebelum perulangan</li>
+            <li>Kondisi akan dilakukan pengecekan dalam setiap perulangan, jika <strong>true</strong> perulangan akan
+                dilakukan, jika <strong>false</strong> perulangan akan berhenti</li>
+            <li><strong>Post statement</strong> akan dieksekusi setiap kali diakhir perulangan</li>
+            <li>Init statement, Kondisi dan Post Statement <strong>tidak wajib</strong> diisi, jika Kondisi tidak diisi,
+                berarti kondisi selalu bernilai <strong>true</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--perulangan-tanpa-henti">Kode : Perulangan Tanpa Henti</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">for</span> ( ; ; ) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;For Loop&quot;</span>);
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--perulangan-dengan-kondisi">Kode : Perulangan Dengan Kondisi</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> counter = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span>( ; counter &lt;= <span class="hljs-number">10</span>; ) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Perulangan ke <span class="hljs-subst">${counter}</span>&lt;/p&gt;`</span>);
+    counter++;
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\28\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--perulangan-dengan-init-statement">Kode : Perulangan Dengan Init Statement</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> counter = <span class="hljs-number">1</span>; counter &lt;= <span class="hljs-number">10</span>; ) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Perulangan ke <span class="hljs-subst">${counter}</span>&lt;/p&gt;`</span>);
+    counter++;
+}
+</code></pre>
+        <hr>
+        <h2 id="kode--perulangan-dengan-post-statement">Kode : Perulangan Dengan Post Statement</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> counter = <span class="hljs-number">1</span>; counter &lt;= <span class="hljs-number">10</span>; counter++) {
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;Perulangan ke <span class="hljs-subst">${counter}</span>&lt;/p&gt;`</span>);
+}
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

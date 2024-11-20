@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Property di Constructor Function</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="property-di-constructor-function">Property di Constructor Function</h1>
+        <hr>
+        <h2 id="property-di-constructor-function-1">Property di Constructor Function</h2>
+        <ul>
+            <li>Sebenarnya <strong>setelah</strong> kita membuat object, kita bisa dengan mudah <strong>menambahkan
+                    property</strong> ke dalam object tersebut hanya dengan menggunakan <strong>nama variable
+                    nya</strong>, diikuti <strong>tanda titik dan nama property</strong></li>
+            <li>Namun <strong>jika seperti itu</strong>, alhasil, constructor function yang sudah kita buat
+                <strong>tidak terlalu berguna</strong>, karena property nya hanya ada di object yang kita tambahkan
+                property</li>
+            <li>Untuk <strong>menambahkan property</strong> di dalam semua object yang dibuat dari constructor function,
+                kita bisa <strong>menggunakan kata kunci this</strong> lalu diikuti dengan nama property nya</li>
+        </ul>
+        <hr>
+        <h2 id="kode--property-di-constructor-function">Kode : Property di Constructor Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = <span class="hljs-string">&quot;&quot;</span>
+}
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+faizal.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Faizal&quot;</span>; <span class="hljs-comment">// seperti ini bisa cuma tidak semua object dapat property ini</span>
+
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();
+syiber.<span class="hljs-property">firstName</span> = <span class="hljs-string">&quot;Syiber&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\3\1.PNG" alt="1"></p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Getter dan Setter</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="getter-dan-setter">Getter dan Setter</h1>
+        <hr>
+        <h2 id="getter-dan-setter-1">Getter dan Setter</h2>
+        <ul>
+            <li><strong>Getter dan Setter</strong> adlah kemampuan <strong>membuat function</strong> yang berbeda untuk
+                <strong>mengambil data</strong> (Getter) dan <strong>mengubah data</strong> (Setter) pada sebuah
+                <strong>property di Object</strong></li>
+            <li>Dengan menggunakan Getter dan Setter, kita bisa melakukan hal apapun dalam function sebelum sebuah
+                property di akses atau diubah, misal menambah validasi dan lain-lain</li>
+        </ul>
+        <hr>
+        <h2 id="kode--getter">Kode : Getter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>,
+
+    <span class="hljs-comment">// property function biasa</span>
+    <span class="hljs-comment">// fullName: function() {</span>
+    <span class="hljs-comment">//     return `${this.firstName} ${this.lastName}`;</span>
+    <span class="hljs-comment">// }</span>
+
+    <span class="hljs-comment">// getter</span>
+    <span class="hljs-keyword">get</span> <span class="hljs-title function_">fullName</span>() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstName}</span> <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.lastName}</span>`</span>;
+    }
+}
+
+<span class="hljs-comment">// otomatis memanggil get fullName()</span>
+<span class="hljs-comment">// console.log(person.fullName()); // Memanggil function biasa</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">fullName</span>); <span class="hljs-comment">// getter</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\53\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--setter">Kode : Setter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>,
+
+    <span class="hljs-comment">// getter</span>
+    <span class="hljs-keyword">get</span> <span class="hljs-title function_">fullName</span>() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-variable language_">this</span>.firstName}</span> <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.lastName}</span>`</span>;
+    },
+    
+    <span class="hljs-comment">// setter</span>
+    <span class="hljs-keyword">set</span> <span class="hljs-title function_">fullName</span>(<span class="hljs-params">value</span>) {
+        <span class="hljs-keyword">const</span> array = value.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> = array[<span class="hljs-number">0</span>];
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = array[<span class="hljs-number">1</span>];
+    }
+}
+
+person.<span class="hljs-property">fullName</span> = <span class="hljs-string">&quot;Faizal Dwi&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(person);
+
+person.<span class="hljs-property">fullName</span> = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(person);
+
+person.<span class="hljs-property">fullName</span> = <span class="hljs-string">&quot;Black Syiber&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(person);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\53\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

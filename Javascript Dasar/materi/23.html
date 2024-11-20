@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Ternary Operator</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="ternary-operator">Ternary Operator</h1>
+        <hr>
+        <h2 id="ternary-operator-1">Ternary Operator</h2>
+        <ul>
+            <li><strong>Ternary operator</strong> adalah operator sederhana dari if statement</li>
+            <li>Ternary operator terdiri dari kondisi yang <strong>dievaluasi</strong>, jika menghasilkan true maka
+                nilai pertama diambil, jika false, maka nilai kedua diambil</li>
+        </ul>
+        <hr>
+        <h2 id="kode--tanpa-ternary-operator">Kode : Tanpa Ternary Operator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> nilai = <span class="hljs-number">75</span>;
+<span class="hljs-keyword">let</span> ucapan;
+
+<span class="hljs-keyword">if</span> (nilai &gt;= <span class="hljs-number">75</span>) {
+    ucapan = <span class="hljs-string">&quot;Selamat Anda Lulus&quot;</span>;
+} <span class="hljs-keyword">else</span> {
+    ucapan = <span class="hljs-string">&quot;Silahkan Coba Lagi&quot;</span>;
+}
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${ucapan}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\23\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--dengan-ternary-operator">Kode : Dengan Ternary Operator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> nilai = <span class="hljs-number">60</span>;
+<span class="hljs-keyword">const</span> ucapan = nilai &gt;= <span class="hljs-number">75</span> ? <span class="hljs-string">&quot;Selamat Anda Lulus&quot;</span> : <span class="hljs-string">&quot;Silahkan Coba Lagi&quot;</span>;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${ucapan}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\23\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Anonymous Function</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="anonymous-function">Anonymous Function</h1>
+        <ul>
+            <li>Sebelumnya kita selalu <strong>membuat function</strong> dengan <strong>nama</strong></li>
+            <li>Kita juga bisa <strong>membuat function tanpa nama function</strong>, atau istilahnya adalah
+                <strong>anonymous function</strong></li>
+            <li>Kita bisa buat anonymous function <strong>dalam sebuah variable</strong> atau bisa juga kita buat ketika
+                <strong>mengisi parameter</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--anonymous-function-di-variable">Kode : Anonymous Function di Variable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> say = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-title function_">say</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-title function_">say</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\43\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--anonymous-function-di-parameter">Kode : Anonymous Function di Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">giveMeName</span>(<span class="hljs-params">callback</span>) {
+    <span class="hljs-title function_">callback</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+}
+
+<span class="hljs-title function_">giveMeName</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+});
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\43\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

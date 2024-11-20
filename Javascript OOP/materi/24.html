@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Error Handling</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="error-handling">Error Handling</h1>
+        <hr>
+        <h2 id="error-handling-1">Error Handling</h2>
+        <ul>
+            <li>Saat terjadi error di kode program JavaScript, kadang kita tidak ingin program kita berhenti</li>
+            <li>Di JavaScript, kita bisa menangkap jika terjadi error</li>
+            <li>Kita bisa menggunakan try catch statement untuk menangkap error</li>
+            <li>Pada block try, kita akan mencoba mengakses kode program yang bisa menyebabkan error, dan jika terjadi
+                error, block try akan berhenti dan otomatis masuk ke block catch</li>
+            <li>Jika tidak terjadi error, block catch tidak akan dieksekusi</li>
+        </ul>
+        <hr>
+        <h2 id="kode--error-handling">Kode : Error Handling</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MathUtil</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">...numbers</span>) {
+        <span class="hljs-keyword">if</span>(numbers.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">// const error = new Error(&quot;Total parameter harusn lebih dari 0&quot;);</span>
+            <span class="hljs-comment">// throw error;</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;Total parameter harus lebih dari 0&quot;</span>);
+        }
+
+        <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> number <span class="hljs-keyword">of</span> numbers) {
+            total += number;
+        }
+        <span class="hljs-keyword">return</span> total;
+    }
+}
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">MathUtil</span>.<span class="hljs-title function_">sum</span>());
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+} <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Terjadi error : <span class="hljs-subst">${error.message}</span>`</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\24\1.PNG" alt="1">
+        </p>
+        <ul>
+            <li>jika terjadi error maka jalankan perintah yang ada di block catch</li>
+            <li>jika tidak terjadi error maka jalankan perintah yang ada di block try</li>
+            <li>dan program tidak akan berhenti</li>
+        </ul>
+        <hr>
+        <h2 id="kata-kunci-finally">Kata Kunci finally</h2>
+        <ul>
+            <li>Kadang kita ingin melakukan sesuatu entah itu terjadi error ataupun tidak</li>
+            <li>Dalam try catch, kita bisa menambahkan block finally</li>
+            <li>Block finally ini akan selalu dieksekusi setelah try catch selesai, entah terjadi error atau tidak,
+                block finally akan selalu dieksekusi</li>
+        </ul>
+        <hr>
+        <h2 id="kode--kata-kunci-finally">Kode : Kata Kunci finally</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MathUtil</span> {
+    <span class="hljs-keyword">static</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">...numbers</span>) {
+        <span class="hljs-keyword">if</span>(numbers.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">// const error = new Error(&quot;Total parameter harusn lebih dari 0&quot;);</span>
+            <span class="hljs-comment">// throw error;</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;Total parameter harus lebih dari 0&quot;</span>);
+        }
+
+        <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> number <span class="hljs-keyword">of</span> numbers) {
+            total += number;
+        }
+        <span class="hljs-keyword">return</span> total;
+    }
+}
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">MathUtil</span>.<span class="hljs-title function_">sum</span>());
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+} <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Terjadi error : <span class="hljs-subst">${error.message}</span>`</span>);
+} <span class="hljs-keyword">finally</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Program selesai&quot;</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\24\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="try-finally">Try Finally</h2>
+        <ul>
+            <li>Kata kunci finally juga bisa digunakan tanpa perlu menggunakan catch</li>
+            <li>Biasanya ini digunakan dalam kasus tertentu</li>
+        </ul>
+        <hr>
+        <h2 id="kode--try-finally">Kode : Try Finally</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> {
+    #counter = <span class="hljs-number">1</span>;
+
+    <span class="hljs-title function_">next</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.#counter;
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-variable language_">this</span>.#counter++;
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> counter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Counter</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">next</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">next</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">next</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">next</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter.<span class="hljs-title function_">next</span>());
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\24\3.PNG" alt="3">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

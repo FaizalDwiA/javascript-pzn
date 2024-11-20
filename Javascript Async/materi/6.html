@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>State di AJAX</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="state-di-ajax">State di AJAX</h1>
+        <hr>
+        <h2 id="state-di-ajax-1">State di AJAX</h2>
+        <ul>
+            <li>AJAX memiliki tahapan state, dimana kita bisa mendapatkan banyak sekali state di Ajax menggunakan
+                property readyState</li>
+            <li>Property readyState mengembalikan nilai number, dimana tiap number merupakan representasi dari statenya
+            </li>
+        </ul>
+        <hr>
+        <h2 id="daftar-state">Daftar State</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Value</th>
+                <th>State</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>0 </td>
+                <td>UNSENT</td>
+                <td>Client has been created. open() not called yet.</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>OPENED</td>
+                <td>open() has been called</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>HEADERS_RECEIVED</td>
+                <td>send() has been called, and headers and status are available.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>LOADING</td>
+                <td>Downloading; responText holds partial data.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>DONE</td>
+                <td>The operation is complete</td>
+            </tr>
+        </table>
+        ---
+        <h2 id="ready-state-change-event">Ready State Change Event</h2>
+        <ul>
+            <li>Jika kita ingin mendengarkan perubahan yang terjadi pada state, kita bisa menggunakan event
+                readystatechange</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--ready-state-change-event">Kode : Ready State Change Event</h2>
+        <p><em>script.js</em></p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">displayResponse</span>(<span class="hljs-params">json</span>) {
+    <span class="hljs-keyword">const</span> header = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;response&quot;</span>);
+    header.<span class="hljs-property">textContent</span> = json.<span class="hljs-property">response</span>;
+}
+
+<span class="hljs-keyword">const</span> ajax = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();
+<span class="hljs-comment">// ajax.addEventListener(&quot;readystatechange&quot;, callback)</span>
+ajax.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Ready State Change <span class="hljs-subst">${ajax.readyState}</span>`</span>);
+}
+ajax.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;api/hello.json&quot;</span>);
+ajax.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;load&quot;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">if</span>(ajax.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) {
+        <span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(ajax.<span class="hljs-property">responseText</span>);
+        <span class="hljs-title function_">displayResponse</span>(json)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-title function_">displayResponse</span>({
+            <span class="hljs-attr">response</span>: <span class="hljs-string">`Terjadi Kesalahan dengan status <span class="hljs-subst">${ajax.status}</span>`</span>
+        });
+    }
+});
+
+ajax.<span class="hljs-title function_">send</span>(); <span class="hljs-comment">// mengirim request</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\6\1.PNG" alt="1">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

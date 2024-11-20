@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Operator Logika di Non Boolean</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="operator-logika-di-non-boolean">Operator Logika di Non Boolean</h1>
+        <hr>
+        <h2 id="operator-logika-di-non-boolean-1">Operator Logika di Non Boolean</h2>
+        <ul>
+            <li>Sebelumnya kita sudah tahu bahwa operator logika <strong>AND (&amp;&amp;) dan OR (||)</strong> digunakan
+                untuk <strong>dua data boolean</strong></li>
+            <li>Namun berbeda di JavaScript, kita bisa menggunakan operator logika AND dan OR untuk <strong>tipe data
+                    non boolean</strong></li>
+        </ul>
+        <hr>
+        <h2 id="operator-or--di-non-boolean">Operator OR (||) di Non Boolean</h2>
+        <ul>
+            <li><strong>Operator logika OR (||)</strong>, membaca dari <strong>kiri ke kanan</strong>.</li>
+            <li>Operator ini akan mengambil <strong>nilai pertama</strong> yang <strong>truthy</strong>.</li>
+            <li>Jika <strong>tidak ada</strong> satupun yang bernilai truthy, maka yang <strong>terakhir</strong> yang
+                akan diambil</li>
+        </ul>
+        <hr>
+        <h2 id="kode--operator-or-">Kode : Operator OR (||)</h2>
+        <blockquote>
+            <p>jadi yang akan kita ambil itu yang truthy</p>
+        </blockquote>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;hello&quot;</span> || <span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// hello</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;&quot;</span> || []); <span class="hljs-comment">// []</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;0&quot;</span> || <span class="hljs-string">&quot;NOL&quot;</span>); <span class="hljs-comment">// &quot;0&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-number">0</span> || <span class="hljs-string">&quot;NOL&quot;</span>); <span class="hljs-comment">// NOL</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-literal">null</span> || <span class="hljs-string">&quot;NULL&quot;</span>); <span class="hljs-comment">// &quot;NULL&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-literal">undefined</span> || <span class="hljs-string">&quot;UNDEFINED&quot;</span>); <span class="hljs-comment">// &quot;UNDEFINED&quot;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\27\1.PNG" alt="1">
+        </p>
+        <hr>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">fistName</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Al Farizi&quot;</span>
+}
+
+<span class="hljs-keyword">const</span> name = person.<span class="hljs-property">fistName</span> || person.<span class="hljs-property">lastName</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(name);
+</code></pre>
+        <p><img src="..\assets\img\27\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="operator-and--di-non-boolean">Operator AND (&amp;&amp;) di Non Boolean</h2>
+        <ul>
+            <li><strong>Operator logika AND (||)</strong>, membaca dari kiri ke kanan.</li>
+            <li>Operator ini akan mengambil nilai pertama yang <strong>falsy</strong>.</li>
+            <li>Jika <strong>tidak ada</strong> satupun yang bernilai falsy, maka yang <strong>terakhir</strong> yang
+                akan diambil</li>
+        </ul>
+        <hr>
+        <h2 id="kode--operator-and-">Kode : Operator AND (&amp;&amp;)</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;hello&quot;</span> &amp;&amp; <span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// &#x27;&#x27;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;&quot;</span> &amp;&amp; []); <span class="hljs-comment">// &quot;&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;0&quot;</span> &amp;&amp; <span class="hljs-string">&quot;NOL&quot;</span>); <span class="hljs-comment">// &quot;NOL&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-string">&quot;NOL&quot;</span>); <span class="hljs-comment">// null</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-string">&quot;NULL&quot;</span>); <span class="hljs-comment">// undefined</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-literal">undefined</span> &amp;&amp; <span class="hljs-string">&quot;UNDEFINED&quot;</span>); <span class="hljs-comment">// &quot;UNDEFINED&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;undefined&quot;</span> &amp;&amp; <span class="hljs-string">&quot;null&quot;</span>); <span class="hljs-comment">// &quot;null&quot;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\27\3.PNG" alt="3">
+        </p>
+
+
+
+    </body>
+
+</html>

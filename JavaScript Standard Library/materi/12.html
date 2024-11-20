@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Symbol</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="symbol">Symbol</h1>
+        <hr>
+        <h2 id="symbol-1">Symbol</h2>
+        <ul>
+            <li>Symbol merupakan tipe data yang digaransi akan selalu unique setiap kali kita membuat data symbol</li>
+            <li>Symbol kadang banyak digunakan untuk membuat key pada object</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--symbol">Kode : Symbol</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> firstName = <span class="hljs-title class_">Symbol</span>();
+<span class="hljs-keyword">const</span> lastName = <span class="hljs-title class_">Symbol</span>();
+
+<span class="hljs-keyword">const</span> person = {};
+person[firstName] = <span class="hljs-string">&quot;Faizal&quot;</span>;
+person[lastName] = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person[firstName]);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person[lastName]);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\12\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="symbol-for">Symbol For</h2>
+        <ul>
+            <li>Kadang agak sulit membuat symbol harus selalu menggunakan variable</li>
+            <li>Pembuatan symbol juga bisa menggunakan static method Symbol.for(key)</li>
+            <li>Jika kita menggunakan key yang sama, Symbol yang sama akan sekalu dikembalikan</li>
+        </ul>
+        <hr>
+        <h2 id="kode--symbol-for">Kode : Symbol For</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {}
+person[<span class="hljs-title class_">Symbol</span>.<span class="hljs-title function_">for</span>(<span class="hljs-string">&quot;firstName&quot;</span>)] = <span class="hljs-string">&quot;Faizal&quot;</span>;
+person[<span class="hljs-title class_">Symbol</span>.<span class="hljs-title function_">for</span>(<span class="hljs-string">&quot;lastName&quot;</span>)] = <span class="hljs-string">&quot;Al Farizi&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person[<span class="hljs-title class_">Symbol</span>.<span class="hljs-title function_">for</span>(<span class="hljs-string">&quot;firstName&quot;</span>)]);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person[<span class="hljs-title class_">Symbol</span>.<span class="hljs-title function_">for</span>(<span class="hljs-string">&quot;lastName&quot;</span>)]);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\12\2.PNG"
+                alt="2"></p>
+
+
+
+    </body>
+
+</html>

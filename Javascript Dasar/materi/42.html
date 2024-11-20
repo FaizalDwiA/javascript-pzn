@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Function Sebagai Value</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="function-sebagai-value">Function Sebagai Value</h1>
+        <hr>
+        <h2 id="function-sebagai-value-1">Function Sebagai Value</h2>
+        <ul>
+            <li><strong>Function tidak hanya bisa digunakan</strong> sebagai kode program yang dieksekusi, tapi bisa
+                juga sebagai <strong>value</strong></li>
+            <li>Artinya, function <strong>bisa disimpan di variable</strong>, bisa juga dikirim melalui parameter ke
+                function lainnya</li>
+        </ul>
+        <hr>
+        <h2 id="kode--function-di-variable">Kode : Function di Variable</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">let</span> say = sayHello;
+
+<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+<span class="hljs-title function_">say</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><img src="..\assets\img\42\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--function-di-parameter">Kode : Function di Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+<span class="hljs-keyword">let</span> say = sayHello;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">giveMeName</span>(<span class="hljs-params">callback</span>) {
+    <span class="hljs-title function_">callback</span>(<span class="hljs-string">&quot;Faizal&quot;</span>); <span class="hljs-comment">// sayHello(&quot;Faizal&quot;);</span>
+}
+
+<span class="hljs-title function_">giveMeName</span>(sayHello);
+<span class="hljs-title function_">giveMeName</span>(say); <span class="hljs-comment">// giveMeName(sayHello)</span>
+</code></pre>
+        <p><img src="..\assets\img\42\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

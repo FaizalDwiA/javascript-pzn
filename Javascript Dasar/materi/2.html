@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Program Hello World</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="program-hello-world">Program Hello World</h1>
+        <p>saat belajar bahasa pemrograman kita akan membuat program sederhanan, biasanya program Hello Wordl</p>
+        <h2 id="membuat-kode-javascript">Membuat Kode JavaScript</h2>
+        <ul>
+            <li>Ada beberapa cara untuk membuat kode JavaScript</li>
+            <li>Bisa langsung di <strong>file HTML</strong></li>
+            <li>Atau bisa menggunakan file <strong>.js</strong> (ekstensi untuk JavaScript), lalu di include di dalam
+                file HTML</li>
+            <li>Pada prakter course ini kita akan menggunakan HTML langsung agar mudah membuat kode programnya.</li>
+        </ul>
+        <h2 id="kita-mulai">Kita mulai</h2>
+        <p>Buat file HTML didalamnya ada script JavaScriptnya</p>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Hello World&quot;</span>)
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><img src="..\assets\img\2\1.PNG" alt="1">
+        </p>
+        <h2 id="include-script-javascript">Include Script JavaScript</h2>
+        <p><em>index.html</em></p>
+        <pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Hello World from File<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;scripts/hello-world.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <p><em>scripts/hello-world.js</em></p>
+        <pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+</code></pre>
+        <h2 id="titik-koma">Titik Koma</h2>
+        <ul>
+            <li>JavaScript mirip seperti bahasa pemrograman C/C++, dimana di akhir tiap statement kode program, kita
+                perlu menambahkan <strong>; (titik koma)</strong></li>
+            <li>Namun, di JavaScript tanda ; (titik koma) <strong>tidak wajib</strong>, jadi kita bisa menambahkan /pun
+                tidak.</li>
+            <li>Sangat disarankan <strong>konsisten</strong>, jika ingin menggunakan titik koma, gunakan disemua tempat,
+                jika tidak, jangan gunakan di semua tempat.</li>
+            <li>Saya sendiri lebih <strong>merekomendasikan</strong> menggunakan titik koma.</li>
+        </ul>
+
+
+
+    </body>
+
+</html>

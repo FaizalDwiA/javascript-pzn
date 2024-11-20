@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Object Method</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="object-method">Object Method</h1>
+        <hr>
+        <h2 id="object-method-1">Object Method</h2>
+        <ul>
+            <li><strong>Pada tipe data object</strong>, kita sudah membahas tentang property di object</li>
+            <li>Karena sebenarnya <strong>function</strong> juga merupakan salah satu <strong>tipe data</strong>, jadi
+                function pun sebenarnya bisa <strong>ditambahkan</strong> sebagai <strong>property di object</strong>
+            </li>
+            <li><strong>Cara pembuatannya</strong> pun sama dengan function sebagai value</li>
+            <li>Function di object kadang disebut juga sebagai <strong>Object Method</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-object-dengan-method">Kode : Membuat Object dengan Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">sayHello</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+    }
+}
+
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <p>atau</p>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+<span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Faizal&quot;</span>,
+    <span class="hljs-attr">sayHello</span>: sayHello
+}
+
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\50\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--menambah-method-ke-object">Kode : Menambah Method ke Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> person = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Faizal&quot;</span>
+}
+
+person.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+}
+
+person.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\50\2.PNG" alt="2">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

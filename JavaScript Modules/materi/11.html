@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Alias</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="alias">Alias</h1>
+        <hr>
+        <h2 id="alias-1">Alias</h2>
+        <ul>
+            <li>Saat kita membuat aplikasi JavaScript, semakin lama kemungkinan module akan semakin banyak</li>
+            <li>Dan bisa saja akan ada nama variable atau nama function atau nama class yang sama antar module</li>
+            <li>Hal ini akan menyulitkan ketika ada module yang menggunakan beberapa module, namun ternyata variable,
+                function atau class nya memiliki nama yang sama</li>
+            <li>Untungnya, module memiliki fitur alias, dimana kita bisa mengubah nama variable, function atau class nya
+            </li>
+        </ul>
+        <hr>
+        <h2 id="alias-di-export">Alias di Export</h2>
+        <ul>
+            <li>Kita dapat menggunakan alias ketika melakukan export di module</li>
+            <li>Caranya menggunakan kata kunci as, lalu diikuti dengan nama alias :
+                <ul>
+                    <li>export { variable as variableLain, function as functionLain, Class as ClassLain }</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--alias-di-export">Kode : Alias di Export</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> company = <span class="hljs-string">&quot;Faizal Coding&quot;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">first, second</span>) {
+    <span class="hljs-keyword">return</span> first + second;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Company</span> {
+    
+}
+
+<span class="hljs-keyword">export</span> {company <span class="hljs-keyword">as</span> perusahaan, sum <span class="hljs-keyword">as</span> total, <span class="hljs-title class_">Company</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">Perusahaan</span>};
+</code></pre>
+        <hr>
+        <h2 id="alias-di-import">Alias di Import</h2>
+        <ul>
+            <li>Atau rekomendasinya sebenarnya melakukan alias ketika melakukan import</li>
+            <li>Sehingga ketika export, nama tidak perlu berubah</li>
+            <li>Untuk melakukan alias ketika import, kita bisa gunakan kata kunci as, diikuti dengan nama alias :
+                <ul>
+                    <li>import { function as functionLain } from “./module.js”</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--alias-di-import">Kode : Alias di Import</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">import</span> {company <span class="hljs-keyword">as</span> perusahaan, sum <span class="hljs-keyword">as</span> total, <span class="hljs-title class_">Company</span> <span class="hljs-keyword">as</span> <span class="hljs-title class_">Perusahaan</span>}
+  <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./scripts/multiple.js&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(perusahaan);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">total</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Perusahaan</span>);
+</code></pre>
+
+
+
+    </body>
+
+</html>

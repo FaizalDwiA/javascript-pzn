@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Text Node</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="text-node">Text Node</h1>
+        <hr>
+        <h2 id="text-node-1">Text Node</h2>
+        <ul>
+            <li>Saat kita membuat HTML, kadang kita membuat teks tanpa tag</li>
+            <li>Saat halaman web tersebut direpresentasikan dalam DOM, text tanpa tag bukanlah merupakan Element,
+                melainkan Node</li>
+            <li>Lebih tepatnya adalah Text Node</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Text">https://developer.mozilla.org/en-US/docs/Web/API/Text</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode-text-node">Kode: Text Node</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+Faizal Dwi Al Farizi
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> text = <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">firstChild</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(text.<span class="hljs-property">wholeText</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\10\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="membuat-text-node">Membuat Text Node</h2>
+        <ul>
+            <li>Kita juga bisa membuat Text Node menggunakan method document.createTextNode(string)</li>
+            <li>Hasilnya berupa Text yang bisa kita tambahkan ke Node lain</li>
+        </ul>
+        <hr>
+        <h2 id="kode-membuat-text-node">Kode: Membuat Text Node</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> text = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createTextNode</span>(<span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(text);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\10\2.PNG"
+                alt="2"></p>
+
+
+
+    </body>
+
+</html>

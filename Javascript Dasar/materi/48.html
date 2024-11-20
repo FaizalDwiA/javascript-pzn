@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Arrow Function</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="arrow-function">Arrow Function</h1>
+        <hr>
+        <h2 id="arrow-function-1">Arrow Function</h2>
+        <ul>
+            <li><strong>Arrow function</strong> adalah alternatif pembuatan function yang <strong>lebih
+                    sederhana</strong> dari function biasanya</li>
+            <li>Namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi</li>
+            <li>Dinamakan arrow function karena menggunakan <strong>tanda =&gt;</strong> (seperti panah)</li>
+            <li>Berikut contoh beberapa kekurangan arrow function :
+                <ul>
+                    <li>tidak memiliki fitur arguments object</li>
+                    <li>tidak bisa menggunakan function generator</li>
+                    <li>tidak bisa mengakses this (yang nanti akan dibahas di function di object)</li>
+                    <li>tidak bisa mengakses super (yang nanti akan dibahas di JavaScript Object Oriented Programming)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--membuat-arrow-function">Kode : Membuat Arrow Function</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params">name</span>) =&gt; {
+    <span class="hljs-keyword">const</span> say = <span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(say);
+}
+
+<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\48\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="arrow-function-tanpa-block">Arrow Function Tanpa Block</h2>
+        <ul>
+            <li>Jika sebuah arrow function isinya sederhana, misal hanya <strong>satu baris</strong></li>
+            <li>Kita bisa membuat arrow function <strong>tanpa</strong> harus menggunakan <strong>block</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--arrow-function-tanpa-block">Kode : Arrow Function Tanpa Block</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = (<span class="hljs-params">name</span>) =&gt; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>);
+
+<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\48\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="arrow-function-return-value">Arrow Function Return Value</h2>
+        <ul>
+            <li>Arrow function bisa <strong>mengembalikan value</strong>, sama seperti function biasanya</li>
+            <li><strong>Jika menggunakan block</strong>, maka kita perlu menggunakan kata <strong>kunci return</strong>
+            </li>
+            <li>Jika <strong>tidak menggunakan block</strong>, kita <strong>tidak perlu</strong> menggunakan **kata
+                kunci return **</li>
+        </ul>
+        <hr>
+        <h2 id="kode--arrow-function-return-value">Kode : Arrow Function Return Value</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sum</span> = (<span class="hljs-params">first, second</span>) =&gt; first + second;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\48\3.PNG" alt="3">
+        </p>
+        <hr>
+        <h2 id="arrow-function-tanpa-kurung-parameter">Arrow Function Tanpa Kurung Parameter</h2>
+        <p>Jika <strong>parameter</strong> di arrow function <strong>hanya satu</strong>, kita <strong>bisa tidak
+                menggunakan kurung pada parameter</strong></p>
+        <hr>
+        <h2 id="kode--arrow-function-tanpa-kurung-parameter">Kode : Arrow Function Tanpa Kurung Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">sayHello</span> = name =&gt; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>((<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>));
+<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\48\4.PNG" alt="4">
+        </p>
+        <hr>
+        <h2 id="kode--arrow-function-sebagai-parameter">Kode : Arrow Function Sebagai Parameter</h2>
+        <ul>
+            <li>Karena arrow function <strong>sama seperti</strong> anonymous function</li>
+            <li>Jadi kita juga <strong>bisa</strong> menggunakan arrow function sebagai <strong>parameter di function
+                    lain</strong></li>
+        </ul>
+        <hr>
+        <h2 id="kode--arrow-function-sebagai-parameter-1">Kode : Arrow Function Sebagai Parameter</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// Anonymouse Function</span>
+<span class="hljs-comment">// giveMeName(function(name) {</span>
+<span class="hljs-comment">//     console.log(`Hello ${name}`);</span>
+<span class="hljs-comment">// });</span>
+
+<span class="hljs-comment">// Arrow Function</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">giveMeName</span>(<span class="hljs-params">callback</span>) {
+    <span class="hljs-title function_">callback</span>(<span class="hljs-string">&quot;Syiber&quot;</span>);
+}
+
+<span class="hljs-title function_">giveMeName</span>(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>`</span>));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\48\5.PNG" alt="5">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

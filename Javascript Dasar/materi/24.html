@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Nullish Coalescing Operator</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="nullish-coalescing-operator">Nullish Coalescing Operator</h1>
+        <hr>
+        <h2 id="nullish-coalescing-operator-1">Nullish Coalescing Operator</h2>
+        <ul>
+            <li><strong>Nullist value</strong> adalah null dan undefined</li>
+            <li><strong>Nullist coalescing operator (??)</strong> adalah operator mirip dengan ternary operator, yang
+                membedakan adalah pada kondisi, jika bernilai null atau undefined, baru value default nya diambil</li>
+        </ul>
+        <hr>
+        <h2 id="kode--tanpa-nullish-coalescing-operator">Kode : Tanpa Nullish Coalescing Operator</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> parameter;
+
+<span class="hljs-keyword">let</span> data = parameter;
+<span class="hljs-keyword">if</span> (data === <span class="hljs-literal">undefined</span> || data === <span class="hljs-literal">null</span>) {
+    data = <span class="hljs-string">&quot;Nilai Default&quot;</span>;
+}
+
+<span class="hljs-title function_">alert</span>(data);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\24\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id=""></h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> parameter;
+
+<span class="hljs-keyword">let</span> data = parameter ?? <span class="hljs-string">&quot;Nilai Default&quot;</span>;
+
+<span class="hljs-title function_">alert</span>(data);
+</code></pre>
+
+
+
+    </body>
+
+</html>

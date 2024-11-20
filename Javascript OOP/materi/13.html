@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Class Inheritance</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="class-inheritance">Class Inheritance</h1>
+        <hr>
+        <h2 id="class-inheritance-1">Class Inheritance</h2>
+        <ul>
+            <li>Sebelumnya kita sudah tahu bahwa prototype mendukung pewarisan, walaupun agak sedikit tricky cara
+                pembuatannya</li>
+            <li>Untungnya itu diperbaiki di ES6 dengan fitur class nya</li>
+            <li>Sebuah class bisa melakukan pewarisan dari class lainnya dengan menggunakan kata kunci extends</li>
+            <li>Di JavaScript, class inheritance sama seperti prototype inheritance, hanya bisa memiliki satu parent
+                class</li>
+        </ul>
+        <hr>
+        <h2 id="kode--class-inheritance">Kode : Class Inheritance</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hi <span class="hljs-subst">${name}</span>, my name is employee <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Manager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Employee</span> {
+    <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">name</span>) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hi <span class="hljs-subst">${name}</span>, my name is manager <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> syiber = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Employee</span>();
+syiber.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;Syiber&quot;</span>;
+syiber.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+
+<span class="hljs-keyword">const</span> faizal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Manager</span>();
+faizal.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;Faizal&quot;</span>;
+faizal.<span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Black&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syiber);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(faizal);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\1.PNG" alt="1">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

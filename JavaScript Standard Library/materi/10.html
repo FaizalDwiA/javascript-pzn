@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Map</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="map">Map</h1>
+        <hr>
+        <h2 id="map-1">Map</h2>
+        <ul>
+            <li>Map merupakan representasi dari struktur data key-value</li>
+            <li>Map mirip dengan tipe data object, hanya saja pada Map, semua method untuk manipulasi data sudah
+                disediakan</li>
+            <li>Map mengikuti kontrak iterable, sehingga bisa di iterasi secara default</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="perbedaan-map-dan-object">Perbedaan Map dan Object</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Map</th>
+                <th>Object</th>
+            </tr>
+            <tr>
+                <td>Pertama dibuat, tidak memiliki key</td>
+                <td>Karena memiliki prototype, jadi bisa jadi memiliki default key ketika pertama dibuat</td>
+            </tr>
+            <tr>
+                <td>Key bisa tipe data apapun</td>
+                <td>Key hanya bisa string atau symbol</td>
+            </tr>
+            <tr>
+                <td>Jumlah key bisa diketahui dengan mudah dengan attribute size</td>
+                <td>Tidak bisa diketahui, harus manual menggunakan iteras</td>
+            </tr>
+            <tr>
+                <td>Secara default tidak bisa dikonversi ke JSON</td>
+                <td>Bisa dikonversi ke JSON secara otomatis</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="map-instance-method--property">Map Instance Method &amp; Property</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Method & Property</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>Panjang Map</td>
+            </tr>
+            <tr>
+                <td>clear()</td>
+                <td>Menghapus semua isi Map</td>
+            </tr>
+            <tr>
+                <td>delete(key)</td>
+                <td>Menghapus data Map berdasarkan key</td>
+            </tr>
+            <tr>
+                <td>get(key) : value</td>
+                <td>Mendapatkan data Map berdasarkan key</td>
+            </tr>
+            <tr>
+                <td>has(key) : boolean</td>
+                <td>Mengecek apakah Map berisi data key</td>
+            </tr>
+            <tr>
+                <td>set(key, value)</td>
+                <td>Mengubah data Map dengan key = value</td>
+            </tr>
+            <tr>
+                <td>forEach((key, value) => ) </td>
+                <td>Melakukan iterasi Map</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--map">Kode : Map</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;Name&quot;</span>, <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>);
+map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;Address&quot;</span>, <span class="hljs-string">&quot;Indonesia&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(map);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;Name&quot;</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;Address&quot;</span>));
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> el <span class="hljs-keyword">of</span> map) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">${el[<span class="hljs-number">0</span>]}</span> : <span class="hljs-subst">${el[<span class="hljs-number">1</span>]}</span>`</span>);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\10\1.PNG"
+                alt="1"></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

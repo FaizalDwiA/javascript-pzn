@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Function Return Value</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="function-return-value">Function Return Value</h1>
+        <hr>
+        <h2 id="function-return-value-1">Function Return Value</h2>
+        <ul>
+            <li><strong>Secara default</strong>, function itu <strong>tidak menghasilkan value</strong> apapun, namun
+                jika kita ingin, kita bisa <strong>membuat</strong> sebuah function <strong>mengembalikan value</strong>
+            </li>
+            <li>Agar function bisa menghasilkan value, kita bisa menggunakan <strong>kata kunci return</strong> di dalam
+                function nya.</li>
+            <li>Dan di dalam block function, untuk menghasilkan nilai tersebut, kita harus menggunakan kata kunci
+                return, lalu diikuti dengan data yang ingin kita hasilkan.</li>
+            <li>Function hanya bisa <strong>mengembalikan satu data</strong>, jika kita ingin mengembalikan beberapa
+                data sekaligus, kita bisa menggunakan <strong>Array</strong> sebagai return value nya</li>
+        </ul>
+        <hr>
+        <h2 id="kode--function-return-value">Kode : Function Return Value</h2>
+        <pre><code class="language-js"><span class="hljs-comment">// Membuat function</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params">firstName, lastName</span>) {
+    <span class="hljs-keyword">const</span> say = <span class="hljs-string">`Hello <span class="hljs-subst">${firstName}</span> <span class="hljs-subst">${lastName}</span>`</span>;
+    <span class="hljs-keyword">return</span> say;
+}
+
+<span class="hljs-comment">// Memanggil function</span>
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">sayHello</span>(<span class="hljs-string">&quot;Faizal&quot;</span>, <span class="hljs-string">&quot;Al Farizi&quot;</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${result}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\38\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode--function-return-value-lebih-dari-satu">Kode : Function Return Value Lebih Dari Satu</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFinalValue</span>(<span class="hljs-params">value</span>) {
+    <span class="hljs-keyword">if</span>(value &gt; <span class="hljs-number">90</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;A&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &gt; <span class="hljs-number">80</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;B&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &gt; <span class="hljs-number">70</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;C&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &gt; <span class="hljs-number">60</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;D&quot;</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;E&quot;</span>;
+    }
+}
+
+<span class="hljs-keyword">const</span> finalValue = <span class="hljs-title function_">getFinalValue</span>(<span class="hljs-number">76</span>);
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${finalValue}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\38\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="menghentikan-eksekusi-dengan-return">Menghentikan Eksekusi dengan Return</h2>
+        <ul>
+            <li>Saat kita menggunakan kata kunci <strong>return</strong>, maka kode <strong>setelah</strong> return
+                tersebut <strong>tidak akan dieksekusi</strong></li>
+            <li>Kita bisa menggunakan return untuk **menghentikan eksekusi **sebuah function</li>
+        </ul>
+        <hr>
+        <h2 id="kode--menghentikan-eksekusi-dengan-return">Kode : Menghentikan Eksekusi dengan Return</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isContains</span>(<span class="hljs-params">array, searchValue</span>) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">const</span> element <span class="hljs-keyword">of</span> array) {
+        <span class="hljs-keyword">if</span>(element === searchValue) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-keyword">const</span> array = [<span class="hljs-number">1</span>, <span class="hljs-number">32</span>, <span class="hljs-number">4324</span>, <span class="hljs-number">3</span>, <span class="hljs-number">43</span>, <span class="hljs-number">53</span>, <span class="hljs-number">43</span>, <span class="hljs-number">43</span>, <span class="hljs-number">535</span>, <span class="hljs-number">35</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> search = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">const</span> found = <span class="hljs-title function_">isContains</span>(array, search)
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">writeln</span>(<span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">${found}</span>&lt;/p&gt;`</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\38\3.PNG" alt="3">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Attr</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="attr">Attr</h1>
+        <hr>
+        <h2 id="attr-1">Attr</h2>
+        <ul>
+            <li>Attr atau attribute merupakan representasi dari attribute sebuah element, atau singkatnya key-value, key
+                nya adalah nama attribute, dan value nya adalah value attribute</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Attr">https://developer.mozilla.org/en-US/docs/Web/API/Attr</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode-attr">Kode: Attr</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;assets/img/1/1.PNG&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;faizal&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;logo&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> logo = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;logo&quot;</span>);
+    <span class="hljs-keyword">const</span> src = logo.<span class="hljs-title function_">getAttributeNode</span>(<span class="hljs-string">&quot;src&quot;</span>);
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(src.<span class="hljs-property">name</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(src.<span class="hljs-property">value</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\8\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="attr-value">Attr Value</h2>
+        <ul>
+            <li>Kadang kebanyakan programmer ingin langsung mendapatkan value Attr</li>
+            <li>Jarang sekali menggunakan object Attr nya</li>
+            <li>Untuk mendapatkan value secara langsung, kita bisa menggunakan method getAttribute(name) di Element</li>
+        </ul>
+        <hr>
+        <h2 id="kode--attr-value">Kode : Attr Value</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;assets/img/1/1.PNG&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;faizal&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;logo&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> logo = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;logo&quot;</span>);
+    <span class="hljs-keyword">const</span> src = logo.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;src&quot;</span>);
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(src);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\8\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="membuat-attr">Membuat Attr</h2>
+        <ul>
+            <li>Untuk membuat Attr, kita bisa menggunakan document.createAttribute(name)</li>
+            <li>Lalu untuk menambahkannya ke Element, kita bisa gunakan element.setAttributeNode(attr)</li>
+            <li>Atau kita juga bisa langsung membuat Attr langsung dengan name dan value nya menggunakan
+                element.setAttribute(name, value)</li>
+        </ul>
+        <hr>
+        <h2 id="kode-membuat-attr">Kode: Membuat Attr</h2>
+
+
+
+    </body>
+
+</html>

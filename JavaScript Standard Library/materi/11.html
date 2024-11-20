@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Set</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="set">Set</h1>
+        <hr>
+        <h2 id="set-1">Set</h2>
+        <ul>
+            <li>Set merupakan implementasi dari struktur data yang berisikan data-data unique</li>
+            <li>Set mirip seperti Array, hanya saja isi datanya selalu unique</li>
+            <li>Jika kita menambahkan data yang sama, maka data hanya akan diterima satu saja</li>
+            <li>Set mengimplementasikan kontrak iterable, sehingga bisa diiterasi secara default</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="set-instance-method--property">Set Instance Method &amp; Property</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Method & Property</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>Panjang Set</td>
+            </tr>
+            <tr>
+                <td>add(value)</td>
+                <td>Menambah data ke Set</td>
+            </tr>
+            <tr>
+                <td>has(value)</td>
+                <td>Mengecek apakah Set memiliki value</td>
+            </tr>
+            <tr>
+                <td>delete(value)</td>
+                <td>Menghapus value dari Set</td>
+            </tr>
+            <tr>
+                <td>forEach(value => )</td>
+                <td>Melakukan iterasi Set</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--set">Kode : Set</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+
+set.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;Faizal&quot;</span>);
+set.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;Dwi&quot;</span>);
+set.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;Al&quot;</span>);
+set.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;Farizi&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set);
+set.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\11\1.PNG"
+                alt="1"></p>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>NodeList</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="nodelist">NodeList</h1>
+        <hr>
+        <h2 id="nodelist-1">NodeList</h2>
+        <ul>
+            <li>NodeList adalah kumpulan dari Node</li>
+            <li>Biasanya NodeList digunakan ketika kita menyeleksi banyak Node sekaligus, misal ketika kita ingin
+                mengambil semua children di Node misalnya</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList">https://developer.mozilla.org/en-US/docs/Web/API/NodeList</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--nodelist">Kode : NodeList</h2>
+        <pre><code class="language-js">&lt;ul id=<span class="hljs-string">&quot;menu1&quot;</span>&gt;
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+&lt;/ul&gt;
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;li&quot;</span>);
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list);
+
+    <span class="hljs-keyword">const</span> list1 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu1&quot;</span>).<span class="hljs-property">childNodes</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list1);
+
+    <span class="hljs-keyword">const</span> list2 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu1&quot;</span>).<span class="hljs-property">childNodes</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list2);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="live-vs-static-nodelist">Live vs Static NodeList</h2>
+        <ul>
+            <li>NodeList memiliki 2 tipe, yaitu Live dan Static</li>
+            <li>Live artinya perubahan yang terjadi pada NodeList nya, akan merubah semua NodeList yang sama</li>
+            <li>Static artinya perubahan yang terjadi pada NodeList nya, tidak akan merubah semua NodeList yang sama
+            </li>
+            <li>Saat kita menggunakan element.childNodes, NodeList tersebut bersifat Live</li>
+            <li>Saat kita menggunakan document.querySelectorAll(), NodeList tersebut bersifat Static</li>
+        </ul>
+        <hr>
+        <h2 id="kode--nodelist-live">Kode : NodeList Live</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> menu1 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu1&quot;</span>);
+    <span class="hljs-keyword">const</span> list1 = menu1.<span class="hljs-property">childNodes</span>;
+
+    menu1.<span class="hljs-title function_">append</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;li&quot;</span>));
+    menu1.<span class="hljs-title function_">append</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;li&quot;</span>));
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list1);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="kode--nodelist-static">Kode : NodeList Static</h2>
+        <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;first&quot;</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;second&quot;</span>&gt;</span>Second<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;third&quot;</span>&gt;</span>Third<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&quot;li&quot;</span>);
+
+    <span class="hljs-keyword">const</span> menu1 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;menu1&quot;</span>);
+    menu1.<span class="hljs-title function_">append</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;li&quot;</span>));
+    menu1.<span class="hljs-title function_">append</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;li&quot;</span>));
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(list);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\7\3.PNG"
+                alt="3"></p>
+
+
+
+    </body>
+
+</html>

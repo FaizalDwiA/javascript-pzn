@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Tipe Data Object</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+            type="text/css">
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="tipe-data-object">Tipe Data Object</h1>
+        <hr>
+        <h2 id="associative-array">Associative Array</h2>
+        <ul>
+            <li>Di bahasa pemrograman lain seperti PHP, kita bisa menggunakan index beruba tipe data lain selain number,
+                misal <strong>string</strong></li>
+            <li>Fitur ini biasanya disebut <strong>associative array atau hash</strong></li>
+            <li>Di JavaScript associative array <strong>tidak didukung</strong>.</li>
+            <li>Jika kita <strong>memaksa</strong> memasukkan data bukan number di index Array, maka JavaScript akan
+                merubah tipe data Array tersebut menjadi <strong>object</strong>, dan ini bisa berbahaya, karena
+                beberapa operasi di array mungkin bisa berubah hasilnya</li>
+        </ul>
+        <hr>
+        <h2 id="tipe-data-object-1">Tipe Data Object</h2>
+        <ul>
+            <li><strong>Tipe data object</strong> adalah tipe data yang mirip dengan tipe data Array</li>
+            <li>Yang membedakan adalah <strong>index</strong> pada tipe data object bisa menggunakan
+                <strong>string</strong></li>
+            <li>Index di object biasanya disebut <strong>attributes atau properties</strong>, bukan index</li>
+        </ul>
+        <hr>
+        <h2 id="kode-membuat-object-kosong">Kode Membuat Object Kosong</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> orang = {};
+</code></pre>
+        <hr>
+        <h2 id="kode-mengubah-dan-menghapus-property-di-object">Kode Mengubah dan Menghapus Property di Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> orang = {};
+
+<span class="hljs-comment">// Menambah atau Mengubah</span>
+orang[<span class="hljs-string">&quot;nama&quot;</span>] = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+orang[<span class="hljs-string">&quot;alamat&quot;</span>] = <span class="hljs-string">&quot;Indonesia&quot;</span>;
+orang[<span class="hljs-string">&quot;umur&quot;</span>] = <span class="hljs-number">30</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(orang);
+
+<span class="hljs-comment">// Menghapus</span>
+<span class="hljs-keyword">delete</span> orang[<span class="hljs-string">&quot;umur&quot;</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(orang);
+</code></pre>
+        <p><img src="..\assets\img\15\1.PNG" alt="1">
+        </p>
+        <hr>
+        <h2 id="kode-membuat-object-dengan-properties">Kode Membuat Object dengan Properties</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> orang = {
+    <span class="hljs-attr">nama</span>: <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>,
+    <span class="hljs-attr">alamat</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>,
+    <span class="hljs-attr">umur</span>: <span class="hljs-number">30</span>,
+};
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">table</span>(orang);
+</code></pre>
+        <p><img src="..\assets\img\15\2.PNG" alt="2">
+        </p>
+        <hr>
+        <h2 id="kode-mengakses-property-object">Kode Mengakses Property Object</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> orang = {
+    <span class="hljs-attr">nama</span>: <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>,
+    <span class="hljs-attr">alamat</span>: <span class="hljs-string">&quot;Indonesia&quot;</span>,
+    <span class="hljs-attr">umur</span>: <span class="hljs-number">30</span>,
+};
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Nama : <span class="hljs-subst">${orang[<span class="hljs-string">&quot;nama&quot;</span>]}</span>`</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Alamat : <span class="hljs-subst">${orang.alamat}</span>`</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">`Umur : <span class="hljs-subst">${orang.umur}</span>`</span>);
+</code></pre>
+        <p><img src="..\assets\img\15\3.PNG" alt="3">
+        </p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+    </body>
+
+</html>

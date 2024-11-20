@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>RegExp</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="regexp">RegExp</h1>
+        <hr>
+        <h2 id="regexp-1">RegExp</h2>
+        <ul>
+            <li>RegExp merupakan implementasi dari regular expression di JavaScript</li>
+            <li>Regular expression merupakan fitur untuk mencari text dengan pola</li>
+            <li>Membuat regular expression di JavaScript bisa dilakukan dengan dua cara, yaitu menggunakan literal
+                notation atau membuat object RegExp</li>
+            <li><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="membuat-regexp">Membuat RegExp</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> regex1 = <span class="hljs-regexp">/[a]/</span>
+<span class="hljs-keyword">const</span> regex2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">&quot;[a]&quot;</span>);
+<span class="hljs-keyword">const</span> regex3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-regexp">/[a]/</span>);
+</code></pre>
+        <hr>
+        <h2 id="regexp-instance-method">RegExp Instance Method</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Instance Method</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>exec(value) : result</td>
+                <td>Eksekusi regex, jika menemukan data sesuai pola, maka kembalikan result nya, jika tidak maka null
+                </td>
+            </tr>
+            <tr>
+                <td>test(value) : boolean</td>
+                <td>Eksekusi regex, jika menemukan data sesuai pola, maka return true, jika tidak maka false</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--regexp-instance-method">Kode : RegExp Instance Method</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Faizal Dwi Al Farizi&quot;</span>;
+<span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/Faizal/</span>;
+
+<span class="hljs-keyword">let</span> result = regex.<span class="hljs-title function_">exec</span>(name);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+
+<span class="hljs-keyword">let</span> test = regex.<span class="hljs-title function_">test</span>(name);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(test);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\1.PNG"
+                alt="1"></p>
+        <hr>
+        <h2 id="regexp-modifier">RegExp Modifier</h2>
+        <p>RegExp memiliki modifier untuk mengubah sifat cara pencarian :</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Modifier</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Regex menjadi incase sensitive</td>
+            </tr>
+            <tr>
+                <td>g</td>
+                <td>Pencarian dilakukan secara global, secara default setelah menemukan data, pencarian akan berhenti
+                </td>
+            </tr>
+            <tr>
+                <td>m</td>
+                <td>Multiline, pencarian dilakukan di tiap baris (enter)</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--regexp-modifier">Kode : RegExp Modifier</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Faizal Dwi\nBlack Syiber\nThunder Dragon&quot;</span>;
+<span class="hljs-keyword">const</span> regex1 = <span class="hljs-regexp">/Faizal/g</span>;
+<span class="hljs-keyword">const</span> regex2 = <span class="hljs-regexp">/Dwi/ig</span>;
+
+<span class="hljs-keyword">let</span> result;
+<span class="hljs-keyword">while</span>((result = regex1.<span class="hljs-title function_">exec</span>(name)) !== <span class="hljs-literal">null</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+}
+
+<span class="hljs-keyword">while</span>((result = regex2.<span class="hljs-title function_">exec</span>(name)) !== <span class="hljs-literal">null</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\2.PNG"
+                alt="2"></p>
+        <hr>
+        <h2 id="fitur-regexp-lainnya">Fitur RegExp Lainnya</h2>
+        <ul>
+            <li>Assersions : indikasi awal dan akhir teks<br>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions</a>
+            </li>
+            <li>Character Classes : membedakan antara huruf dan angka<br>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes</a>
+            </li>
+            <li>Group dan Range : melakukan grouping atau range huruf atau angka<br>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges</a>
+            </li>
+            <li>Quantifiers : menentukan jumlah huruf atau angka<br>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers</a>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="kode--contoh-fitur-regexp">Kode : Contoh Fitur RegExp</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> regex = <span class="hljs-regexp">/fa[aiueo]zal/ig</span>;
+<span class="hljs-keyword">const</span> text = <span class="hljs-string">&quot;faizal fdauzan fauzan fauzal frizal faezal dwi faozal&quot;</span>;
+
+<span class="hljs-keyword">while</span>((result = regex.<span class="hljs-title function_">exec</span>(text)) !== <span class="hljs-literal">null</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+}
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\3.PNG"
+                alt="3"></p>
+        <hr>
+        <h2 id="regular-expression-di-string">Regular Expression di String</h2>
+        <p>Di JavaScript, tipe data String memiliki instance method yang dapat memanfaatkan RegExp untuk melakukan
+            pencarian :</p>
+        <table border="1" width="100%">
+            <tr>
+                <th>String Method</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>match(regex) : Array</td>
+                <td>Mencari semua data yang sesuai dengan regex</td>
+            </tr>
+            <tr>
+                <td>search(regex) : index </td>
+                <td>Mencari index data yang sesuai dengan regex</td>
+            </tr>
+            <tr>
+                <td>replace(regex, value) </td>
+                <td>Mengubah data dengan value yang sesuai regex</td>
+            </tr>
+            <tr>
+                <td>replaceAll(regex, value)</td>
+                <td>Mengubah semua data dengan value yang sesuai regex</td>
+            </tr>
+            <tr>
+                <td>split(regex) : Array</td>
+                <td>Memotong string dengan regex</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="kode--regular-expression-di-string">Kode : Regular Expression di String</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">const</span> string = <span class="hljs-string">&quot;dwa dwi dwak dewi dwu drik dlu duwi dwe&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(string.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/dw[aiueo]/ig</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(string.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/dw[aiueo]/ig</span>));
+
+<span class="hljs-comment">// di replace semua karena regex</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(string.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/dw[aiueo]/ig</span>, <span class="hljs-string">&quot;keren&quot;</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(string.<span class="hljs-title function_">replaceAll</span>(<span class="hljs-regexp">/dw[aiueo]/ig</span>, <span class="hljs-string">&quot;keren&quot;</span>));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(string.<span class="hljs-title function_">split</span>(<span class="hljs-regexp">/i/ig</span>));
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\13\4.PNG"
+                alt="4"></p>
+
+
+
+    </body>
+
+</html>

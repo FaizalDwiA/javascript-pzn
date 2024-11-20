@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Falsy dan Truthy</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="falsy-dan-truthy">Falsy dan Truthy</h1>
+        <hr>
+        <h2 id="falsy">Falsy</h2>
+        <ul>
+            <li>Falsy atau kadang ditulis <strong>falsey</strong>, adalah value yang ketika dalam konteks boolean, dia
+                dianggap <strong>false</strong></li>
+            <li>Jadi di JavaScript, kondisi itu <strong>tidak hanya bisa boolean</strong>, tapi diluar boolean pun bisa,
+                namun kita harus tahu beberapa data falsy, atau dianggap false</li>
+            <li>Ini adalah salah satu fitur unik dari JavaScript, yang berguna, namun kadang juga sering membingungkan
+            </li>
+        </ul>
+        <hr>
+        <h2 id="data-falsy">Data Falsy</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Data dianggap Falsy</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>false</td>
+                <td>Boolean false</td>
+            </tr>
+            <tr>
+                <td>0, -0</td>
+                <td>Number 0 dan -0 dianggap false</td>
+            </tr>
+            <tr>
+                <td>"", '', ``</td>
+                <td>Semua string kosong dianggap false</td>
+            </tr>
+            <tr>
+                <td>null</td>
+                <td>null dianggap false</td>
+            </tr>
+            <tr>
+                <td>undefined</td>
+                <td>undefined dianggap false</td>
+            </tr>
+            <tr>
+                <td>NaN</td>
+                <td>Not a Number dianggap false</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="truthy">Truthy</h2>
+        <ul>
+            <li><strong>Truthy</strong> adalah kebalikan dari falsy, dimana data nya dianggap bernilai
+                <strong>true</strong></li>
+            <li>Sederhana sekali sebenarnya untuk mengetahui sebuah data itu adalah truthy, yaitu data yang **bukan
+                bernilai falsy **</li>
+        </ul>
+        <hr>
+        <h2 id="kode--falsy-dan-truthy">Kode : Falsy dan Truthy</h2>
+        <pre><code class="language-js"><span class="hljs-keyword">let</span> data = <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">// FALSE</span>
+<span class="hljs-comment">// let data = &quot;false&quot;; // TRUE</span>
+<span class="hljs-comment">// let data = 1; // TRUE</span>
+<span class="hljs-comment">// let data = 0; // FALSE</span>
+<span class="hljs-comment">// let data = -2; // TRUE</span>
+<span class="hljs-comment">// let data = []; // TRUE</span>
+<span class="hljs-comment">// let data = undefined; // FALSE</span>
+<span class="hljs-comment">// let data; // FALSE</span>
+
+<span class="hljs-keyword">if</span>(data) {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;TRUE&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;FALSE&quot;</span>);
+}
+</code></pre>
+
+
+
+    </body>
+
+</html>

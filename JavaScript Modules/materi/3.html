@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Live Server</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="live-server">Live Server</h1>
+        <hr>
+        <h2 id="live-server-1">Live Server</h2>
+        <ul>
+            <li>Saat kita menggunakan fitur JavaScript Module, sangat disarankan untuk menjalankan kode avaScript kita
+                dalam Web Server</li>
+            <li>Hal ini karena spesifikasi dari JavaScript module meminta secara default kode JavaScript perlu di satu
+                domain server yang sama, jika kita membuat file html menggunakan URL file://, maka dikhawatirkan akan
+                terjadi error CORS (Cross Origin Resource Sharing) Visual Studio Code</li>
+            <li>Jika menggunakan Visual Studio Code, disarankan untuk menginstall plugin Live Server : <a
+                    href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer</a><br>
+                <img src="..\assets\img\3\1.PNG"
+                    alt="1"></li>
+            <li>Plugin Live Server ini bisa digunakan untuk menjalankan local web server, sehingga kita bisa mengakses
+                kode web JavaScript kita menggunakan domain localhost<br>
+                <img src="..\assets\img\3\2.PNG"
+                    alt="2"></li>
+        </ul>
+        <hr>
+        <h2 id="jetbrains-ide">JetBrains IDE</h2>
+        <ul>
+            <li>Jika menggunakan JetBrains IDE, sudah terdapat fitur untuk membuka halaman web dalam local web server
+            </li>
+            <li>Tidak perlu menginstall plugin tambahan</li>
+        </ul>
+
+
+
+    </body>
+
+</html>

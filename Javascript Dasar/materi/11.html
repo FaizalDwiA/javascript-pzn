@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Console</title>
+        <style>
+            /* From extension vscode.github */
+            /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+            .vscode-dark img[src$=\#gh-light-mode-only],
+            .vscode-light img[src$=\#gh-dark-mode-only] {
+                display: none;
+            }
+        </style>
+
+        <link rel="stylesheet" href="../../assets/css/markdown.min.css">
+        <link rel="stylesheet" href="../../assets/css/highlight.min.css">
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+            .task-list-item {
+                list-style-type: none;
+            }
+
+            .task-list-item-checkbox {
+                margin-left: -20px;
+                vertical-align: middle;
+                pointer-events: none;
+            }
+        </style>
+
+    </head>
+
+    <body class="vscode-body vscode-light">
+        <h1 id="console">Console</h1>
+        <ul>
+            <li>Javascript memiliki fitur untuk melakukan logging bernama <strong>console</strong></li>
+            <li><strong>Logging</strong> = mekanisme yang biasa dilakukan oleh programmer untuk
+                <strong>menampilkan</strong> informasi dari aplikasi yang sedang berjalan, <strong>tanpa</strong> harus
+                menganggu alur kerja aplikasi dan juga interaksi user</li>
+            <li>Untuk melakukan ini, kita bisa menggunakan <strong>fitur console</strong> di javascript</li>
+            <li>Untuk menggunakan console, kita cukup gunakan <strong>perintah console</strong> di kode javascript</li>
+        </ul>
+        <hr>
+        <h2 id="console-method">Console Method</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>Console Method</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>console.info(...) / console.log(...)</td>
+                <td>Memberitahu informasi</td>
+            </tr>
+            <tr>
+                <td>console.warn(...)</td>
+                <td>Memberitahu informasi peringatan</td>
+            </tr>
+            <tr>
+                <td>console.error(...)</td>
+                <td>Memberitahu informasi error</td>
+            </tr>
+            <tr>
+                <td>console.table(...)</td>
+                <td>Memberitahu informasi dalam bentuk tabel</td>
+            </tr>
+        </table>
+        <hr>
+        <h2 id="console-info">Console Info</h2>
+        <pre><code class="language-js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">debug</span>(<span class="hljs-string">&quot;Debug&quot;</span>); <span class="hljs-comment">// default tidak dikeluarkan, kita atur levelnya</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">info</span>(<span class="hljs-string">&quot;Hello World&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(<span class="hljs-string">&quot;Ini Peringatan&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Ini Error&quot;</span>);
+</code></pre>
+        <p><strong>Hasil :</strong></p>
+        <p><img src="..\assets\img\11\1.PNG" alt="1">
+        </p>
+
+
+
+    </body>
+
+</html>
